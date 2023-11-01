@@ -11,3 +11,65 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.plain {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  height: fit-content;
+  width: fit-content;
+}
+
+#navbar {
+  display: flex;
+  margin: 0;
+  width: 100%;
+  background-color: blue;
+  justify-content: flex-end;
+}
+
+#navbar > div {
+  color: white;
+  font-weight: bold;
+  width: fit-content;
+  margin: 5px 20px 5px 0;
+}
+
+#naslov {
+  width: fit-content;
+  height: 6em;
+  float: left;
+}
+
+#naslov_text {
+  padding: 5% 0;
+  float: right;
+  display: flex;
+  flex-direction: column;
+  margin: 0 10px;
+}
+
+#naslov_text > div {
+  margin: 0;
+  padding: 0;
+}
+
+#naslov_text > div:first-child {
+  font-size: 24px;
+}
+
+#profil {
+  background-color: antiquewhite;
+  padding: 2% 0;
+  margin: 0;
+  float: right;
+  display: flex;
+  flex-direction: column;
+}
+
+#icon {
+  height: 5em;
+  margin: 7px;
+  vertical-align: baseline;
+}
