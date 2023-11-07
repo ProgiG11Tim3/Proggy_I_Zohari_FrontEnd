@@ -6,7 +6,9 @@ class MainPage extends React.Component {
     render() {
         return <div>
             {/* <Header profil={<Profil />}/> */}
-            <Template />
+            <Template>
+                Lorem Ipsum
+            </Template>
         </div>
     }
 }
