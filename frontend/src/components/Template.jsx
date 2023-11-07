@@ -8,6 +8,10 @@ class Template extends React.Component {
         return <div>
             {/* <Header profil={<Profil />}/> */}
             <Header/>
+<<<<<<< HEAD
+=======
+            {this.props.children}
+>>>>>>> main
         </div>
     }
 }
