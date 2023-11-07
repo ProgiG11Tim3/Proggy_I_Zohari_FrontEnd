@@ -3,7 +3,6 @@ import "../../index.css";
 import logo from "../../images/logo.png";
 
 class Header extends React.Component {
-
     render() {
         return <div>
             <div id="naslov">
@@ -13,10 +12,7 @@ class Header extends React.Component {
                     <div>Olakšava život kad imate bolesnu djecu</div>
                 </div>
             </div>
-            <div id="profil">
-                <div>Prijavljen/a: Prezime Ime</div>
-                <div>Profil: PEDIJATAR</div>
-            </div>
+            {this.props.profil}
             <div id="navbar">
                 <div>EN</div>
                 <div>aA</div>

@@ -60,12 +60,13 @@ code {
 }
 
 #profil {
-  background-color: antiquewhite;
-  padding: 2% 0;
+  height: 6em;
+  padding: 0 2%;
   margin: 0;
   float: right;
   display: flex;
   flex-direction: column;
+  justify-content: center;
 }
 
 #icon {
