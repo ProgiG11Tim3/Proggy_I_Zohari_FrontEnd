@@ -2,7 +2,7 @@ import React from "react";
 import Template from "../components/Template";
 import "../index.css"
 
-class MainPage extends React.Component {
+class RegisterPage extends React.Component {
     render() {
         return <div>
             {/* <Header profil={<Profil />}/> */}
@@ -21,4 +21,4 @@ class MainPage extends React.Component {
     }
 }
 
-export default MainPage
+export default RegisterPage
