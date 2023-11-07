@@ -74,3 +74,39 @@ code {
   margin: 7px;
   vertical-align: baseline;
 }
+
+#register_main_container {
+  padding: 2.5%;
+  background-color: whitesmoke;
+  width: 70%;
+  margin: 0 auto;
+  border-radius: 30px;
+}
+
+.register_category_container {
+  height: fit-content;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.input_container {
+  margin: 1% 2.5%;
+  padding: 1%;
+  background-color: beige;
+  width: 25%;
+  height: fit-content;
+}
+
+.input_tag {
+  font-weight: bold;
+}
+
+.naslov {
+  font-size: 2em;
+  width: 74%;
+  margin: 5px auto;
+}
+
+#register_button {
+  float: right;
+}
