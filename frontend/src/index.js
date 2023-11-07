@@ -7,6 +7,6 @@ import RegisterPage from './pages/RegisterPage'
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <RegisterPage />
+    <MainPage />
   </React.StrictMode>
 );
