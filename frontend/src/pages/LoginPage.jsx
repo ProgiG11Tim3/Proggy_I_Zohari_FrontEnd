@@ -14,7 +14,6 @@ class LoginPage extends React.Component {
                         <div className="login_input_container">
                             <Input className="login_input_container" tag="Korisničko ime" name="username" placeholder={"Korisničko ime"}/>
                             <div>
-
                                 <Input tag={"Lozinka"} name={"lozinka"} placeholder={"Lozinka"}/>
                                 <img src={viewLogo} alt="viewlogo" id="viewLogo"/>
                             </div>
