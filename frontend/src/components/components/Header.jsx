@@ -9,7 +9,7 @@ class Header extends React.Component {
                 <img src={logo} alt="logo" id="icon"/>
                 <div id="naslov_text">
                     <div>Ozdravi</div>
-                    <div id="podnaslov_text">Olakšava život kad imate bolesnu djecu</div>
+                    <div id={"podnaslov_text"}>Olakšava život kad imate bolesnu djecu</div>
                 </div>
             </div>
             {this.props.profil}

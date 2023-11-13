@@ -5,7 +5,7 @@ import "../index.css"
 
 class Template extends React.Component {
     render() {
-        return <div>
+        return <div id={"Template"}>
             {/* <Header profil={<Profil />}/> */}
             <Header/>
             {this.props.children}
