@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  user-select: none;
 }
 
 code {
@@ -50,7 +51,6 @@ input::-webkit-inner-spin-button {
 
 #naslov_text {
   color: rgb(156, 31, 117);
-  font-family: 'Ubuntu';
   padding: 5% 0;
   float: right;
   display: flex;
@@ -149,7 +149,7 @@ input::-webkit-inner-spin-button {
 #register_button {
   color: white;
   text-align: center;
-  font-size: 13px;
+  font-size: 15px;
   padding: 15px;
   border-style: none;
   width: 140px;
@@ -161,10 +161,14 @@ input::-webkit-inner-spin-button {
   float: right;
 }
 
+#register_button:hover {
+  cursor: pointer;
+}
+
 .line {
   height: 0;
-  width: 110%;
-  margin: 0 0 0 -5%;
+  width: 105%;
+  margin: 0 0 0 -2.5%;
   padding: 0;
   border-style: solid;
   border-width: 0.5px;
