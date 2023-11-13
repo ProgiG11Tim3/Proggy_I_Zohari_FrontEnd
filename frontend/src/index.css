@@ -9,6 +9,11 @@ body {
   background-color: rgb(251, 251, 251);
 }
 
+@font-face {
+  font-family: 'Ubuntu';
+  src: url('../public/fonts/Ubuntu-Regular.ttf') format('truetype');
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
