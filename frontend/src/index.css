@@ -5,11 +5,17 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  user-select: none;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 .plain {
@@ -25,13 +31,14 @@ code {
   display: flex;
   margin: 0;
   width: 100%;
-  background-color: blue;
+  background: linear-gradient(to right, rgb(156, 31, 117), rgb(133, 31, 156), rgb(70, 31, 156));
   justify-content: flex-end;
 }
 
 #navbar > div {
   color: white;
   font-weight: bold;
+  font-size: 13px;
   width: fit-content;
   margin: 5px 20px 5px 0;
 }
@@ -43,11 +50,14 @@ code {
 }
 
 #naslov_text {
+  color: rgb(156, 31, 117);
   padding: 5% 0;
   float: right;
   display: flex;
   flex-direction: column;
-  margin: 0 10px;
+  margin-left: 5px;
+  font-weight: 430;
+  margin-bottom: 3px;
 }
 
 #naslov_text > div {
@@ -57,6 +67,12 @@ code {
 
 #naslov_text > div:first-child {
   font-size: 24px;
+  margin-top: 12px;
+}
+
+#podnaslov_text {
+  font-size: 14px;
+  margin-top: 4px;
 }
 
 #profil {
@@ -70,7 +86,98 @@ code {
 }
 
 #icon {
-  height: 5em;
-  margin: 7px;
+  height: 4em;
+  margin-right: 0px;
+  margin-left: 15px;
+  margin-top: 15px;
+  margin-bottom: 3px;
   vertical-align: baseline;
+}
+
+#register_main_container {
+  padding: 2.5%;
+  background-color: white;
+  width: 70%;
+  margin: 0 auto 4em auto;
+  border-radius: 30px;
+}
+
+.register_category_container {
+  height: fit-content;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.inputs_paragraf {
+  margin: 2% 0 4% 0;
+}
+
+.input_container {
+  margin: 2% 7% 2% 0;
+  padding: 0;
+  width: 25%;
+  height: fit-content;
+}
+
+.input_box {
+  border-radius: 10px;
+  border: none;
+  width: 100%;
+  font-size: 13px;
+  padding: 10px;
+  background-color: rgb(240, 239, 245);
+}
+
+.input_tag {
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.paragraf_title {
+  font-size: 20px;
+}
+
+.main_naslov {
+  margin: 0 auto;
+  padding: 0 0 1em 0;
+  background-color: rgb(251, 251, 251);
+  color: rgb(156, 31, 117);
+  font-size: 2em;
+  width: 74%;
+}
+
+#register_button {
+  color: white;
+  text-align: center;
+  font-size: 15px;
+  padding: 15px;
+  border-style: none;
+  width: 140px;
+  margin: -3em 2em 0 0;
+  height: 4 em;
+  align-content: center;
+  border-radius: 10px;
+  background: linear-gradient(to right, rgb(156, 31, 117), rgb(133, 31, 156), rgb(70, 31, 156));
+  float: right;
+}
+
+#register_button:hover {
+  cursor: pointer;
+}
+
+.line {
+  height: 0;
+  width: 105%;
+  margin: 0 0 0 -2.5%;
+  padding: 0;
+  border-style: solid;
+  border-width: 0.5px;
+  border-color: rgb(240, 239, 245);
+}
+
+.main {
+  height: 100%;
+  margin: 0;
+  padding: 2em 0 1em 0;
+  background-color: rgb(251, 251, 251);
 }
