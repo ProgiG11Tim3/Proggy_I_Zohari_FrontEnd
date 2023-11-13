@@ -224,10 +224,6 @@ input::-webkit-inner-spin-button {
   text-align: center;
 }
 
-/*LOGIN*/
-/*LOGIN*/
-/*LOGIN*/
-
 #login_bigboy_main{
   user-select: none;
   display: flex;
@@ -254,7 +250,6 @@ input::-webkit-inner-spin-button {
   width: 300px;
   background-color: white;
   border-radius: 20px;
-  /*margin-top: 20px;*/
   color:rgb(59, 59, 56);
   font-size: 13px;
   font-weight: bold;
@@ -292,7 +287,7 @@ input::-webkit-inner-spin-button {
   height: 11px;
   float: right;
   bottom: 0;
-  margin-top: -18.5%;
+  margin-top: -20%;
   transform: translateX(-50%);
 }
 
