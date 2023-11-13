@@ -28,7 +28,7 @@ class MainPage extends React.Component {
                         </div>
                         <div id={"role_main_container"} className={"lom_text"}>
                             LIJEČNIK OBITELJSKE MEDICINE
-                            <div id={"role_sub_container"} className={"role_sub_text"}>
+                            <div id={"role_sub_container"} className={"role_sub_text role_sub_text_lom"}>
                                 Prijavite pacijente u sustav na jednom mjestu.
                                 <div className={"role_sub-smol_text"}>Puni katalog usluga</div>
                             </div>
@@ -38,7 +38,7 @@ class MainPage extends React.Component {
                     <div id={"home_reg_log_container"}>
                         <div id={"reg_button"}>Registriraj se</div>
                         <div id={"prijava_button"}>
-                            Prijava
+                            <Link to="/login" className={"linkic"}>Prijava</Link>
                         </div>
                     </div>
 

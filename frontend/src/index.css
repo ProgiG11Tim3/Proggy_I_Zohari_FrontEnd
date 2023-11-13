@@ -90,13 +90,18 @@ code {
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 400px;
+  height: 450px;
   background-color: rgb(251, 251, 251);
 }
+
+
 #home_main_container{
   width: 100%;
-  padding-left: 20%;
-
+  display: flex;
+  text-align: center;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
   background-color: rgb(251, 251, 251);
 
 }
@@ -138,6 +143,7 @@ code {
 
 .lom_text{
   color: rgb(70, 31, 156);
+  margin-top: 0px;
 }
 
 .role_sub_text{
@@ -149,6 +155,9 @@ code {
 
 
 }
+.role_sub_text_lom{
+  margin-bottom: 20px;
+}
 
 .role_sub-smol_text{
   font-size: 10px;
@@ -158,31 +167,124 @@ code {
 }
 
 #home_reg_log_container{
+  height: 30px;
+  padding-bottom: 10px;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
-  align-content: center;
-  margin-left: 690px;
+  align-items: center;
+
 }
 
 #Template {
   background-color: rgb(251, 251, 251);
 }
 
+.linkic {
+  color: black;
+  text-decoration: none;
+}
+
 #reg_button {
   color: white;
   text-align: center;
-  font-size: 11px;
+  font-size: 13px;
   padding: 10px;
   box-sizing: border-box;
-  width: 120px;
-  height: 30px;
+  width: 140px;
+  height: 80px;
   align-content: center;
   border-radius: 8px;
   background: linear-gradient(to right, rgb(156, 31, 117), rgb(133, 31, 156), rgb(70, 31, 156));
 }
 
 #prijava_button {
-  font-size: 11px;
+  font-size: 13px;
   width: 120px;
   margin-top: 10px;
   text-align: center;
+}
+
+/*LOGIN*/
+/*LOGIN*/
+/*LOGIN*/
+
+#login_bigboy_main{
+  display: flex;
+  width: 100%;
+  height: 575px;
+  background-color: rgb(251, 251, 251);
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+
+}
+
+.login_naslov{
+  height: 22px;
+  color: rgb(156, 31, 117);
+  font-size: 25px;
+  padding-top: 40px;
+  text-align: left;
+  width: 280px;
+}
+
+#login_main_container{
+  height: 290px;
+  width: 300px;
+  background-color: white;
+  border-radius: 20px;
+  /*margin-top: 20px;*/
+  color:rgb(59, 59, 56);
+  font-size: 13px;
+  font-weight: bold;
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 70px;
+  margin-top: 10px;
+}
+
+.login_input_container Input{
+  border-radius: 10px;
+  border: none;
+  margin-top: 5px;
+  margin-bottom: 25px;
+  height: 25px;
+  width: 230px;
+  background-color: rgb(240, 239, 245);
+  font-size: 11px;
+  color: rgb(59, 59, 56);
+  padding: 10px;
+  box-sizing: border-box;
+  font-family: Ubuntu;
+}
+
+.login_input_container input::placeholder {
+  /* Your styles for the placeholder text here */
+  color: rgb(51, 63, 80, 0.3); /* Change the placeholder text color */
+}
+
+#viewLogo {
+  height: 11px;
+  position: absolute;
+  top: 50%;
+  left: 56%;
+  transform: translateX(-50%);
+}
+
+#login_button {
+  background: linear-gradient(to right, rgb(156, 31, 117), rgb(133, 31, 156), rgb(70, 31, 156));
+  color: white;
+  border: none;
+  height: 35px;
+  width: 130px;
+  border-radius: 10px;
+  font-family: Ubuntu;
+  margin-left: 43px;
+  margin-top: 10px;
+  font-size: 14px;
 }
