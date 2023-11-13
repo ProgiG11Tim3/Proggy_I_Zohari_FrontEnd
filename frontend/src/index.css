@@ -19,6 +19,12 @@ code {
     monospace;
 }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 #root {
   height: 100%;
 }
@@ -223,10 +229,6 @@ code {
   text-align: center;
 }
 
-/*LOGIN*/
-/*LOGIN*/
-/*LOGIN*/
-
 #login_bigboy_main{
   user-select: none;
   display: flex;
@@ -253,7 +255,6 @@ code {
   width: 300px;
   background-color: white;
   border-radius: 20px;
-  /*margin-top: 20px;*/
   color:rgb(59, 59, 56);
   font-size: 13px;
   font-weight: bold;
@@ -291,7 +292,7 @@ code {
   height: 11px;
   float: right;
   bottom: 0;
-  margin-top: -18.5%;
+  margin-top: -20%;
   transform: translateX(-50%);
 }
 
