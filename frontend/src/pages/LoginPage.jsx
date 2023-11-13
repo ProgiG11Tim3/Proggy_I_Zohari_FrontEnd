@@ -7,15 +7,19 @@ import viewLogo from "../images/viewLogo.png";
 
 class LoginPage extends React.Component {
     render(){
-        return <div>
-            <Template>
+        return <Template>
                 <div id="login_bigboy_main">
                     <div className={"login_naslov"}>Prijava</div>
                     <div id={"login_main_container"}>
                         <div className="login_input_container">
                             <Input className="login_input_container" tag="Korisničko ime" name="username" placeholder={"Korisničko ime"}/>
-                            <img src={viewLogo} alt="viewlogo" id="viewLogo"/>
-                            <Input tag={"Lozinka"} name={"lozinka"} placeholder={"Lozinka"}/>
+                            <div>
+
+                                <Input tag={"Lozinka"} name={"lozinka"} placeholder={"Lozinka"}/>
+                                <img src={viewLogo} alt="viewlogo" id="viewLogo"/>
+                            </div>
+
+
                             <button id={"login_button"}>Prijavi se</button>
                         </div>
                     </div>
@@ -23,8 +27,7 @@ class LoginPage extends React.Component {
 
                 </div>
 
-            </Template>
-        </div>
+        </Template>
     }
 }
 
