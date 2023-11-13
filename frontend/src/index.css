@@ -279,8 +279,7 @@ input::-webkit-inner-spin-button {
 }
 
 .login_input_container input::placeholder {
-  /* Your styles for the placeholder text here */
-  color: rgb(51, 63, 80, 0.3); /* Change the placeholder text color */
+  color: rgb(51, 63, 80, 0.3);
 }
 
 #viewLogo {
