@@ -138,7 +138,8 @@ input::-webkit-inner-spin-button {
   border-radius: 20px;
   float: left;
   font-weight: bold;
-
+  font-size: 18px;
+  font-family: Ubuntu;
   text-align: center;
   align-items: center;
   align-content: center;
@@ -271,7 +272,7 @@ input::-webkit-inner-spin-button {
   margin-top: 10px;
 }
 
-.login_input_container Input{
+.login_inputic Input{
   border-radius: 10px;
   border: none;
   margin-top: 5px;
@@ -286,7 +287,7 @@ input::-webkit-inner-spin-button {
   font-family: Ubuntu;
 }
 
-.login_input_container input::placeholder {
+.login_inputic input::placeholder {
   color: rgb(51, 63, 80, 0.3);
 }
 
