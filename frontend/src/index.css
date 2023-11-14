@@ -222,6 +222,10 @@ input::-webkit-inner-spin-button {
   background: linear-gradient(to right, rgb(156, 31, 117), rgb(133, 31, 156), rgb(70, 31, 156));
 }
 
+#reg_button:first-child {
+  text-decoration: none;
+}
+
 #prijava_button {
   font-size: 13px;
   width: 120px;
@@ -258,13 +262,12 @@ input::-webkit-inner-spin-button {
   color:rgb(59, 59, 56);
   font-size: 13px;
   font-weight: bold;
-  padding: 20px;
   box-sizing: border-box;
   display: flex;
   justify-content: flex-start;
   flex-direction: column;
   align-items: center;
-  padding-top: 70px;
+  padding-top: 1.5%;
   margin-top: 10px;
 }
 
@@ -287,13 +290,18 @@ input::-webkit-inner-spin-button {
   color: rgb(51, 63, 80, 0.3);
 }
 
-#viewLogo {
+#view_logo {
   height: 11px;
   float: right;
   bottom: 0;
-  margin-top: -20%;
+  margin-top: -20.5%;
   transform: translateX(-50%);
 }
+
+#view_logo:hover {
+  cursor: pointer;
+}
+
 
 #login_button {
   background: linear-gradient(to right, rgb(156, 31, 117), rgb(133, 31, 156), rgb(70, 31, 156));
@@ -329,7 +337,7 @@ input::-webkit-inner-spin-button {
 .input_container {
   margin: 2% 7% 2% 0;
   padding: 0;
-  width: 25%;
+  width: 18em;
   height: fit-content;
 }
 
