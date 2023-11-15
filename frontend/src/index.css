@@ -1,12 +1,12 @@
 html,
 body {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  background-color: rgb(251, 251, 251);
+  font-family: 'Ubuntu', serif;
   margin: 0;
   padding: 0;
-  font-family: 'Ubuntu', serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   user-select: none;
-  background-color: rgb(251, 251, 251);
 }
 
 @font-face {
@@ -31,44 +31,44 @@ input::-webkit-inner-spin-button {
 
 .plain {
   height: 100%;
-  width: 100%;
+  height: fit-content;
   margin: 0;
   padding: 0;
-  height: fit-content;
+  width: 100%;
   width: fit-content;
 }
 
 #navbar {
-  display: flex;
-  width: 100%;
   background: linear-gradient(to right, rgb(156, 31, 117), rgb(133, 31, 156), rgb(70, 31, 156));
+  display: flex;
   justify-content: flex-end;
+  width: 100%;
 }
 
 #navbar > div {
   color: white;
-  font-weight: bold;
   font-size: 13px;
-  width: fit-content;
+  font-weight: bold;
   margin: 4px 20px 5px 0;
+  width: fit-content;
 }
 
 #naslov {
-  width: fit-content;
-  height: 7%;
   float: left;
+  height: 7%;
+  width: fit-content;
 }
 
 #naslov_text {
   color: rgb(156, 31, 117);
-  font-family: 'Ubuntu';
-  padding: 5% 0;
-  float: right;
   display: flex;
   flex-direction: column;
-  margin-left: 5px;
+  float: right;
+  font-family: 'Ubuntu';
   font-weight: 430;
   margin-bottom: 3px;
+  margin-left: 5px;
+  padding: 5% 0;
 }
 
 #naslov_text > div {
@@ -91,69 +91,66 @@ input::-webkit-inner-spin-button {
 }
 
 #profil {
-  height: 6em;
-  padding: 0 2%;
-  margin: 0;
-  float: right;
   display: flex;
   flex-direction: column;
+  float: right;
+  height: 6em;
   justify-content: center;
+  margin: 0;
+  padding: 0 2%;
 }
 
 #icon {
   height: 4em;
-  margin-right: 0px;
-  margin-left: 15px;
-  margin-top: 15px;
   margin-bottom: 3px;
+  margin-left: 15px;
+  margin-right: 0px;
+  margin-top: 15px;
   vertical-align: baseline;
 }
 
 #home_bigboy_main{
+  background-color: rgb(251, 251, 251);
   display: flex;
   flex-direction: column;
-  width: 100%;
   height: 450px;
-  background-color: rgb(251, 251, 251);
+  width: 100%;
 }
 
 
 #home_main_container{
-  width: 100%;
-  display: flex;
-  text-align: center;
-  align-items: center;
   align-content: center;
-  justify-content: center;
+  align-items: center;
   background-color: rgb(251, 251, 251);
-
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
 }
 
 #role_main_container {
-  padding: 2.5%;
-
-  width: 220px;
-  margin: 0;
-  margin-top: 40px;
+  align-content: center;
+  align-items: center;
   border-radius: 20px;
   float: left;
-  font-weight: bold;
-  font-size: 18px;
   font-family: Ubuntu;
-  text-align: center;
-  align-items: center;
-  align-content: center;
+  font-size: 18px;
+  font-weight: bold;
   justify-content: center;
-
+  margin-top: 40px;
+  margin: 0;
+  padding: 2.5%;
+  text-align: center;
+  width: 220px;
 }
 
 #role_sub_container {
   background-color: rgb(240, 239, 245);
   border-radius: 25px;
-  width: 220px;
+  box-sizing: border-box;
   height: 140px;
   margin-top: 30px;
-  box-sizing: border-box;
+  width: 220px;
 }
 
 .roditelj_text{
@@ -172,32 +169,29 @@ input::-webkit-inner-spin-button {
 
 .role_sub_text{
   color: gray;
-  font-weight: normal;
   font-size: 11px;
-  text-align: left;
+  font-weight: normal;
   padding: 15px;
-
-
+  text-align: left;
 }
 .role_sub_text_lom{
   margin-bottom: 20px;
 }
 
 .role_sub-smol_text{
+  color: lightgray;
   font-size: 10px;
   margin-top: 75px;
   text-align: center;
-  color: lightgray;
 }
 
 #home_reg_log_container{
-  height: 30px;
-  padding-bottom: 10px;
+  align-items: center;
   display: flex;
   flex-direction: column;
+  height: 30px;
   justify-content: center;
-  align-items: center;
-
+  padding-bottom: 10px;
 }
 
 #Template {
@@ -211,16 +205,16 @@ input::-webkit-inner-spin-button {
 }
 
 #reg_button {
-  color: white;
-  text-align: center;
-  font-size: 13px;
-  padding: 10px;
-  box-sizing: border-box;
-  width: 140px;
-  height: 80px;
   align-content: center;
-  border-radius: 8px;
   background: linear-gradient(to right, rgb(156, 31, 117), rgb(133, 31, 156), rgb(70, 31, 156));
+  border-radius: 8px;
+  box-sizing: border-box;
+  color: white;
+  font-size: 13px;
+  height: 80px;
+  padding: 10px;
+  text-align: center;
+  width: 140px;
 }
 
 #reg_button:first-child {
@@ -229,62 +223,61 @@ input::-webkit-inner-spin-button {
 
 #prijava_button {
   font-size: 13px;
-  width: 120px;
   margin-top: 10px;
   text-align: center;
+  width: 120px;
 }
 
 #login_bigboy_main{
-  user-select: none;
-  display: flex;
-  width: 100%;
-  height: 100%;
-  background-color: rgb(251, 251, 251);
   align-items: center;
-  justify-content: flex-start;
+  background-color: rgb(251, 251, 251);
+  display: flex;
   flex-direction: column;
-
+  height: 100%;
+  justify-content: flex-start;
+  user-select: none;
+  width: 100%;
 }
 
 .login_naslov{
-  height: 22px;
   color: rgb(156, 31, 117);
   font-size: 25px;
+  height: 22px;
   padding-top: 40px;
   text-align: left;
   width: 280px;
 }
 
 #login_main_container{
-  height: 290px;
-  width: 300px;
+  align-items: center;
   background-color: white;
   border-radius: 20px;
+  box-sizing: border-box;
   color:rgb(59, 59, 56);
+  display: flex;
+  flex-direction: column;
   font-size: 13px;
   font-weight: bold;
-  box-sizing: border-box;
-  display: flex;
+  height: 290px;
   justify-content: flex-start;
-  flex-direction: column;
-  align-items: center;
-  padding-top: 1.5%;
   margin-top: 10px;
+  padding-top: 1.5%;
+  width: 300px;
 }
 
 .login_inputic Input{
+  background-color: rgb(240, 239, 245);
   border-radius: 10px;
   border: none;
-  margin-top: 5px;
-  margin-bottom: 25px;
-  height: 25px;
-  width: 230px;
-  background-color: rgb(240, 239, 245);
-  font-size: 11px;
-  color: rgb(59, 59, 56);
-  padding: 10px;
   box-sizing: border-box;
+  color: rgb(59, 59, 56);
   font-family: Ubuntu;
+  font-size: 11px;
+  height: 25px;
+  margin-bottom: 25px;
+  margin-top: 5px;
+  padding: 10px;
+  width: 230px;
 }
 
 .login_inputic input::placeholder {
@@ -292,9 +285,9 @@ input::-webkit-inner-spin-button {
 }
 
 #view_logo {
-  height: 11px;
-  float: right;
   bottom: 0;
+  float: right;
+  height: 11px;
   margin-top: -20.5%;
   transform: translateX(-50%);
 }
@@ -306,15 +299,15 @@ input::-webkit-inner-spin-button {
 
 #login_button {
   background: linear-gradient(to right, rgb(156, 31, 117), rgb(133, 31, 156), rgb(70, 31, 156));
-  color: white;
-  border: none;
-  height: 35px;
-  width: 130px;
   border-radius: 10px;
+  border: none;
+  color: white;
   font-family: Ubuntu;
+  font-size: 14px;
+  height: 35px;
   margin-left: 43px;
   margin-top: 10px;
-  font-size: 14px;
+  width: 130px;
 }
 
 #login_button:hover {
@@ -322,17 +315,17 @@ input::-webkit-inner-spin-button {
 }
 
 #register_main_container {
-  padding: 2.5%;
   background-color: white;
-  width: 60%;
-  margin: 0 auto 4em auto;
   border-radius: 30px;
+  margin: 0 auto 4em auto;
+  padding: 2.5%;
+  width: 60%;
 }
 
 .register_category_container {
-  height: fit-content;
   display: flex;
   flex-wrap: wrap;
+  height: fit-content;
 }
 
 .inputs_paragraf {
@@ -340,25 +333,25 @@ input::-webkit-inner-spin-button {
 }
 
 .input_container {
+  height: fit-content;
   margin: 2% 7% 2% 0;
   padding: 0;
   width: 230px;
-  height: fit-content;
 }
 
 .input_box {
+  background-color: rgb(240, 239, 245);
   border-radius: 10px;
   border: none;
-  width: 100%;
   font-size: 13px;
   padding: 10px;
-  background-color: rgb(240, 239, 245);
+  width: 100%;
 }
 
 .input_tag {
   font-size: 16px;
-  margin-bottom: 10px;
   font-weight: bold;
+  margin-bottom: 10px;
 }
 
 .paragraf_title {
@@ -366,27 +359,27 @@ input::-webkit-inner-spin-button {
 }
 
 .main_naslov {
-  margin: 0 auto;
-  padding: 0 0 1em 0;
   background-color: rgb(251, 251, 251);
   color: rgb(156, 31, 117);
   font-size: 2em;
+  margin: 0 auto;
+  padding: 0 0 1em 0;
   width: 65%;
 }
 
 #register_button {
-  color: white;
-  text-align: center;
-  font-size: 15px;
-  padding: 15px;
-  border-style: none;
-  width: 140px;
-  margin: -3em 2em 0 0;
-  height: 4 em;
   align-content: center;
-  border-radius: 10px;
   background: linear-gradient(to right, rgb(156, 31, 117), rgb(133, 31, 156), rgb(70, 31, 156));
+  border-radius: 10px;
+  border-style: none;
+  color: white;
   float: right;
+  font-size: 15px;
+  height: 4 em;
+  margin: -3em 2em 0 0;
+  padding: 15px;
+  text-align: center;
+  width: 140px;
 }
 
 #register_button:hover {
@@ -394,18 +387,18 @@ input::-webkit-inner-spin-button {
 }
 
 .line {
-  height: 0;
-  width: 105%;
-  margin: 0 0 0 -2.5%;
-  padding: 0;
+  border-color: rgb(240, 239, 245);
   border-style: solid;
   border-width: 0.5px;
-  border-color: rgb(240, 239, 245);
+  height: 0;
+  margin: 0 0 0 -2.5%;
+  padding: 0;
+  width: 105%;
 }
 
 .main {
+  background-color: rgb(251, 251, 251);
   height: 100%;
   margin: 0;
   padding: 2em 0 1em 0;
-  background-color: rgb(251, 251, 251);
 }
