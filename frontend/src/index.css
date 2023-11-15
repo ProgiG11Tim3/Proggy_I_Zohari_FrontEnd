@@ -316,10 +316,14 @@ input::-webkit-inner-spin-button {
   font-size: 14px;
 }
 
+#login_button:hover {
+  cursor: pointer;
+}
+
 #register_main_container {
   padding: 2.5%;
   background-color: white;
-  width: 70%;
+  width: 60%;
   margin: 0 auto 4em auto;
   border-radius: 30px;
 }
@@ -337,7 +341,7 @@ input::-webkit-inner-spin-button {
 .input_container {
   margin: 2% 7% 2% 0;
   padding: 0;
-  width: 18em;
+  width: 230px;
   height: fit-content;
 }
 
@@ -365,7 +369,7 @@ input::-webkit-inner-spin-button {
   background-color: rgb(251, 251, 251);
   color: rgb(156, 31, 117);
   font-size: 2em;
-  width: 74%;
+  width: 65%;
 }
 
 #register_button {
