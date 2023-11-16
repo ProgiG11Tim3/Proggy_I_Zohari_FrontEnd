@@ -1,7 +1,11 @@
 import React from "react";
+import { redirect } from 'react-router-dom';
+import axios from 'axios';
+
 import Template from "../components/Template";
 import Input from "../components/components/Input";
 import InputsParagraf from "../components/InputsParagraf";
+
 import "../index.css"
 
 class RegisterPage extends React.Component {
@@ -18,19 +22,28 @@ class RegisterPage extends React.Component {
             emailParent: null,
             userNameParent: null,
             passwordParent: null,
-            passwordParent2: null,
             employerEmail: null
         }
+        this.repPass = null
         this.submit = this.submit.bind(this)
         this.checkInputs = this.checkInputs.bind(this)
     }
 
     submit() {
-        if (this.state.passwordParent != this.state.passwordParent2) {
+        if (this.state.passwordParent != this.repPass) {
             alert("Lozinke se ne podudaraju, pokušajte ponovo.")
+        } else if (JSON.stringify(this.state.oib).length != 11) {
+            alert("OIB mora imat 11 znakova.")
         } else if (!this.checkInputs()) {
             alert("Molimo da popunite formu u potpunosti.")
         } else {
+            axios.post("http://localhost:8080/register", this.state).then(res => {
+                if (res.data == 200) {
+                    alert("Uspješna registracija.")
+                } else {
+                    alert("Pogreška u registraciji.")
+                }
+            })
             console.log(this.state)
         }
     }
@@ -89,7 +102,7 @@ class RegisterPage extends React.Component {
                             handleChange={e => {this.setState({passwordParent: e.target.value})}}/>
 
                             <Input tag="Ponovi lozinku" name="lozinka2" placeholder="Ponovljena lozinka" type="password"
-                            handleChange={e => {this.setState({passwordParent2: e.target.value})}}/>
+                            handleChange={e => {this.repPass = e.target.value}}/>
                         </InputsParagraf>
                         
                         <div className="line"></div>
