@@ -32,7 +32,7 @@ code {
  
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(to bottom, rgb(156, 31, 117), rgb(133, 31, 156), rgb(70, 31, 156));
+  background: linear-gradient(to bottom, rgb(156, 31, 117, 0.4), rgb(133, 31, 156, 0.4), rgb(70, 31, 156, 0.4));
   border-radius: 10px;
 }
 
@@ -288,7 +288,7 @@ input::-webkit-inner-spin-button {
   border: none;
   box-sizing: border-box;
   color: rgb(59, 59, 56);
-  font-family: Ubuntu;
+  font-family: 'Ubuntu', serif;
   font-size: 11px;
   height: 25px;
   margin-bottom: 25px;
@@ -337,6 +337,7 @@ input::-webkit-inner-spin-button {
   margin: 0 auto 4em auto;
   padding: 2.5%;
   width: 60%;
+
 }
 
 .register_category_container {
@@ -369,6 +370,12 @@ input::-webkit-inner-spin-button {
   font-size: 16px;
   font-weight: bold;
   margin-bottom: 10px;
+
+}
+
+::placeholder {
+  color: rgb(51, 63, 80, 0.3);
+  font-family: 'Ubuntu', sans-serif;
 }
 
 .paragraf_title {
@@ -397,6 +404,7 @@ input::-webkit-inner-spin-button {
   padding: 15px;
   text-align: center;
   width: 140px;
+  font-family: 'Ubuntu';
 }
 
 #register_button:hover {
