@@ -35,7 +35,7 @@ class RegisterPage extends React.Component {
         } else if (this.state.oib.length != 11) {
             alert("OIB mora imat 11 znakova.")
         } else {
-            axios.post("/register", this.state).then(res => {
+            axios.post("/api/register", this.state).then(res => {
                 if (res.data == "OK") {
                     alert("Uspješna registracija.")
                 } else {

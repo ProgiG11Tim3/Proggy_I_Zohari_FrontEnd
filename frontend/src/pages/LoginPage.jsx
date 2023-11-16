@@ -43,7 +43,7 @@ class LoginPage extends React.Component {
         } else if (this.state.password == null) {
             alert("Molimo da upišete lozinku.")
         } else {
-            axios.post("/login", {
+            axios.post("/api/login", {
                 username: this.state.username,
                 password: this.state.password
             }).then(res => {
