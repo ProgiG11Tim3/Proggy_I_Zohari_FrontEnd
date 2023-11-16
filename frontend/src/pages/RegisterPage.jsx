@@ -1,5 +1,4 @@
 import React from "react";
-import { redirect } from 'react-router-dom';
 import axios from 'axios';
 
 import Template from "../components/Template";
@@ -24,27 +23,27 @@ class RegisterPage extends React.Component {
             passwordParent: null,
             employerEmail: null
         }
-        this.repPass = null
         this.submit = this.submit.bind(this)
         this.checkInputs = this.checkInputs.bind(this)
     }
 
     submit() {
-        if (this.state.passwordParent != this.repPass) {
-            alert("Lozinke se ne podudaraju, pokušajte ponovo.")
-        } else if (JSON.stringify(this.state.oib).length != 11) {
-            alert("OIB mora imat 11 znakova.")
-        } else if (!this.checkInputs()) {
+        if (!this.checkInputs()) {
             alert("Molimo da popunite formu u potpunosti.")
+        } else if (this.state.passwordParent != this.repPass) {
+            alert("Lozinke se ne podudaraju, pokušajte ponovo.")
+        } else if (this.state.oib.length != 11) {
+            alert("OIB mora imat 11 znakova.")
         } else {
-            axios.post("http://localhost:8080/register", this.state).then(res => {
-                if (res.data == 200) {
+            axios.post("/register", this.state).then(res => {
+                if (res.data == "OK") {
                     alert("Uspješna registracija.")
                 } else {
                     alert("Pogreška u registraciji.")
                 }
-            })
-            console.log(this.state)
+            }).catch((e) => {
+                console.log(e)
+            })   
         }
     }
 
@@ -73,7 +72,7 @@ class RegisterPage extends React.Component {
                             <Input tag="OIB" name="oib" placeholder="OIB" type="number"
                             handleChange={e => {this.setState({oib: e.target.value})}}/>
 
-                            <Input tag="Datum rođenja" name="datum_rod" placeholder="Odaberi datum" type="date"
+                            <Input tag="Datum rođenja" name="datum_rod" placeholder="YYYY-MM-DD" type="text"
                             handleChange={e => {this.setState({dateOfBirthParent: e.target.value})}}/>
 
                             <Input tag="Mjesto prebivališta" name="mjesto_preb" placeholder="Mjesto prebivališta" type="text"
