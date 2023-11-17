@@ -1,5 +1,6 @@
 import React from "react";
 import axios from 'axios';
+import { Navigate } from 'react-router-dom';
 
 import Template from "../components/Template";
 import Input from "../components/components/Input";
@@ -25,7 +26,9 @@ class RegisterPage extends React.Component {
         }
         this.submit = this.submit.bind(this)
         this.checkInputs = this.checkInputs.bind(this)
+        this.element = null
     }
+
 
     submit() {
         if (!this.checkInputs()) {
@@ -38,6 +41,8 @@ class RegisterPage extends React.Component {
             axios.post("/api/register", this.state).then(res => {
                 if (res.data == "OK") {
                     alert("Uspješna registracija.")
+                    this.element = <Navigate to="/" replace={true}/>
+                    this.forceUpdate()
                 } else {
                     alert("Pogreška u registraciji.")
                 }
@@ -58,6 +63,7 @@ class RegisterPage extends React.Component {
 
     render() {
         return <div>
+            {this.element}
             <Template>
                 <div className="main">
                     <div className="main_naslov">Registracija</div>

@@ -126,6 +126,10 @@ input::-webkit-inner-spin-button {
   vertical-align: baseline;
 }
 
+#icon:hover {
+  cursor: pointer;
+}
+
 #home_bigboy_main{
   background-color: rgb(251, 251, 251);
   display: flex;
