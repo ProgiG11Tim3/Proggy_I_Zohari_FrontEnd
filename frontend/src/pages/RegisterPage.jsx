@@ -40,7 +40,6 @@ class RegisterPage extends React.Component {
         } else {
             axios.post("/api/register", this.state).then(res => {
                 if (res.data == "OK") {
-                    alert("Uspješna registracija.")
                     this.element = <Navigate to="/" replace={true}/>
                     this.forceUpdate()
                 } else {
