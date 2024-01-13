@@ -36,7 +36,7 @@ class MainPage extends React.Component {
 
                     </div>
                     <div id={"home_reg_log_container"}>
-                        <div id={"reg_button"}>Registriraj se</div>
+                        <Link to="/register" id={"reg_button"}>Registriraj se</Link>
                         <div id={"prijava_button"}>
                             <Link to="/login" className={"linkic"}>Prijava</Link>
                         </div>
