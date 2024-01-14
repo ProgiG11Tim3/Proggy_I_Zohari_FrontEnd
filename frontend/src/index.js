@@ -7,17 +7,23 @@ import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
 import ProfileDoctorPatientList from './pages/ProfileDoctorPatientList';
 import ProfileDoctorNewPatient from "./pages/ProfileDoctorNewPatient";
-import ProfileDoctorSickNotes from "./pages/ProfileDoctorSickNotes"
+import ProfileDoctorSickNotes from "./pages/ProfileDoctorSickNotes";
 import ProfileDoctorSickNotesSelect from "./pages/ProfileDoctorSickNotesSelect";
-import profileDoctorNewExam from "./pages/ProfileDoctorNewExam";
+import ProfileDoctorNewExam from "./pages/ProfileDoctorNewExam";
+import TemplateTwoPart from "./components/TemplateTwoPart";
+import ProfileDoctorMedicalFile from "./pages/ProfileDoctorMedicalFile";
+import ProfileDoctorSpecialistExam from "./pages/ProfileDoctorSpecialistExam";
 
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import ProfileDoctorNewExam from "./pages/ProfileDoctorNewExam";
+
 
 const App = () => {
     return (
         <Router>
             <Routes>
+                <Route path={"/specialistexam"} element={<ProfileDoctorSpecialistExam />} />
+                <Route path={"/medicalfile"} element={<ProfileDoctorMedicalFile />} />
+                <Route path={"/test"} element={<TemplateTwoPart />} />
                 <Route path={"/newmedicalexam"} element={<ProfileDoctorNewExam />} />
                 <Route path={"/sicknotesview"} element={<ProfileDoctorSickNotesSelect />} />
                 <Route path={"/sicknotes"} element={<ProfileDoctorSickNotes />} />

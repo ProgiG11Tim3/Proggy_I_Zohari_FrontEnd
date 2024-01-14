@@ -736,6 +736,16 @@ input::-webkit-inner-spin-button {
   padding-top: 15px;
 }
 
+.naslovbox_desno{
+  width: 100%;
+  text-align: right;
+}
+
+.naslov_desno{
+  margin-right: 22.5%;
+  padding-top: 15px;
+}
+
 .bigboy_left_smallboi_right {
   display: flex;
   width: 100%;
@@ -761,7 +771,79 @@ input::-webkit-inner-spin-button {
   box-sizing: border-box;
   height: 100px;
   width: 280px;
-  padding: 20px;
+  padding: 30px;
+  font-size: 14px;
+  font-family: "Ubuntu Light";
+  font-weight: bold;
+}
+
+#patient_name_textbox{
+  margin-bottom: 10px;
+}
+#medical_file_title{
+  margin-top: 40px;
+}
+
+.medical_file_instance{
+  background-color: rgb(246, 245, 249);
+  width: 83%;
+  height: fit-content;
+  margin-top: 20px;
+  margin-left: 5%;
+  margin-bottom: 30px;
+  border: none;
+  padding: 10px;
   font-size: 13px;
-  font-family: Ubuntu;
+  border-radius: 18px;
+  color: rgb(59, 59, 56);
+}
+
+.medical_file_instance_info{
+  padding: 10px;
+  font-size: 14px;
+  color: rgb(70, 31, 156);
+  font-family: "Ubuntu Light";
+  font-weight: bold;
+}
+
+#doctor_specexam_input{
+  margin-left: 30px;
+  margin-top: 5px;
+}
+
+#doctor_specexam_box{
+  margin-top: 30px;
+}
+
+.doctor_specexam_input textarea{
+  background-color: rgb(246, 245, 249);
+  width: 88.5%;
+  height: 50px;
+  margin-top: 20px;
+  margin-left: 5%;
+  border-radius: 24px;
+  border: none;
+  padding: 10px;
+  font-size: 13px;
+}
+
+#doctor_specexam_button_submitbox {
+  margin-top: 75px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+#doctor_specexam_button_submit{
+  align-self: flex-end;
+  background-color: rgb(70, 31, 156);
+  color: white;
+  border: none;
+  height: 30px;
+  width: 110px;
+  margin-top: 15px;
+  margin-right: 30px;
+  border-radius: 13px;
+  font-size: 12px;
+  font-family: "Ubuntu Light";
+  font-weight: bold;
 }

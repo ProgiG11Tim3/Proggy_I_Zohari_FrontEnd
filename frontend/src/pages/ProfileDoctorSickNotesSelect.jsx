@@ -19,13 +19,13 @@ class ProfileDoctorSickNotesSelect extends React.Component {
 
                 </div>
                 <div className={"lom_podnaslovi"}>Opis razloga za preporuku</div>
-                    <div id="doctor_sickleave_box_recdata">
+                <div id="doctor_sickleave_box_recdata">
                        Opis povucen
-                    </div>
+                </div>
                 <div className={"lom_podnaslovi"}>Trajanje bolovanja</div>
-                    <div id="doctor_sickleave_duration">
+                <div id="doctor_sickleave_duration">
                         Trajanje povuceno
-                    </div>
+                </div>
                 <div className={"button_boxes_apart"}>
                     <div id={"doctor_sickleave_button_backbox"}>
                         <button id={"doctor_sickleave_button_back"}>Natrag</button>
