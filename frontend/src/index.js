@@ -10,9 +10,12 @@ import ProfileDoctorNewPatient from "./pages/ProfileDoctorNewPatient";
 import ProfileDoctorSickNotes from "./pages/ProfileDoctorSickNotes";
 import ProfileDoctorSickNotesSelect from "./pages/ProfileDoctorSickNotesSelect";
 import ProfileDoctorNewExam from "./pages/ProfileDoctorNewExam";
-import TemplateTwoPart from "./components/TemplateTwoPart";
 import ProfileDoctorMedicalFile from "./pages/ProfileDoctorMedicalFile";
 import ProfileDoctorSpecialistExam from "./pages/ProfileDoctorSpecialistExam";
+import ProfileDoctorPatientProfile from "./pages/ProfileDoctorPatientProfile";
+import ProfileDoctorMedicalReport from "./pages/ProfileDoctorMedicalReport";
+import ProfileDoctorMedicalReportOpened from "./pages/ProfileDoctorMedicalReportOpened";
+import ProfileDoctorMedicalReportMessage from "./pages/ProfileDoctorMedicalReportMessage";
 
 
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
@@ -22,9 +25,12 @@ const App = () => {
     return (
         <Router>
             <Routes>
+                <Route path={"/medicalreports/medicalreport/message"} element={<ProfileDoctorMedicalReportMessage />} />
+                <Route path={"/medicalreports/medicalreport"} element={<ProfileDoctorMedicalReportOpened />} />
+                <Route path={"/medicalreports"} element={<ProfileDoctorMedicalReport />} />
+                <Route path={"/patientprofile"} element={<ProfileDoctorPatientProfile />} />
                 <Route path={"/specialistexam"} element={<ProfileDoctorSpecialistExam />} />
                 <Route path={"/medicalfile"} element={<ProfileDoctorMedicalFile />} />
-                <Route path={"/test"} element={<TemplateTwoPart />} />
                 <Route path={"/newmedicalexam"} element={<ProfileDoctorNewExam />} />
                 <Route path={"/sicknotesview"} element={<ProfileDoctorSickNotesSelect />} />
                 <Route path={"/sicknotes"} element={<ProfileDoctorSickNotes />} />
