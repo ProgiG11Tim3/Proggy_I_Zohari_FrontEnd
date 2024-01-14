@@ -8,13 +8,18 @@ import RegisterPage from './pages/RegisterPage';
 import ProfileDoctorPatientList from './pages/ProfileDoctorPatientList';
 import ProfileDoctorNewPatient from "./pages/ProfileDoctorNewPatient";
 import ProfileDoctorSickNotes from "./pages/ProfileDoctorSickNotes"
+import ProfileDoctorSickNotesSelect from "./pages/ProfileDoctorSickNotesSelect";
+import profileDoctorNewExam from "./pages/ProfileDoctorNewExam";
 
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import ProfileDoctorNewExam from "./pages/ProfileDoctorNewExam";
 
 const App = () => {
     return (
         <Router>
             <Routes>
+                <Route path={"/newmedicalexam"} element={<ProfileDoctorNewExam />} />
+                <Route path={"/sicknotesview"} element={<ProfileDoctorSickNotesSelect />} />
                 <Route path={"/sicknotes"} element={<ProfileDoctorSickNotes />} />
                 <Route path={"/newpatient"} element={<ProfileDoctorNewPatient />} />
                 <Route path={"/patientlist"} element={<ProfileDoctorPatientList />} />

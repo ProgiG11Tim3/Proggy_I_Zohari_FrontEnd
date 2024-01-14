@@ -368,6 +368,7 @@ input::-webkit-inner-spin-button {
   font-size: 13px;
   padding: 10px;
   width: 100%;
+  vertical-align: top;
 }
 
 .input_tag {
@@ -556,4 +557,211 @@ input::-webkit-inner-spin-button {
   margin-top: 5px;
   padding: 10px;
   width: 230px;
+}
+
+
+
+.lom_podnaslovi{
+  font-size: 20px;
+  color:rgb(59, 59, 56);
+  margin-left: 5%;
+  margin-top: 20px;
+}
+
+#doctor_newexam_input{
+  margin-left: 60px;
+}
+
+#doctor_newexam_diagnosis_input textarea{
+  background-color: rgb(246, 245, 249);
+  width: 88.5%;
+  height: 200px;
+  margin-top: 10px;
+  margin-left: 5%;
+  border-radius: 18px;
+  border: none;
+  padding: 10px;
+  font-size: 13px;
+}
+
+.doctor_newexam_titles1{
+  margin-left: 60px;
+}
+
+.doctor_newexam_flexbox{
+  display: flex;
+}
+
+.flexbox{
+  display: flex;
+}
+
+#sickleave_info_subbox{
+  color: rgb(70, 31, 156);
+
+  margin-left: 20px;
+}
+
+
+
+#doctor_sickleave_patient_name{
+  padding-right: 20px;
+  margin-top: 22.5px;
+}
+
+#sickleave_profile_button{
+  margin-top: 18px;
+}
+
+#doctor_sickleave_box_recdata {
+  background-color: rgb(246, 245, 249);
+  width: 83%;
+  height: 100px;
+  margin-top: 20px;
+  margin-left: 5%;
+  margin-bottom: 30px;
+  border-radius: 18px;
+  padding-top: 8px;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  font-size: 13px;
+  color: rgb(59, 59, 56);
+}
+
+#doctor_sickleave_duration {
+  background-color: rgb(246, 245, 249);
+  width: 83%;
+  height: 50px;
+  margin-top: 20px;
+  margin-left: 5%;
+  margin-bottom: 30px;
+  border: none;
+  padding: 10px;
+  font-size: 13px;
+  border-radius: 18px;
+  color: rgb(59, 59, 56);
+}
+
+#doctor_sickleave_button_back {
+    background-color:rgb(77, 55, 78);
+    color: white;
+    border: none;
+    height: 35px;
+    width: 90px;
+    margin-top: 15px;
+    margin-left: 50px;
+    border-radius: 15px;
+    font-size: 12px;
+    font-family: "Ubuntu"
+}
+
+#doctor_sickleave_button_submit {
+  background-color: rgb(70, 31, 156);
+  color: white;
+  border: none;
+  height: 35px;
+  width: 90px;
+  margin-top: 15px;
+  margin-right: 130px;
+  border-radius: 15px;
+  font-size: 12px;
+  font-family: "Ubuntu";
+}
+
+.button_boxes_apart {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.button_boxes_together{
+  width: 100%;
+  display: flex;
+}
+
+#doctor_sickleave_button_submitbox{
+  align-self: flex-end;
+}
+
+#doctor_newexam_button_giveupbox {
+  align-self: flex-end;
+  margin-left: 72%;
+}
+
+#doctor_newexam_button_submitbox {
+  align-self: flex-end;
+}
+
+#doctor_newexam_button_giveup {
+  background-color:rgb(77, 55, 78);
+  color: white;
+  border: none;
+  height: 30px;
+  width: 110px;
+  margin-top: 15px;
+  margin-left: 50px;
+  border-radius: 13px;
+  font-size: 12px;
+  font-family: "Ubuntu Light";
+  font-weight: bold;
+}
+
+#doctor_newexam_button_submit {
+  background-color: rgb(70, 31, 156);
+  color: white;
+  border: none;
+  height: 30px;
+  width: 110px;
+  margin-top: 15px;
+  margin-left: 20px;
+  border-radius: 13px;
+  font-size: 12px;
+  font-family: "Ubuntu Light";
+  font-weight: bold;
+}
+
+#doctor_newexam_currentdiagnosis Input{
+  width: 30px;
+  background-color: pink;
+  margin-top: 17px;
+}
+
+#doctor_newexam_naslovbox{
+  width: 100%;
+  text-align: right;
+}
+#doctor_newexam_naslov{
+  margin-right: 22.5%;
+  padding-top: 15px;
+}
+
+.bigboy_left_smallboi_right {
+  display: flex;
+  width: 100%;
+  height: 530px;
+}
+
+.bigboy_left{
+  background-color: white;
+  width: 78%;
+  border-top-right-radius: 40px;
+  height: 100%;
+}
+
+.smallboi_right{
+  width: 10%;
+  align-self: start;
+  margin-left: 2%;
+}
+
+.smallboi_infobox{
+  background-color: white;
+  border-radius: 25px;
+  box-sizing: border-box;
+  height: 100px;
+  width: 280px;
+  padding: 20px;
+  font-size: 13px;
+  font-family: Ubuntu;
 }
