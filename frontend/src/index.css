@@ -364,7 +364,6 @@ input::-webkit-inner-spin-button {
   margin: 0 auto 4em auto;
   padding: 2.5%;
   width: 60%;
-
 }
 
 .register_category_container {
@@ -460,6 +459,13 @@ input::-webkit-inner-spin-button {
 /*LIJECNIK*/
 /*LIJECNIK*/
 /*LIJECNIK*/
+/*LIJECNIK*/
+/*LIJECNIK*/
+/*LIJECNIK*/
+/*LIJECNIK*/
+/*LIJECNIK*/
+/*LIJECNIK*/
+
 
 #patient_list_naslov {
   width: 100%;
@@ -1005,4 +1011,96 @@ input::-webkit-inner-spin-button {
   height: 20px;
   border-radius: 12px;
   align-items: center;
+}
+
+/*PEDIJATAR*/
+/*PEDIJATAR*/
+/*PEDIJATAR*/
+/*PEDIJATAR*/
+/*PEDIJATAR*/
+
+#ped_button_color{
+  background-color: rgb(133, 31, 156);
+}
+
+#ped_text_color{
+  color: rgb(133, 31, 156);
+}
+
+.ped_text_color{
+  color: rgb(133, 31, 156);
+}
+
+.ped_button_color{
+  background-color: rgb(133, 31, 156);
+}
+
+#ped_newexam_button_submit {
+  background-color: rgb(133, 31, 156);
+  color: white;
+  border: none;
+  height: 30px;
+  width: 110px;
+  margin-top: 15px;
+  margin-left: 20px;
+  border-radius: 13px;
+  font-size: 12px;
+  font-family: "Ubuntu Light";
+  font-weight: bold;
+}
+
+#ped_specexam_button_submit{
+  align-self: flex-end;
+  background-color: rgb(133, 31, 156);
+  color: white;
+  border: none;
+  height: 30px;
+  width: 110px;
+  margin-top: 15px;
+  margin-right: 30px;
+  border-radius: 13px;
+  font-size: 12px;
+  font-family: "Ubuntu Light";
+  font-weight: bold;
+}
+
+#ped_medrep_button_submit{
+  align-self: flex-end;
+  background-color: rgb(133, 31, 156);
+  color: white;
+  border: none;
+  height: 30px;
+  width: 180px;
+  margin-right: 30px;
+  border-radius: 13px;
+  font-size: 12px;
+  font-family: "Ubuntu Light";
+  font-weight: bold;
+}
+
+#ped_medrep_msg_button_submit{
+  align-self: flex-end;
+  background-color: rgb(133, 31, 156);
+  color: white;
+  border: none;
+  height: 30px;
+  width: 110px;
+  margin-right: 30px;
+  border-radius: 13px;
+  font-size: 12px;
+  font-family: "Ubuntu Light";
+  font-weight: bold
+}
+
+.ped_patient_profile_title{
+  margin-right: 68%;
+  margin-bottom: 10px;
+}
+
+#ped_main_container {
+  background-color: white;
+  border-radius: 30px;
+  margin: 0 auto 2em auto;
+  padding: 2.5%;
+  width: 60%;
 }
