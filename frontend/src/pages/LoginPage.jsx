@@ -54,7 +54,7 @@ class LoginPage extends React.Component {
                     this.forceUpdate()
                 }
                 else if (res.data === "DOCTOR"){
-                    this.element = <Navigate to="/patientlist" replace={true}/>
+                    this.element = <Navigate to="/doctor/patientlist" replace={true}/>
                     this.forceUpdate()
                 }
                 else {

@@ -1,8 +1,11 @@
 import React from "react";
 import Template from "../components/Template";
 import "../index.css";
+import viewLogo from "../images/viewLogo.png";
 
 class ProfilePediatricianPatientList extends React.Component {
+
+
     render(){
         return <Template>
             <div id={"patient_list_naslov"} className={"lom_naslovi"}> Popis pacijenata </div>
