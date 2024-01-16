@@ -44,7 +44,7 @@ const App = () => {
                 <Route path={"/doctor/medicalreports/medicalreport/message"} element={<ProfileDoctorMedicalReportMessage />} />
                 <Route path={"/doctor/medicalreports/medicalreport"} element={<ProfileDoctorMedicalReportOpened />} />
                 <Route path={"/doctor/medicalreports"} element={<ProfileDoctorMedicalReport />} />
-                <Route path={"/doctor/patientprofile"} element={<ProfileDoctorPatientProfile />} />
+                <Route path={"/doctor/patientprofile/:oib"} element={<ProfileDoctorPatientProfile />} />
                 <Route path={"/doctor/specialistexam"} element={<ProfileDoctorSpecialistExam />} />
                 <Route path={"/doctor/medicalfile"} element={<ProfileDoctorMedicalFile />} />
                 <Route path={"/doctor/newmedicalexam"} element={<ProfileDoctorNewExam />} />

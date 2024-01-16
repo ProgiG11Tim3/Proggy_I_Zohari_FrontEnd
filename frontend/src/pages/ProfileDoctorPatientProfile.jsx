@@ -1,10 +1,35 @@
 import React from "react";
 import Template from "../components/Template";
 import "../index.css";
+import axios from "axios";
+import { useParams } from "react-router-dom";
 
 class ProfileDoctorPatientProfile extends React.Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            patient: null,
+        };
+    }
+
+    componentDidMount() {
+        //const oib = this.props.match.params.oib;
+        // Fetch patient data from the backend when the component mounts
+        axios.get("/api/doctor/getPatient/{OIB}")
+            .then(response => {
+                this.setState({ patient: response.data });
+            })
+            .catch(error => {
+                console.error("Error fetching patient data:", error);
+            });
+    }
     render(){
+
+        const {patient} = this.state;
+
         return <Template>
+
             <div className="main">
                 <div className={"naslovbox_desno"}>
                     <div className="lom_naslovi doctor_patient_profile_title">Prezime Ime - Profil</div>
@@ -16,7 +41,7 @@ class ProfileDoctorPatientProfile extends React.Component {
                         <div className={"flexbox"}>
                             <div className={"flexbox_column doctor_patient_profile"}>
                                 <div className={"doctor_patient_profile_tekst1"}>Ime</div>
-                                <div className={"doctor_patient_profile_tekst2"}>Ime</div>
+                                <div className={"doctor_patient_profile_tekst2"}>{'patient.nameParent'}</div>
                             </div>
                             <div className={"flexbox_column doctor_patient_profile"}>
                                 <div className={"doctor_patient_profile_tekst1"}>Prezime</div>
