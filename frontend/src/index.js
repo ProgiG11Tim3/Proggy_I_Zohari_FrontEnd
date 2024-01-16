@@ -10,9 +10,20 @@ import ProfileDoctorNewPatient from "./pages/ProfileDoctorNewPatient";
 import ProfileDoctorSickNotes from "./pages/ProfileDoctorSickNotes";
 import ProfileDoctorSickNotesSelect from "./pages/ProfileDoctorSickNotesSelect";
 import ProfileDoctorNewExam from "./pages/ProfileDoctorNewExam";
-import TemplateTwoPart from "./components/TemplateTwoPart";
 import ProfileDoctorMedicalFile from "./pages/ProfileDoctorMedicalFile";
 import ProfileDoctorSpecialistExam from "./pages/ProfileDoctorSpecialistExam";
+import ProfileDoctorPatientProfile from "./pages/ProfileDoctorPatientProfile";
+import ProfileDoctorMedicalReport from "./pages/ProfileDoctorMedicalReport";
+import ProfileDoctorMedicalReportOpened from "./pages/ProfileDoctorMedicalReportOpened";
+import ProfileDoctorMedicalReportMessage from "./pages/ProfileDoctorMedicalReportMessage";
+import ProfilePediatricianPatientList from "./pages/ProfilePediatricianPatientList";
+import ProfilePediatricianNewExam from "./pages/ProfilePediatricianNewExam";
+import ProfilePediatricianMedicalFile from "./pages/ProfilePediatricianMedicalFile";
+import ProfilePediatricianSpecialistExam from "./pages/ProfilePediatricianSpecialistExam";
+import ProfilePediatricianMedicalReport from "./pages/ProfilePediatricianMedicalReport";
+import ProfilePediatricianMedicalReportOpened from "./pages/ProfilePediatricianMedicalReportOpened";
+import ProfilePediatricianMedicalReportMessage from "./pages/ProfilePediatricianMedicalReportMessage";
+import ProfilePediatricianPatientProfile from "./pages/ProfilePediatricianPatientProfile";
 
 
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
@@ -22,14 +33,25 @@ const App = () => {
     return (
         <Router>
             <Routes>
-                <Route path={"/specialistexam"} element={<ProfileDoctorSpecialistExam />} />
-                <Route path={"/medicalfile"} element={<ProfileDoctorMedicalFile />} />
-                <Route path={"/test"} element={<TemplateTwoPart />} />
-                <Route path={"/newmedicalexam"} element={<ProfileDoctorNewExam />} />
-                <Route path={"/sicknotesview"} element={<ProfileDoctorSickNotesSelect />} />
-                <Route path={"/sicknotes"} element={<ProfileDoctorSickNotes />} />
-                <Route path={"/newpatient"} element={<ProfileDoctorNewPatient />} />
-                <Route path={"/patientlist"} element={<ProfileDoctorPatientList />} />
+                <Route path={"/pediatrician/patientprofile"} element={<ProfilePediatricianPatientProfile />} />
+                <Route path={"/pediatrician/medicalreports/medicalreport/message"} element={<ProfilePediatricianMedicalReportMessage />} />
+                <Route path={"/pediatrician/medicalreports/medicalreport"} element={<ProfilePediatricianMedicalReportOpened />} />
+                <Route path={"/pediatrician/medicalreports"} element={<ProfilePediatricianMedicalReport />} />
+                <Route path={"/pediatrician/specialistexam"} element={<ProfilePediatricianSpecialistExam />} />
+                <Route path={"/pediatrician/medicalfile"} element={<ProfilePediatricianMedicalFile />} />
+                <Route path={"/pediatrician/newexam"} element={<ProfilePediatricianNewExam />} />
+                <Route path={"/pediatrician/patientlist"} element={<ProfilePediatricianPatientList />} />
+                <Route path={"/doctor/medicalreports/medicalreport/message"} element={<ProfileDoctorMedicalReportMessage />} />
+                <Route path={"/doctor/medicalreports/medicalreport"} element={<ProfileDoctorMedicalReportOpened />} />
+                <Route path={"/doctor/medicalreports"} element={<ProfileDoctorMedicalReport />} />
+                <Route path={"/doctor/patientprofile"} element={<ProfileDoctorPatientProfile />} />
+                <Route path={"/doctor/specialistexam"} element={<ProfileDoctorSpecialistExam />} />
+                <Route path={"/doctor/medicalfile"} element={<ProfileDoctorMedicalFile />} />
+                <Route path={"/doctor/newmedicalexam"} element={<ProfileDoctorNewExam />} />
+                <Route path={"/doctor/sicknotesview"} element={<ProfileDoctorSickNotesSelect />} />
+                <Route path={"/doctor/sicknotes"} element={<ProfileDoctorSickNotes />} />
+                <Route path={"/doctor/newpatient"} element={<ProfileDoctorNewPatient />} />
+                <Route path={"/doctor/patientlist"} element={<ProfileDoctorPatientList />} />
                 <Route path="/register" element={<RegisterPage />} />
                 <Route path="/login" element={<LoginPage />} />
                 <Route path="/" element={<MainPage />} />
