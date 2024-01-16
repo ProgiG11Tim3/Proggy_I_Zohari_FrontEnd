@@ -57,7 +57,7 @@ class LoginPage extends React.Component {
                 }
             }).catch((e) => {
                 console.log(e)
-            })   
+            })
         }
     }
 
@@ -69,10 +69,10 @@ class LoginPage extends React.Component {
                 <div id={"login_main_container"}>
                     <div className="login_inputic">
                         <Input tag="Korisničko ime" name="username" placeholder={"Korisničko ime"} type="text"
-                        handleChange={e => {this.setState({username: e.target.value})}} />
+                               handleChange={e => {this.setState({username: e.target.value})}} />
                         <div id="login_pass_container">
                             <Input tag={"Lozinka"} name={"lozinka"} placeholder={"Lozinka"} type={this.state.input_type}
-                            handleChange={e => {this.setState({password: e.target.value})}} />
+                                   handleChange={e => {this.setState({password: e.target.value})}} />
                             <img src={this.state.viewIcon} alt="viewlogo" id="view_logo" onClick={() => {this.viewPass()}}/>
                         </div>
                         <button id={"login_button"} onClick={this.submit}>Prijavi se</button>

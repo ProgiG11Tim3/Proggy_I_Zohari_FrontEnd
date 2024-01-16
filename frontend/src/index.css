@@ -16,7 +16,30 @@ body {
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  monospace;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 5px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, rgb(156, 31, 117, 0.4), rgb(133, 31, 156, 0.4), rgb(70, 31, 156, 0.4));
+  border-radius: 10px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 /* width */
@@ -425,6 +448,7 @@ input::-webkit-inner-spin-button {
   width: 105%;
 }
 
+
 .main {
   background-color: rgb(251, 251, 251);
   height: 100%;
@@ -692,4 +716,417 @@ input[type="file"] {
 #popratna_naslov {
   font-weight: bold;
   margin-left: 6%;
+
+
+/*LIJECNIK*/
+/*LIJECNIK*/
+/*LIJECNIK*/
+
+#patient_list_naslov {
+  width: 100%;
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 5px;
+  background-color: rgb(247, 247, 247);
+}
+
+.lom_naslovi {
+  font-size: 23px;
+  color:rgb(59, 59, 56);
+}
+
+#patient_list_bigboy {
+  background-color: white;
+  height: 510px;
+}
+
+.patient_list_instance {
+  background-color: rgb(246, 245, 249);
+  width: 95%;
+  height: 50px;
+  margin-top: 20px;
+  margin-left: 2.5%;
+  border-radius: 18px;
+  padding-top: 8px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.patient_list_infobox {
+  align-self: flex-start;
+}
+
+.patient_list_ime_prezime{
+  color: rgb(70, 31, 156);
+  font-weight: bold;
+  font-size: 13px;
+  margin-left: 20px;
+  margin-top: 5px;
+}
+
+.patient_list_oib{
+  font-size: 13px;
+  margin-top: 5px;
+  margin-left: 20px;
+}
+
+.patient_list_buttonbox {
+  align-self: flex-end;
+}
+
+.patient_list_button {
+  background-color: rgb(70, 31, 156);
+  color: white;
+  border: none;
+  height: 25px;
+  width: 90px;
+  margin-bottom: 15px;
+  margin-right: 30px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-family: Ubuntu;
+}
+
+#new_patient_title {
+  color:rgb(59, 59, 56);
+  font-size: 25px;
+  height: 22px;
+  padding-top: 40px;
+  text-align: left;
+  width: 280px;
+  padding-bottom: 10px;
+}
+
+#new_patient_button{
+  background-color:rgb(77, 55, 78);
+  color: white;
+  border: none;
+  height: 30px;
+  width: 70px;
+  margin-top: 15px;
+  margin-left: 70px;
+  border-radius: 15px;
+  font-size: 12px;
+  font-family: Ubuntu;
+}
+
+#new_patient_main_container {
+  align-items: center;
+  background-color: white;
+  border-radius: 20px;
+  box-sizing: border-box;
+  color:rgb(59, 59, 56);
+  display: flex;
+  flex-direction: column;
+  font-size: 13px;
+  font-weight: bold;
+  height: 220px;
+  justify-content: flex-start;
+  margin-top: 10px;
+  padding-top: 1.5%;
+  width: 280px;
+}
+
+#new_patient_inputic Input{
+  background-color: rgb(240, 239, 245);
+  border-radius: 10px;
+  border: none;
+  box-sizing: border-box;
+  color: rgb(59, 59, 56);
+  font-family: 'Ubuntu', serif;
+  font-size: 11px;
+  height: 25px;
+  margin-bottom: 25px;
+  margin-top: 5px;
+  padding: 10px;
+  width: 230px;
+}
+
+
+
+.lom_podnaslovi{
+  font-size: 20px;
+  color:rgb(59, 59, 56);
+  margin-left: 5%;
+  margin-top: 20px;
+}
+
+#doctor_newexam_input{
+  margin-left: 60px;
+}
+
+#doctor_newexam_diagnosis_input textarea{
+  background-color: rgb(246, 245, 249);
+  width: 88.5%;
+  height: 200px;
+  margin-top: 10px;
+  margin-left: 5%;
+  border-radius: 18px;
+  border: none;
+  padding: 10px;
+  font-size: 13px;
+}
+
+.doctor_newexam_titles1{
+  margin-left: 60px;
+}
+
+.doctor_newexam_flexbox{
+  display: flex;
+}
+
+.flexbox{
+  display: flex;
+}
+
+#sickleave_info_subbox{
+  color: rgb(70, 31, 156);
+
+  margin-left: 20px;
+}
+
+
+
+#doctor_sickleave_patient_name{
+  padding-right: 20px;
+  margin-top: 22.5px;
+}
+
+#sickleave_profile_button{
+  margin-top: 18px;
+}
+
+#doctor_sickleave_box_recdata {
+  background-color: rgb(246, 245, 249);
+  width: 83%;
+  height: 100px;
+  margin-top: 20px;
+  margin-left: 5%;
+  margin-bottom: 30px;
+  border-radius: 18px;
+  padding-top: 8px;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  font-size: 13px;
+  color: rgb(59, 59, 56);
+}
+
+#doctor_sickleave_duration {
+  background-color: rgb(246, 245, 249);
+  width: 83%;
+  height: 50px;
+  margin-top: 20px;
+  margin-left: 5%;
+  margin-bottom: 30px;
+  border: none;
+  padding: 10px;
+  font-size: 13px;
+  border-radius: 18px;
+  color: rgb(59, 59, 56);
+}
+
+#doctor_sickleave_button_back {
+    background-color:rgb(77, 55, 78);
+    color: white;
+    border: none;
+    height: 35px;
+    width: 90px;
+    margin-top: 15px;
+    margin-left: 50px;
+    border-radius: 15px;
+    font-size: 12px;
+    font-family: "Ubuntu"
+}
+
+#doctor_sickleave_button_submit {
+  background-color: rgb(70, 31, 156);
+  color: white;
+  border: none;
+  height: 35px;
+  width: 90px;
+  margin-top: 15px;
+  margin-right: 130px;
+  border-radius: 15px;
+  font-size: 12px;
+  font-family: "Ubuntu";
+}
+
+.button_boxes_apart {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.button_boxes_together{
+  width: 100%;
+  display: flex;
+}
+
+#doctor_sickleave_button_submitbox{
+  align-self: flex-end;
+}
+
+#doctor_newexam_button_giveupbox {
+  align-self: flex-end;
+  margin-left: 72%;
+}
+
+#doctor_newexam_button_submitbox {
+  align-self: flex-end;
+}
+
+#doctor_newexam_button_giveup {
+  background-color:rgb(77, 55, 78);
+  color: white;
+  border: none;
+  height: 30px;
+  width: 110px;
+  margin-top: 15px;
+  margin-left: 50px;
+  border-radius: 13px;
+  font-size: 12px;
+  font-family: "Ubuntu Light";
+  font-weight: bold;
+}
+
+#doctor_newexam_button_submit {
+  background-color: rgb(70, 31, 156);
+  color: white;
+  border: none;
+  height: 30px;
+  width: 110px;
+  margin-top: 15px;
+  margin-left: 20px;
+  border-radius: 13px;
+  font-size: 12px;
+  font-family: "Ubuntu Light";
+  font-weight: bold;
+}
+
+#doctor_newexam_currentdiagnosis Input{
+  width: 30px;
+  background-color: pink;
+  margin-top: 17px;
+}
+
+#doctor_newexam_naslovbox{
+  width: 100%;
+  text-align: right;
+}
+#doctor_newexam_naslov{
+  margin-right: 22.5%;
+  padding-top: 15px;
+}
+
+.naslovbox_desno{
+  width: 100%;
+  text-align: right;
+}
+
+.naslov_desno{
+  margin-right: 22.5%;
+  padding-top: 15px;
+}
+
+.bigboy_left_smallboi_right {
+  display: flex;
+  width: 100%;
+  height: 530px;
+}
+
+.bigboy_left{
+  background-color: white;
+  width: 78%;
+  border-top-right-radius: 40px;
+  height: 100%;
+}
+
+.smallboi_right{
+  width: 10%;
+  align-self: start;
+  margin-left: 2%;
+}
+
+.smallboi_infobox{
+  background-color: white;
+  border-radius: 25px;
+  box-sizing: border-box;
+  height: 100px;
+  width: 280px;
+  padding: 30px;
+  font-size: 14px;
+  font-family: "Ubuntu Light";
+  font-weight: bold;
+}
+
+#patient_name_textbox{
+  margin-bottom: 10px;
+}
+#medical_file_title{
+  margin-top: 40px;
+}
+
+.medical_file_instance{
+  background-color: rgb(246, 245, 249);
+  width: 83%;
+  height: fit-content;
+  margin-top: 20px;
+  margin-left: 5%;
+  margin-bottom: 30px;
+  border: none;
+  padding: 10px;
+  font-size: 13px;
+  border-radius: 18px;
+  color: rgb(59, 59, 56);
+}
+
+.medical_file_instance_info{
+  padding: 10px;
+  font-size: 14px;
+  color: rgb(70, 31, 156);
+  font-family: "Ubuntu Light";
+  font-weight: bold;
+}
+
+#doctor_specexam_input{
+  margin-left: 30px;
+  margin-top: 5px;
+}
+
+#doctor_specexam_box{
+  margin-top: 30px;
+}
+
+.doctor_specexam_input textarea{
+  background-color: rgb(246, 245, 249);
+  width: 88.5%;
+  height: 50px;
+  margin-top: 20px;
+  margin-left: 5%;
+  border-radius: 24px;
+  border: none;
+  padding: 10px;
+  font-size: 13px;
+}
+
+#doctor_specexam_button_submitbox {
+  margin-top: 75px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+#doctor_specexam_button_submit{
+  align-self: flex-end;
+  background-color: rgb(70, 31, 156);
+  color: white;
+  border: none;
+  height: 30px;
+  width: 110px;
+  margin-top: 15px;
+  margin-right: 30px;
+  border-radius: 13px;
+  font-size: 12px;
+  font-family: "Ubuntu Light";
+  font-weight: bold;
 }
