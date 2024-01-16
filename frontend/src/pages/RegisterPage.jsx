@@ -29,7 +29,6 @@ class RegisterPage extends React.Component {
         this.element = null
     }
 
-
     submit() {
         if (!this.checkInputs()) {
             alert("Molimo da popunite formu u potpunosti.")

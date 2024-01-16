@@ -3,29 +3,30 @@ import "../../index.css";
 import { Navigate } from 'react-router-dom';
 import logo from "../../images/logo.png";
 
-class Header extends React.Component {đ
+class Header extends React.Component {
     constructor(props) {
         super(props)
-        this.element = null
     }
 
     render() {
         return <div>
-            {this.element}
-            <div id="naslov">
-                <img src={logo} alt="logo" id="icon" onClick={() => {
-                    this.element = <Navigate to="/" replace={true}/>
-                    this.forceUpdate()
-                }}/>
-                <div id="naslov_text">
-                    <div>Ozdravi</div>
-                    <div id={"podnaslov_text"}>Olakšava život kad imate bolesnu djecu</div>
+            <div id="header">
+                <div id="naslov">
+                    <img src={logo} alt="logo" id="icon" onClick={() => {
+                        this.element = <Navigate to="/" replace={true}/>
+                        this.forceUpdate()
+                    }}/>
+                    <div id="naslov_text">
+                        <div>Ozdravi</div>
+                        <div id={"podnaslov_text"}>Olakšava život kad imate bolesnu djecu</div>
+                    </div>
                 </div>
+                {this.props.profil}
             </div>
-            {this.props.profil}
             <div id="navbar">
-                <div>EN</div>
-                <div>aA</div>
+                {this.props.buttons}
+                <div id="language_button">EN</div>
+                <div id="aa_button">aA</div>
             </div>
         </div>
     }
