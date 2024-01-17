@@ -8,17 +8,18 @@ class ProfileDoctorPatientProfile extends React.Component {
 
     constructor(props) {
         super(props);
+        this.element = null;
         this.state = {
-            patient: null,
+            patientData: {},
         };
     }
 
     componentDidMount() {
-        //const oib = this.props.match.params.oib;
-        // Fetch patient data from the backend when the component mounts
-        axios.get("/api/doctor/getPatient/{OIB}")
-            .then(response => {
-                this.setState({ patient: response.data });
+        const OIB = window.location.href.split('/')[5];
+
+        axios.get(`/api/doctor/getPatient/${OIB}`).then(res => {
+            console.log(OIB);
+            this.setState({ patientData: res.data });
             })
             .catch(error => {
                 console.error("Error fetching patient data:", error);
@@ -26,13 +27,13 @@ class ProfileDoctorPatientProfile extends React.Component {
     }
     render(){
 
-        const {patient} = this.state;
+        const patient = this.state.patientData;
 
         return <Template>
 
             <div className="main">
                 <div className={"naslovbox_desno"}>
-                    <div className="lom_naslovi doctor_patient_profile_title">Prezime Ime - Profil</div>
+                    <div className="lom_naslovi doctor_patient_profile_title">{`${patient.lastNameParent} ${patient.nameParent} - Profil`}</div>
                 </div>
 
                 <div id="register_main_container">
@@ -41,29 +42,29 @@ class ProfileDoctorPatientProfile extends React.Component {
                         <div className={"flexbox"}>
                             <div className={"flexbox_column doctor_patient_profile"}>
                                 <div className={"doctor_patient_profile_tekst1"}>Ime</div>
-                                <div className={"doctor_patient_profile_tekst2"}>{'patient.nameParent'}</div>
+                                <div className={"doctor_patient_profile_tekst2"}>{patient.nameParent}</div>
                             </div>
                             <div className={"flexbox_column doctor_patient_profile"}>
                                 <div className={"doctor_patient_profile_tekst1"}>Prezime</div>
-                                <div className={"doctor_patient_profile_tekst2"}>Prezime</div>
+                                <div className={"doctor_patient_profile_tekst2"}>{patient.lastNameParent}</div>
                             </div>
                             <div className={"flexbox_column doctor_patient_profile"}>
                                 <div className={"doctor_patient_profile_tekst1"}>OIB</div>
-                                <div className={"doctor_patient_profile_tekst2"}>12345678910</div>
+                                <div className={"doctor_patient_profile_tekst2"}>{patient.oib}</div>
                             </div>
                         </div>
                         <div className={"flexbox"}>
                             <div className={"flexbox_column doctor_patient_profile"}>
                                 <div className={"doctor_patient_profile_tekst1"}>Datum rođenja</div>
-                                <div className={"doctor_patient_profile_tekst2"}>14/01/1990</div>
+                                <div className={"doctor_patient_profile_tekst2"}>{patient.dateOfBirthParent}</div>
                             </div>
                             <div className={"flexbox_column doctor_patient_profile"}>
                                 <div className={"doctor_patient_profile_tekst1"}>Mjesto prebivališta</div>
-                                <div className={"doctor_patient_profile_tekst2"}>Mjesto prebivališta</div>
+                                <div className={"doctor_patient_profile_tekst2"}>{patient.placeOfResidence}</div>
                             </div>
                             <div className={"flexbox_column doctor_patient_profile"}>
                                 <div className={"doctor_patient_profile_tekst1"}>Poštanski broj prebivališta</div>
-                                <div className={"doctor_patient_profile_tekst2"}>Poštanski broj prebivališta</div>
+                                <div className={"doctor_patient_profile_tekst2"}>{patient.postalCode}</div>
                             </div>
                         </div>
                     </div>
@@ -74,11 +75,11 @@ class ProfileDoctorPatientProfile extends React.Component {
                         <div className={"flexbox"}>
                             <div className={"flexbox_column doctor_patient_profile"}>
                                 <div className={"doctor_patient_profile_tekst1"}>Broj telefona</div>
-                                <div className={"doctor_patient_profile_tekst2"}>099 1234 567</div>
+                                <div className={"doctor_patient_profile_tekst2"}>{patient.phoneNumberParent}</div>
                             </div>
                             <div className={"flexbox_column doctor_patient_profile"}>
                                 <div className={"doctor_patient_profile_tekst1"}>Adresa elektroničke pošte</div>
-                                <div className={"doctor_patient_profile_tekst2"}>ime.prezime@gmail.com</div>
+                                <div className={"doctor_patient_profile_tekst2"}>{patient.emailParent}</div>
                             </div>
                         </div>
                     </div>

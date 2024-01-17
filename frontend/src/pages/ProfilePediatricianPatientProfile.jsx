@@ -6,13 +6,14 @@ import axios from "axios";
 class ProfilePediatricianPatientProfile extends React.Component {
     constructor(props) {
         super(props);
+        this.element = null;
         this.state = {
             patient: null,
+            oib: window.location.href.split('/')[4]
         };
     }
 
     componentDidMount() {
-        const oib = this.props.match.params.oib;
         // Fetch patient data from the backend when the component mounts
         axios.get("/api/doctor/getPatient/{OIB}")
             .then(response => {

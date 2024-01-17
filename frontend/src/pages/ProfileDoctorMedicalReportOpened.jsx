@@ -2,8 +2,45 @@ import React from "react";
 import Template from "../components/Template";
 import "../index.css";
 import Input from "../components/components/Input";
+import axios from "axios";
 class ProfileDoctorMedicalReportOpened extends React.Component {
+
+    constructor(props) {
+        super(props);
+        this.element = null;
+        this.state = {
+            patientData: {},
+            medrepData: {}
+        };
+    }
+
+    componentDidMount() {
+        const OIB = window.location.href.split('/')[5];
+
+
+        axios.get(`/api/doctor/getPatient/${OIB}`).then(res => {
+            console.log(OIB);
+            this.setState({ patientData: res.data });
+        })
+            .catch(error => {
+                console.error("Error fetching patient data:", error);
+            });
+
+        const reportID = window.location.href.split('/')[8];
+        axios.get(`/api/getMedicalRecord/${reportID}`).then(res => {
+                console.log(reportID);
+                this.setState({ medrepData: res.data });
+
+                }
+            )
+            .catch(error => {
+                console.error("Error fetching patient data:", error);
+            });
+    }
     render(){
+        const medRep = this.state.medrepData;
+        const patient = this.state.patientData;
+
         return <Template>
             <div className={"naslovbox_desno"}>
                 <div className={"lom_naslovi naslov_desno"}> Nalaz privatne ustanove </div>
@@ -23,14 +60,14 @@ class ProfileDoctorMedicalReportOpened extends React.Component {
                             </div>
                             <div className={"flexbox_div_1"}>
                                 <div className={"lom_podnaslovi"}>Datum slanja nalaza</div>
-                                <div id={"doctor_medreport_date"} className={"textbox_notfull"}> povucen datum</div>
+                                <div id={"doctor_medreport_date"} className={"textbox_notfull"}>{medRep.dateOfReport}</div>
                             </div>
                         </div>
 
                         <div className={"flexbox_div_2"}>
                             <div className={"lom_podnaslovi"}>Popratna poruka</div>
                             <div id="doctor_medreport_message" className={"textbox_notfull"}>
-                                Popratna poruka povucena
+                                {medRep.reportInformation}
                             </div>
                         </div>
                     </div>
@@ -46,8 +83,8 @@ class ProfileDoctorMedicalReportOpened extends React.Component {
                 </div>
                 <div className={"smallboi_right"}>
                     <div className={"smallboi_infobox"}>
-                        <div id={"patient_name_textbox"}>Prezime Ime</div>
-                        <div id={"patient_oib_textbox"}>OIB</div>
+                        <div id={"patient_name_textbox"}>{`${patient.lastNameParent} ${patient.nameParent}`}</div>
+                        <div id={"patient_oib_textbox"}>{patient.oib}</div>
                     </div>
                 </div>
             </div>

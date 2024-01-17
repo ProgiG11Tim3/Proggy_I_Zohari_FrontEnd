@@ -41,13 +41,13 @@ const App = () => {
                 <Route path={"/pediatrician/medicalfile"} element={<ProfilePediatricianMedicalFile />} />
                 <Route path={"/pediatrician/newexam"} element={<ProfilePediatricianNewExam />} />
                 <Route path={"/pediatrician/patientlist"} element={<ProfilePediatricianPatientList />} />
-                <Route path={"/doctor/medicalreports/medicalreport/message"} element={<ProfileDoctorMedicalReportMessage />} />
-                <Route path={"/doctor/medicalreports/medicalreport"} element={<ProfileDoctorMedicalReportOpened />} />
-                <Route path={"/doctor/medicalreports"} element={<ProfileDoctorMedicalReport />} />
+                <Route path={"/doctor/patientprofile/:oib/medicalreports/medicalreport/message"} element={<ProfileDoctorMedicalReportMessage />} />
+                <Route path={"/doctor/patientprofile/:oib/medicalreports/medicalreport/:reportId"} element={<ProfileDoctorMedicalReportOpened />} />
+                <Route path={"/doctor/patientprofile/:oib/medicalreports"} element={<ProfileDoctorMedicalReport />} />
                 <Route path={"/doctor/patientprofile/:oib"} element={<ProfileDoctorPatientProfile />} />
-                <Route path={"/doctor/specialistexam"} element={<ProfileDoctorSpecialistExam />} />
-                <Route path={"/doctor/medicalfile"} element={<ProfileDoctorMedicalFile />} />
-                <Route path={"/doctor/newmedicalexam"} element={<ProfileDoctorNewExam />} />
+                <Route path={"/doctor/patientprofile/:oib/specialistexam"} element={<ProfileDoctorSpecialistExam />} />
+                <Route path={"/doctor/patientprofile/:oib/medicalfile"} element={<ProfileDoctorMedicalFile />} />
+                <Route path={"/doctor/patientprofile/:oib/newmedicalexam"} element={<ProfileDoctorNewExam />} />
                 <Route path={"/doctor/sicknotesview"} element={<ProfileDoctorSickNotesSelect />} />
                 <Route path={"/doctor/sicknotes"} element={<ProfileDoctorSickNotes />} />
                 <Route path={"/doctor/newpatient"} element={<ProfileDoctorNewPatient />} />

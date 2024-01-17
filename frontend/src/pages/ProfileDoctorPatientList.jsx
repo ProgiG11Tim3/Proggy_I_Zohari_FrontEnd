@@ -23,30 +23,53 @@ class ProfileDoctorPatientList extends React.Component {
                 console.error("Error fetching patient data:", error);
             });
     }
-    render(){
-        return <Template>
-            <div id={"patient_list_naslov"} className={"lom_naslovi"}> Popis pacijenata </div>
-            <div id="patient_list_bigboy">
-                {this.state.patients.map(patient => (
-                    <div key={patient.oib} className="patient_list_instance">
-                        <div className="patient_list_infobox">
-                            <div className="patient_list_ime_prezime">
-                                {`${patient.lastNameParent} ${patient.nameParent}`}
-                            </div>
-                            <div className="patient_list_oib">
-                                {patient.oib}
-                            </div>
-                        </div>
+    render() {
 
-                        <div className="patient_list_buttonbox">
-                            <Link to={'/doctor/patientprofile/${patient.oib}'}>
-                                <button className="patient_list_button">Profil</button>
-                            </Link>
+        const patient = this.state.patients;
+        return (
+            <Template>
+                <div id={"patient_list_naslov"} className={"lom_naslovi"}>
+                    Popis pacijenata
+                </div>
+                <div id="patient_list_bigboy">
+                    {this.state.patients && Array.isArray(this.state.patients) ? (
+                        this.state.patients.map(patient => (
+                            <div key={patient.oib} className="patient_list_instance">
+                                <div className="patient_list_infobox">
+                                    <div className="patient_list_ime_prezime">
+                                        {`${patient.lastNameParent} ${patient.nameParent}`}
+                                    </div>
+                                    <div className="patient_list_oib">
+                                        {patient.oib}
+                                    </div>
+                                </div>
+                                <div className="patient_list_buttonbox">
+                                    <Link to={`/doctor/patientprofile/${patient.oib}`}>
+                                        <button className="patient_list_button">Profil</button>
+                                    </Link>
+                                </div>
+                            </div>
+                        ))
+                    ) : (
+                        <div className="patient_list_instance">
+                            <div className="patient_list_infobox">
+                                <div className="patient_list_ime_prezime">
+                                    {`${patient.lastNameParent} ${patient.nameParent}`}
+                                </div>
+                                <div className="patient_list_oib">
+                                    {patient.oib}
+                                </div>
+                            </div>
+                            <div className="patient_list_buttonbox">
+                                <Link to={`/doctor/patientprofile/${patient.oib}`}>
+                                    <button className="patient_list_button">Profil</button>
+                                </Link>
+                            </div>
                         </div>
-                    </div>
-                ))}
-            </div>
-        </Template>
+                    )}
+                </div>
+            </Template>
+        );
     }
 }
 
