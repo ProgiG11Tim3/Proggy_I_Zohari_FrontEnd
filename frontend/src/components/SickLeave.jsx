@@ -14,8 +14,9 @@ class SickLeave extends React.Component {
     componentDidMount() {
         axios.get("/api/getAllSickLeaves").then(res => {
             console.log(res.data);
+            console.log(res.data);
             const temp = res.data.map(el => (
-                <Leave title={"Preporuka za bolovanje"} content={el.recData} from={el.doctor.nameDoctor + " " + el.doctor.lastNameDoctor} key={el.examinationId}/>
+                <Leave title={"Preporuka za bolovanje"} content={el.recData} from={el.doctor.nameDoctor + " " + el.doctor.lastNameDoctor} key={el.recommendationId}/>
             ))
             this.setState({leaves: temp});
         })

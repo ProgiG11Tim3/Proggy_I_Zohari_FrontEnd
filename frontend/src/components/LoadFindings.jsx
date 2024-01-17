@@ -1,9 +1,6 @@
 import React from "react";
 
 class LoadFindings extends React.Component {
-    constructor(props) {
-        super(props);
-    }
 
     render() {
         return <div id="parent_notifications">
@@ -21,7 +18,7 @@ class LoadFindings extends React.Component {
                     <br></br>
                     <div id="popratna_naslov">Unesite popratnu poruku:</div>
                     <textarea id="popratna_poruka"/>
-                    <button>UČITAJ</button>
+                    <button id="load_file_button">UČITAJ</button>
                 </div>
             </div>
         </div>

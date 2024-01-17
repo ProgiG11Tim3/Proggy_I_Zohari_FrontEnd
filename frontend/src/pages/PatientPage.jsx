@@ -12,19 +12,40 @@ import MedicalHistory from "../components/MedicalHistory";
 import SickLeave from "../components/SickLeave";
 import SpecialistExams from "../components/SpecialistExams";
 import LoadFindings from "../components/LoadFindings";
-import MedicalExcuses from "../components/MedicalExcuses";
+import SickNotes from "../components/SickNotes";
 
 import "../index.css";
 
 class PatientPage extends React.Component {
     constructor(props) {
         super(props);
-        this.element = null;
         this.state = {
+            element: null,
             isloading: true,
             patient_oib: window.location.href.split('/')[4],
-            patientData: {}
-        }
+            patientData: {},
+            selected: 0
+        }/* 
+        this.tabs = {
+            parent: [
+                <PatientNotifications />,
+                <MedicalHistory />,
+                <SickLeave />,
+                <SpecialistExams />,
+                <LoadFindings />
+            ],
+            child: [
+                <PatientNotifications />,
+                <MedicalHistory />,
+                <SickNotes />,
+                <SpecialistExams />,
+                <LoadFindings />
+            ]
+        } */
+    }
+
+    setCurrent(e) {
+        this.setState({selected: e});
     }
 
     componentDidMount() {
@@ -32,7 +53,7 @@ class PatientPage extends React.Component {
             res.data.forEach(el => {
                 if(el.oib == this.state.patient_oib) {
                     this.setState({patientData: el})
-                    this.element = <LoadFindings link={el.link}/>;
+                    this.setState({element: <PatientNotifications link={el.link}/>});
                 }
             })
         })
@@ -46,9 +67,43 @@ class PatientPage extends React.Component {
             return <div>LOADING...</div>
         }
 
-
-        return <Template profil={<Profil lastName={patient.surname} name={patient.name} type={patient.role}/>} buttons={<NavbarButtons />}>
-            {this.element}
+        return <Template profil={<Profil 
+                lastName={patient.surname} 
+                name={patient.name} 
+                type={patient.role}/>} 
+                buttons={
+                    <NavbarButtons role={patient.role} isSelected={e => {
+                        console.log(e)
+                        this.setState({selected: e});
+                        let elem;
+                        switch(e) {
+                            case "0":
+                                elem = <PatientNotifications link={this.state.patientData.link} />;
+                                break;
+                            case "1":
+                                elem = <MedicalHistory link={this.state.patientData.link} />;
+                                break;
+                            case "2":
+                                if(patient.role == "Parent") {
+                                    elem = <SickLeave link={this.state.patientData.link} />;
+                                    break;
+                                } else {
+                                    elem = <SickNotes link={this.state.patientData.link} />;
+                                    break;
+                                }
+                            case "3":
+                                elem = <SpecialistExams link={this.state.patientData.link} />;
+                                break;
+                            case "4":
+                                elem = <LoadFindings link={this.state.patientData.link} />;
+                                break;
+                            default:
+                                console.log("nuthin")
+                        }
+                        this.setState({element: elem});
+                    }}/>
+                }>
+            {this.state.element}
             {/* <PatientNotifications link={patient.link}/> */}
             {/* <OpenedNotification /> */}
             {/* <MedicalHistory /> */}

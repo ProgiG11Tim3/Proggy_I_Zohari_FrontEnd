@@ -1,34 +1,36 @@
 import React from "react";
 import axios from "axios";
+
 import Notification from "./Notification";
 
-class PatientNotifications extends React.Component {
+class SickNotes extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            notifications: []
+            notes: []
         }
     }
 
     componentDidMount() {
-        axios.get("/api"+this.props.link+"/getAllNotifications").then(res => {
+        axios.get("/api"+this.props.link+"/getAllSickNotes").then(res => {
+            console.log(res.data);
             const temp = res.data.map(el => (
-                <Notification button="true" title={el.notificationTitle} content={el.notificationInformation} key={el.notificationId}/>
+                <Notification title={"Ispričnica"} content={el.noteData} key={el.excuseNoteId}/>
             ))
-            this.setState({notifications: temp});
+            this.setState({notes: temp});
         })
     }
 
     render() {
         return <div id="parent_notifications">
             <div id="notification_container_parent">
-                <div id="notifications_title">OBAVIJESTI</div>
+                <div id="notifications_title">Generirane ispričnice</div>
                 <div id="notifications">
-                    {this.state.notifications}
+                    {this.state.notes}
                 </div>
             </div>
         </div>
     }
 }
 
-export default PatientNotifications;
+export default SickNotes;
