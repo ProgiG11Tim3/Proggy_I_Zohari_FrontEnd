@@ -2,10 +2,14 @@ import React from "react";
 import "../../../index.css";
 
 class Profile extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+
     render() {
         return <div id="profile">
-            <div>Prijavljen/a: Prezime Ime</div>
-            <div>Profil: PEDIJATAR</div>
+            <div>Prijavljen/a: {this.props.lastName} {this.props.name}</div>
+            <div>Profil: {this.props.type}</div>
         </div>
     }
 }

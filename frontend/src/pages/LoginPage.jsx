@@ -50,7 +50,7 @@ class LoginPage extends React.Component {
                 password: this.state.password
             }).then(res => {
                 if (res.data == "PARENT") {
-                    this.element = <Navigate to="/" replace={true}/>
+                    this.element = <Navigate to="/home" replace={true}/>
                     this.forceUpdate()
                 } else {
                     alert("Neispravno korisničko ime ili lozinka.")

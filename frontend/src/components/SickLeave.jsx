@@ -1,9 +1,24 @@
 import React from "react";
+import axios from "axios";
+
 import Leave from "./Leave";
 
 class SickLeave extends React.Component {
     constructor(props) {
         super(props);
+        this.state = {
+            leaves: []
+        }
+    }
+
+    componentDidMount() {
+        axios.get("/api/getAllSickLeaves").then(res => {
+            console.log(res.data);
+            const temp = res.data.map(el => (
+                <Leave title={"Preporuka za bolovanje"} content={el.recData} from={el.doctor.nameDoctor + " " + el.doctor.lastNameDoctor} key={el.examinationId}/>
+            ))
+            this.setState({leaves: temp});
+        })
     }
 
     render() {
@@ -11,10 +26,7 @@ class SickLeave extends React.Component {
             <div id="notification_container_parent">
                 <div id="notifications_title">Potvrđena bolovanja</div>
                 <div id="notifications">
-                    <Leave title={"Preporuka za bolovanje"} from={"DR SC"} for={"POSLODAVAC"} content={"Lorem ipsum dolor sit amet, consectetur adipiscing elit. In varius mi ut neque efficitur aliquam. Ut faucibus mollis tellus, ut finibus nulla tempor vel. Sed bibendum ullamcorper tellus at imperdiet. Nullam sit amet euismod magna. Aliquam non nisi ut purus gravida ullamcorper. Nunc eu semper neque. Etiam iaculis dui ut pulvinar facilisis. Pellentesque et consectetur ligula, ac efficitur lectus. Integer sit amet erat eget nibh lacinia ornare. Ut dapibus neque euismod, condimentum eros id, auctor risus. Praesent vel erat tellus. In lobortis posuere tincidunt. Donec eu tortor nisl."}/>
-                    <Leave title={"Preporuka za bolovanje"} from={"DR SC"} for={"POSLODAVAC"} content={"Lorem ipsum dolor sit amet, consectetur adipiscing elit. In varius mi ut neque efficitur aliquam. Ut faucibus mollis tellus, ut finibus nulla tempor vel. Sed bibendum ullamcorper tellus at imperdiet. Nullam sit amet euismod magna. Aliquam non nisi ut purus gravida ullamcorper. Nunc eu semper neque. Etiam iaculis dui ut pulvinar facilisis. Pellentesque et consectetur ligula, ac efficitur lectus. Integer sit amet erat eget nibh lacinia ornare. Ut dapibus neque euismod, condimentum eros id, auctor risus. Praesent vel erat tellus. In lobortis posuere tincidunt. Donec eu tortor nisl."}/>
-                    <Leave title={"Preporuka za bolovanje"} from={"DR SC"} for={"POSLODAVAC"} content={"Lorem ipsum dolor sit amet, consectetur adipiscing elit. In varius mi ut neque efficitur aliquam. Ut faucibus mollis tellus, ut finibus nulla tempor vel. Sed bibendum ullamcorper tellus at imperdiet. Nullam sit amet euismod magna. Aliquam non nisi ut purus gravida ullamcorper. Nunc eu semper neque. Etiam iaculis dui ut pulvinar facilisis. Pellentesque et consectetur ligula, ac efficitur lectus. Integer sit amet erat eget nibh lacinia ornare. Ut dapibus neque euismod, condimentum eros id, auctor risus. Praesent vel erat tellus. In lobortis posuere tincidunt. Donec eu tortor nisl."}/>
-                    <Leave title={"Preporuka za bolovanje"} from={"DR SC"} for={"POSLODAVAC"} content={"Lorem ipsum dolor sit amet, consectetur adipiscing elit. In varius mi ut neque efficitur aliquam. Ut faucibus mollis tellus, ut finibus nulla tempor vel. Sed bibendum ullamcorper tellus at imperdiet. Nullam sit amet euismod magna. Aliquam non nisi ut purus gravida ullamcorper. Nunc eu semper neque. Etiam iaculis dui ut pulvinar facilisis. Pellentesque et consectetur ligula, ac efficitur lectus. Integer sit amet erat eget nibh lacinia ornare. Ut dapibus neque euismod, condimentum eros id, auctor risus. Praesent vel erat tellus. In lobortis posuere tincidunt. Donec eu tortor nisl."}/>
+                    {this.state.leaves}
                 </div>
             </div>
         </div>

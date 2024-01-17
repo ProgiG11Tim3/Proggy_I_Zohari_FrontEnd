@@ -1,6 +1,4 @@
 import React from "react";
-import Notification from "./Notification";
-import Input from "./components/Input";
 
 class LoadFindings extends React.Component {
     constructor(props) {
@@ -23,6 +21,7 @@ class LoadFindings extends React.Component {
                     <br></br>
                     <div id="popratna_naslov">Unesite popratnu poruku:</div>
                     <textarea id="popratna_poruka"/>
+                    <button>UČITAJ</button>
                 </div>
             </div>
         </div>

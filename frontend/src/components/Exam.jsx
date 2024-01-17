@@ -8,9 +8,9 @@ class Exam extends React.Component {
 
     render() {
         return <div className="notification">
-            <div className="notif_from">{this.props.date}</div>
+            <div className="date_of_exam">{this.props.date.slice(0, 10)}</div>
             <div className="notif_title">{this.props.title}</div>
-            <div className="notif_content">{this.props.content}</div>
+            <div className="exam_content">{this.props.content}</div>
         </div>
     }
 }

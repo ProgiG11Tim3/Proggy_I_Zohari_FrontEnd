@@ -1,9 +1,22 @@
 import React from "react";
+import axios from "axios";
 import Notification from "./Notification";
 
 class PatientNotifications extends React.Component {
     constructor(props) {
         super(props);
+        this.state = {
+            notifications: []
+        }
+    }
+
+    componentDidMount() {
+        axios.get("/api"+this.props.link+"/getAllNotifications").then(res => {
+            const temp = res.data.map(el => (
+                <Notification button="true" title={el.notificationTitle} content={el.notificationInformation}/>
+            ))
+            this.setState({notifications: temp});
+        })
     }
 
     render() {
@@ -11,10 +24,7 @@ class PatientNotifications extends React.Component {
             <div id="notification_container_parent">
                 <div id="notifications_title">OBAVIJESTI</div>
                 <div id="notifications">
-                    <Notification button="true" title={"NASLOV"} from={"DR SC"} content={"Lorem ipsum dolor sit amet, consectetur adipiscing elit. In varius mi ut neque efficitur aliquam. Ut faucibus mollis tellus, ut finibus nulla tempor vel. Sed bibendum ullamcorper tellus at imperdiet. Nullam sit amet euismod magna. Aliquam non nisi ut purus gravida ullamcorper. Nunc eu semper neque. Etiam iaculis dui ut pulvinar facilisis. Pellentesque et consectetur ligula, ac efficitur lectus. Integer sit amet erat eget nibh lacinia ornare. Ut dapibus neque euismod, condimentum eros id, auctor risus. Praesent vel erat tellus. In lobortis posuere tincidunt. Donec eu tortor nisl."}/>
-                    <Notification button="true" title={"NASLOV"} from={"DR SC"} content={"Lorem ipsum dolor sit amet, consectetur adipiscing elit. In varius mi ut neque efficitur aliquam. Ut faucibus mollis tellus, ut finibus nulla tempor vel. Sed bibendum ullamcorper tellus at imperdiet. Nullam sit amet euismod magna. Aliquam non nisi ut purus gravida ullamcorper. Nunc eu semper neque. Etiam iaculis dui ut pulvinar facilisis. Pellentesque et consectetur ligula, ac efficitur lectus. Integer sit amet erat eget nibh lacinia ornare. Ut dapibus neque euismod, condimentum eros id, auctor risus. Praesent vel erat tellus. In lobortis posuere tincidunt. Donec eu tortor nisl."}/>
-                    <Notification button="true" title={"NASLOV"} from={"DR SC"} content={"Lorem ipsum dolor sit amet, consectetur adipiscing elit. In varius mi ut neque efficitur aliquam. Ut faucibus mollis tellus, ut finibus nulla tempor vel. Sed bibendum ullamcorper tellus at imperdiet. Nullam sit amet euismod magna. Aliquam non nisi ut purus gravida ullamcorper. Nunc eu semper neque. Etiam iaculis dui ut pulvinar facilisis. Pellentesque et consectetur ligula, ac efficitur lectus. Integer sit amet erat eget nibh lacinia ornare. Ut dapibus neque euismod, condimentum eros id, auctor risus. Praesent vel erat tellus. In lobortis posuere tincidunt. Donec eu tortor nisl."}/>
-                    <Notification button="true" title={"NASLOV"} from={"DR SC"} content={"Lorem ipsum dolor sit amet, consectetur adipiscing elit. In varius mi ut neque efficitur aliquam. Ut faucibus mollis tellus, ut finibus nulla tempor vel. Sed bibendum ullamcorper tellus at imperdiet. Nullam sit amet euismod magna. Aliquam non nisi ut purus gravida ullamcorper. Nunc eu semper neque. Etiam iaculis dui ut pulvinar facilisis. Pellentesque et consectetur ligula, ac efficitur lectus. Integer sit amet erat eget nibh lacinia ornare. Ut dapibus neque euismod, condimentum eros id, auctor risus. Praesent vel erat tellus. In lobortis posuere tincidunt. Donec eu tortor nisl."}/>
+                    {this.state.notifications}
                 </div>
             </div>
         </div>

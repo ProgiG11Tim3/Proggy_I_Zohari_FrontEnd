@@ -16,7 +16,6 @@ class Notification extends React.Component {
 
     render() {
         return <div className="notification">
-            <div className="notif_from">Od: {this.props.from}</div>
             <div className="notif_title">{this.props.title}</div>
             <div className="notif_for">{this.for}</div>
             {this.button}

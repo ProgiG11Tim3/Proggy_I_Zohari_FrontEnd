@@ -1,4 +1,6 @@
 import React from "react";
+import axios from "axios";
+
 import Template from "../components/Template";
 import Profil from "../components/components/components/Profile";
 import Patient from "../components/Patient";
@@ -7,22 +9,79 @@ import Notification from "../components/Notification";
 import "../index.css";
 
 class HomePage extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            isloading: true,
+            parentData: {
+                "parentId": null,
+                "nameParent": null,
+                "lastNameParent": null,
+                "dateOfBirthParent": null,
+                "userNameParent": null,
+                "phoneNumberParent": null,
+                "emailParent": null,
+                "postalCode": null,
+                "placeOfResidence": null,
+                "employerEmail": null,
+                "oib": null
+            },
+            notifications: [],
+            patients: []
+        }
+    }
+
+    componentDidMount() {
+        axios.get("/api/getLoggedInParent").then(res => {
+            this.setState({parentData: res.data});
+        });
+        axios.get("/api/odabirprofila").then(res => {
+            console.log(res.data)
+            const temp = res.data.map(el => {
+                return <Patient role={el.role} name={el.name} surname={el.surname} oib={el.oib} key={el.oib}/>
+            })
+            this.setState({patients: temp});
+        })
+        axios.get("/api/getAllParentNotifications").then(res => {
+            const temp = res.data.map(el => {
+                if(el.child != null) {
+                    return (<Notification key={el.notificationId}
+                        title={el.notificationTitle}
+                        for={el.child.nameChild + " " + el.child.lastNameChild}
+                        content={el.notificationInformation}
+                    />)
+                } else {
+                    return (<Notification key={el.notificationId}
+                        title={el.notificationTitle}
+                        for={this.state.parentData.nameParent + " " + this.state.parentData.lastNameParent}
+                        content={el.notificationInformation}
+                    />)
+                }
+            });
+            this.setState({notifications: temp});
+        })
+        this.setState({isloading: false});
+    }
+
     render() {
-        return <Template profil={<Profil />}>
+        const parent = this.state.parentData;
+
+        if(this.state.isloading) {
+            return <div>LOADING</div>
+        }
+
+        return <Template profil={<Profil 
+        lastName={parent.lastNameParent}
+        name={parent.nameParent}
+        type={"RODITELJ"}/>}>
             <div id="notification_container">
                 <div id="notifications_title">OBAVIJESTI</div>
                 <div id="notifications">
-                    <Notification title={"NASLOV"} from={"DR SC"} for={"JOE MAMA"} content={"Lorem ipsum dolor sit amet, consectetur adipiscing elit. In varius mi ut neque efficitur aliquam. Ut faucibus mollis tellus, ut finibus nulla tempor vel. Sed bibendum ullamcorper tellus at imperdiet. Nullam sit amet euismod magna. Aliquam non nisi ut purus gravida ullamcorper. Nunc eu semper neque. Etiam iaculis dui ut pulvinar facilisis. Pellentesque et consectetur ligula, ac efficitur lectus. Integer sit amet erat eget nibh lacinia ornare. Ut dapibus neque euismod, condimentum eros id, auctor risus. Praesent vel erat tellus. In lobortis posuere tincidunt. Donec eu tortor nisl."}/>
-                    <Notification title={"NASLOV"} from={"DR SC"} for={"JOE MAMA"} content={"Lorem ipsum dolor sit amet, consectetur adipiscing elit. In varius mi ut neque efficitur aliquam. Ut faucibus mollis tellus, ut finibus nulla tempor vel. Sed bibendum ullamcorper tellus at imperdiet. Nullam sit amet euismod magna. Aliquam non nisi ut purus gravida ullamcorper. Nunc eu semper neque. Etiam iaculis dui ut pulvinar facilisis. Pellentesque et consectetur ligula, ac efficitur lectus. Integer sit amet erat eget nibh lacinia ornare. Ut dapibus neque euismod, condimentum eros id, auctor risus. Praesent vel erat tellus. In lobortis posuere tincidunt. Donec eu tortor nisl."}/>
-                    <Notification title={"NASLOV"} from={"DR SC"} for={"JOE MAMA"} content={"Lorem ipsum dolor sit amet, consectetur adipiscing elit. In varius mi ut neque efficitur aliquam. Ut faucibus mollis tellus, ut finibus nulla tempor vel. Sed bibendum ullamcorper tellus at imperdiet. Nullam sit amet euismod magna. Aliquam non nisi ut purus gravida ullamcorper. Nunc eu semper neque. Etiam iaculis dui ut pulvinar facilisis. Pellentesque et consectetur ligula, ac efficitur lectus. Integer sit amet erat eget nibh lacinia ornare. Ut dapibus neque euismod, condimentum eros id, auctor risus. Praesent vel erat tellus. In lobortis posuere tincidunt. Donec eu tortor nisl."}/>
-                    <Notification title={"NASLOV"} from={"DR SC"} for={"JOE MAMA"} content={"Lorem ipsum dolor sit amet, consectetur adipiscing elit. In varius mi ut neque efficitur aliquam. Ut faucibus mollis tellus, ut finibus nulla tempor vel. Sed bibendum ullamcorper tellus at imperdiet. Nullam sit amet euismod magna. Aliquam non nisi ut purus gravida ullamcorper. Nunc eu semper neque. Etiam iaculis dui ut pulvinar facilisis. Pellentesque et consectetur ligula, ac efficitur lectus. Integer sit amet erat eget nibh lacinia ornare. Ut dapibus neque euismod, condimentum eros id, auctor risus. Praesent vel erat tellus. In lobortis posuere tincidunt. Donec eu tortor nisl."}/>
+                    {this.state.notifications}
                 </div>
             </div>
             <div id="patients">
-                <Patient type="roditelj" name="Ime" lastname="Prezime" oib="123456789"/>
-                <Patient type="dijete" name="Ime" lastname="Prezime" oib="123456789"/>
-                <Patient type="dijete" name="Ime" lastname="Prezime" oib="123456789"/>
-                <Patient type="dijete" name="Ime" lastname="Prezime" oib="123456789"/>
+                {this.state.patients}
             </div>
         </Template>
     }
