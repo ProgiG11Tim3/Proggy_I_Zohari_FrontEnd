@@ -34,7 +34,7 @@ class ProfilePediatricianPatientList extends React.Component {
                         <div key={patient.oib} className="patient_list_instance">
                             <div className="patient_list_infobox">
                                 <div id={"ped_text_color"}  className="patient_list_ime_prezime">
-                                    {`${patient.lastNameParent} ${patient.nameParent}`}
+                                    {`${patient.lastNameChild} ${patient.nameChild}`}
                                 </div>
                                 <div className="patient_list_oib">
                                     {patient.oib}
@@ -51,7 +51,7 @@ class ProfilePediatricianPatientList extends React.Component {
                     <div className="patient_list_instance">
                         <div className="patient_list_infobox">
                             <div id={"ped_text_color"} className="patient_list_ime_prezime">
-                                {`${patient.lastNameParent} ${patient.nameParent}`}
+                                {`${patient.lastNameChild} ${patient.nameChild}`}
                             </div>
                             <div className="patient_list_oib">
                                 {patient.oib}

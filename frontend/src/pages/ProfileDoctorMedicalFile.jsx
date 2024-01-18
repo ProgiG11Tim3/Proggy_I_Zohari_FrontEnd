@@ -59,6 +59,8 @@ class ProfileDoctorMedicalFile extends React.Component {
                         )}
                     </div>
                 </div>
+
+
                 <div className={"smallboi_right"}>
                     <div className={"smallboi_infobox"}>
                         <div id={"patient_name_textbox"}>{`${patient.lastNameParent} ${patient.nameParent}`}</div>

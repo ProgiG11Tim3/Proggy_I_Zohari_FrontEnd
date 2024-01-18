@@ -8,27 +8,31 @@ class ProfilePediatricianPatientProfile extends React.Component {
         super(props);
         this.element = null;
         this.state = {
-            patient: null,
-            oib: window.location.href.split('/')[4]
+            patientData: {},
         };
     }
 
     componentDidMount() {
-        // Fetch patient data from the backend when the component mounts
-        axios.get("/api/doctor/getPatient/{OIB}")
-            .then(response => {
-                this.setState({ patient: response.data });
-            })
+        const OIB = window.location.href.split('/')[5];
+
+        axios.get(`/api/pediatrician/getPatient/${OIB}`).then(res => {
+            console.log(res);
+            this.setState({ patientData: res.data });
+
+        })
             .catch(error => {
                 console.error("Error fetching patient data:", error);
             });
+
+
     }
     render(){
+        const patient = this.state.patientData;
 
         return <Template>
             <div className="main">
                 <div className={"naslovbox_desno"}>
-                    <div className="lom_naslovi ped_patient_profile_title">Prezime Ime - Profil</div>
+                    <div className="lom_naslovi ped_patient_profile_title">{`${patient.lastNameChild} ${patient.nameChild} - Profil`}</div>
                 </div>
 
                 <div id="ped_main_container">
@@ -37,29 +41,29 @@ class ProfilePediatricianPatientProfile extends React.Component {
                         <div className={"flexbox"}>
                             <div className={"flexbox_column doctor_patient_profile"}>
                                 <div className={"doctor_patient_profile_tekst1"}>Ime</div>
-                                <div className={"doctor_patient_profile_tekst2 ped_text_color"}>Ime</div>
+                                <div className={"doctor_patient_profile_tekst2 ped_text_color"}>{patient.nameChild}</div>
                             </div>
                             <div className={"flexbox_column doctor_patient_profile"}>
                                 <div className={"doctor_patient_profile_tekst1"}>Prezime</div>
-                                <div className={"doctor_patient_profile_tekst2 ped_text_color"}>Prezime</div>
+                                <div className={"doctor_patient_profile_tekst2 ped_text_color"}>{patient.lastNameChild}</div>
                             </div>
                             <div className={"flexbox_column doctor_patient_profile"}>
                                 <div className={"doctor_patient_profile_tekst1"}>OIB</div>
-                                <div className={"doctor_patient_profile_tekst2 ped_text_color"}>12345678910</div>
+                                <div className={"doctor_patient_profile_tekst2 ped_text_color"}>{patient.oib}</div>
                             </div>
                         </div>
                         <div className={"flexbox"}>
                             <div className={"flexbox_column doctor_patient_profile"}>
                                 <div className={"doctor_patient_profile_tekst1"}>Datum rođenja</div>
-                                <div className={"doctor_patient_profile_tekst2 ped_text_color"}>14/01/1990</div>
+                                <div className={"doctor_patient_profile_tekst2 ped_text_color"}>{patient.dateOfBirthChild}</div>
                             </div>
                             <div className={"flexbox_column doctor_patient_profile"}>
                                 <div className={"doctor_patient_profile_tekst1"}>Ime odgojno-obrazovne ustanove</div>
-                                <div className={"doctor_patient_profile_tekst2 ped_text_color"}>Ime odgojno-obrazovne ustanove</div>
+                                <div className={"doctor_patient_profile_tekst2 ped_text_color"}>{patient.educationalInstitution}</div>
                             </div>
                             <div className={"flexbox_column doctor_patient_profile"}>
                                 <div className={"doctor_patient_profile_tekst1"}>Kontakt odgojno-obrazovne ustanove</div>
-                                <div className={"doctor_patient_profile_tekst2 ped_text_color"}>Kontakt odgojno-obrazovne ustanove</div>
+                                <div className={"doctor_patient_profile_tekst2 ped_text_color"}>{patient.emailEducationalInstitution}</div>
                             </div>
                         </div>
                     </div>
@@ -70,26 +74,26 @@ class ProfilePediatricianPatientProfile extends React.Component {
                         <div className={"flexbox"}>
                             <div className={"flexbox_column doctor_patient_profile"}>
                                 <div className={"doctor_patient_profile_tekst1"}>Ime i prezime</div>
-                                <div className={"doctor_patient_profile_tekst2 ped_text_color"}>Ime i prezime</div>
+                                <div className={"doctor_patient_profile_tekst2 ped_text_color"}>{`${this.state.patientData.parent?.lastNameParent} ${this.state.patientData.parent?.nameParent}`}</div>
                             </div>
                             <div className={"flexbox_column doctor_patient_profile"}>
                                 <div className={"doctor_patient_profile_tekst1"}>Mjesto prebivališta</div>
-                                <div className={"doctor_patient_profile_tekst2 ped_text_color"}>Mjesto prebivališta</div>
+                                <div className={"doctor_patient_profile_tekst2 ped_text_color"}>{this.state.patientData.parent?.placeOfResidence}</div>
                             </div>
                             <div className={"flexbox_column doctor_patient_profile"}>
                                 <div className={"doctor_patient_profile_tekst1"}>Poštanski broj prebivališta</div>
-                                <div className={"doctor_patient_profile_tekst2 ped_text_color"}>Poštanski broj prebivališta</div>
+                                <div className={"doctor_patient_profile_tekst2 ped_text_color"}>{this.state.patientData.parent?.postalCode}</div>
                             </div>
 
                         </div>
                         <div className={"flexbox"}>
                             <div className={"flexbox_column doctor_patient_profile"}>
                                 <div className={"doctor_patient_profile_tekst1"}>Broj telefona</div>
-                                <div className={"doctor_patient_profile_tekst2 ped_text_color"}>099 1234 567</div>
+                                <div className={"doctor_patient_profile_tekst2 ped_text_color"}>{this.state.patientData.parent?.phoneNumberParent}</div>
                             </div>
                             <div className={"flexbox_column doctor_patient_profile"}>
                                 <div className={"doctor_patient_profile_tekst1"}>Adresa elektroničke pošte</div>
-                                <div className={"doctor_patient_profile_tekst2 ped_text_color"}>ime.prezime@gmail.com</div>
+                                <div className={"doctor_patient_profile_tekst2 ped_text_color"}>{this.state.patientData.parent?.emailParent}</div>
                             </div>
                         </div>
                     </div>
