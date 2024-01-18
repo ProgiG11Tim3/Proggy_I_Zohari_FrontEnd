@@ -1,9 +1,30 @@
 import React from "react";
 import Template from "../components/Template";
 import "../index.css";
+import axios from "axios";
 
 class ProfilePediatricianPatientProfile extends React.Component {
+    constructor(props) {
+        super(props);
+        this.element = null;
+        this.state = {
+            patient: null,
+            oib: window.location.href.split('/')[4]
+        };
+    }
+
+    componentDidMount() {
+        // Fetch patient data from the backend when the component mounts
+        axios.get("/api/doctor/getPatient/{OIB}")
+            .then(response => {
+                this.setState({ patient: response.data });
+            })
+            .catch(error => {
+                console.error("Error fetching patient data:", error);
+            });
+    }
     render(){
+
         return <Template>
             <div className="main">
                 <div className={"naslovbox_desno"}>

@@ -57,6 +57,10 @@ class LoginPage extends React.Component {
                     this.element = <Navigate to="/doctor/patientlist" replace={true}/>
                     this.forceUpdate()
                 }
+                else if (res.data === "PEDIATRICIAN"){
+                    this.element = <Navigate to="/pediatrician/patientlist" replace={true}/>
+                    this.forceUpdate()
+                }
                 else {
                     alert("Neispravno korisničko ime ili lozinka.")
                 }

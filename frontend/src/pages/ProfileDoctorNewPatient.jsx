@@ -16,20 +16,20 @@ class ProfileDoctorNewPatient extends React.Component {
     }
     submit() {
         if (this.state.oib == null) {
-            alert("Molimo da upišete OIB novog pacijenta.")
+            alert("Molimo da upišete OIB novog pacijenta.");
         } else {
-            axios.post("/api/unospacijentabyoib", {
-                oib: this.state.oib,
-            }).then(res => {
-                if (res.data === "200") {
-                    this.element = <Navigate to="/doctor/patientlist" replace={true}/>
-                    this.forceUpdate()
-                } else {
-                    alert("Neispravan OIB.")
-                }
-            }).catch((e) => {
-                console.log(e)
-            })
+            axios.post(`/api/unospacijentabyoib${this.state.oib}`)
+                .then(res => {
+                    if (res.data === "OK") {
+                        this.element = <Navigate to="/doctor/patientlist" replace={true}/>
+                        this.forceUpdate();
+                    } else {
+                        alert("Neispravan OIB.");
+                    }
+                })
+                .catch((e) => {
+                    console.log(e);
+                });
         }
     }
     render(){
