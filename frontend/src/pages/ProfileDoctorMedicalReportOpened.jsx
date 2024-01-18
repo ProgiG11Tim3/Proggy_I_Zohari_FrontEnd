@@ -3,6 +3,7 @@ import Template from "../components/Template";
 import "../index.css";
 import Input from "../components/components/Input";
 import axios from "axios";
+import { Link } from "react-router-dom";
 class ProfileDoctorMedicalReportOpened extends React.Component {
 
     constructor(props) {
@@ -26,8 +27,10 @@ class ProfileDoctorMedicalReportOpened extends React.Component {
                 console.error("Error fetching patient data:", error);
             });
 
-        const reportID = window.location.href.split('/')[8];
-        axios.get(`/api/getMedicalRecord/${reportID}`).then(res => {
+        const reportID1 = window.location.href.split('/')[8];
+        const reportID = parseInt(reportID1, 10);
+
+        axios.get(`/api/getMedicalReport/${reportID}`).then(res => {
                 console.log(reportID);
                 this.setState({ medrepData: res.data });
 
@@ -60,7 +63,7 @@ class ProfileDoctorMedicalReportOpened extends React.Component {
                             </div>
                             <div className={"flexbox_div_1"}>
                                 <div className={"lom_podnaslovi"}>Datum slanja nalaza</div>
-                                <div id={"doctor_medreport_date"} className={"textbox_notfull"}>{medRep.dateOfReport}</div>
+                                <div id={"doctor_medreport_date"} className={"textbox_notfull"}>{new Date (medRep.dateOfReport).toLocaleDateString()}</div>
                             </div>
                         </div>
 
@@ -72,13 +75,11 @@ class ProfileDoctorMedicalReportOpened extends React.Component {
                         </div>
                     </div>
 
-
-
-
-
-
                     <div id={"doctor_medrep_button_submitbox"} className={"button_boxes_together button_down"}>
-                        <button id={"doctor_medrep_button_submit"}>Povratna informacija</button>
+                        <Link to={`/doctor/patientprofile/${patient.oib}/medicalreports/medicalreport/${medRep.reportId}/message}`}>
+                            <button id={"doctor_medrep_button_submit"}>Povratna informacija</button>
+                        </Link>
+
                     </div>
                 </div>
                 <div className={"smallboi_right"}>
