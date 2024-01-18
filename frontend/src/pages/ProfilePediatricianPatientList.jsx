@@ -1,7 +1,6 @@
 import React from "react";
 import Template from "../components/Template";
 import "../index.css";
-import viewLogo from "../images/viewLogo.png";
 import axios from "axios";
 import {Link} from "react-router-dom";
 

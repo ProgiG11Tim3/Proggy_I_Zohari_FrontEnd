@@ -471,6 +471,16 @@ input::-webkit-inner-spin-button {
   justify-content: center;
 }
 
+#patient_profile_right {
+  display: flex;
+  width: 30vh;
+  height: 30vh;
+  margin: 2vh 2vh 0 2vh;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 #patients {
   display: flex;
   flex-wrap: wrap;
@@ -486,7 +496,7 @@ input::-webkit-inner-spin-button {
   justify-content: center;
   float: right;
   width: 15%;
-  margin: 2vh 5%;
+  margin: 10vh 5% 0 5%;
 }
 
 .patient_type {
@@ -534,6 +544,7 @@ input::-webkit-inner-spin-button {
   padding: 2vh;
   background-color: whitesmoke;
   border-radius: 1em;
+  overflow-x: hidden;
 }
 
 #notification_container_parent {
@@ -621,6 +632,8 @@ input::-webkit-inner-spin-button {
 
 .nav_button {
   margin: 0 1.5vw;
+  color: white;
+  text-decoration: none;
 }
 
 .nav_button:hover {
@@ -1174,41 +1187,10 @@ input[type="file"] {
 }
 
 #map {
+  float: right;
   height: 70vh;
   width: 100%;
   margin: 0 auto;
-}
-
-@media only screen and (max-width: 768px) {
-  #login_main_container {
-    display: flex;
-    justify-content: center;
-    width: 70%;
-    height: 40vh;
-  }
-
-  .login_naslov {
-    padding-top: 20vh;
-    display: flex;
-    justify-content: center;
-    text-transform: uppercase;
-  }
-
-  #header {
-    display: none;
-  }
-
-  #language_button {
-    display: none;
-  }
-
-  #aa_button {
-    display: none;
-  }
-
-  #home_reg_log_container {
-    position: relative;
-  }
 }
 
 #doctor_medrep_msg_button_submit{
@@ -1334,12 +1316,6 @@ input[type="file"] {
   align-items: center;
 }
 
-/*PEDIJATAR*/
-/*PEDIJATAR*/
-/*PEDIJATAR*/
-/*PEDIJATAR*/
-/*PEDIJATAR*/
-
 #ped_button_color{
   background-color: rgb(133, 31, 156);
 }
@@ -1424,4 +1400,169 @@ input[type="file"] {
   margin: 0 auto 2em auto;
   padding: 2.5%;
   width: 60%;
+}
+
+#mobile_menu {
+  width: 0;
+  height: 0;
+}
+
+@media only screen and (max-width: 768px) {
+  #login_main_container {
+    display: flex;
+    justify-content: center;
+    width: 70%;
+    height: 40vh;
+  }
+
+  .login_naslov {
+    padding-top: 20vh;
+    display: flex;
+    justify-content: center;
+    text-transform: uppercase;
+  }
+
+  #header {
+    display: none;
+  }
+
+  #language_button {
+    display: none;
+  }
+
+  #aa_button {
+    display: none;
+  }
+
+  #home_reg_log_container {
+    margin-top: 5vh;
+    padding-bottom: 10vh;
+  }
+
+  #home_main_container {
+    margin-top: 5vh;
+    display: flex;
+    flex-flow: column;
+  }
+
+  #notification_container {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
+  
+  #notifications {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    height: 70vh;
+  }
+
+  #patients {
+    width: 100%;
+    margin: 0;
+    flex-wrap: wrap;
+    order: 2;
+  }
+
+  .patient_profile {
+    margin: 2.5%;
+    width: 45%;
+  }
+
+  .patient_info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10% 0 15% 0;
+  }
+
+  #notification_container_parent {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    height: 50vh;
+  }
+
+  #patient_parent {
+    float: left;
+    width: 90%;
+    margin: 0;
+  }
+
+  #patient_profile_right {
+    margin: 0;
+    height: 10vh;
+  }
+
+  #load_file_button {
+    position: static;
+    float: left;
+    width: 25%;
+    margin: 5% 37.5% 0 37.5%;
+  }
+
+  #popratna_naslov {
+    float: left;
+  }
+
+  #popratna_poruka {
+    width: 80%;
+    display: flex;
+    margin: 0 auto;
+  }
+
+  .notif_from {
+    visibility: hidden;
+    width: 0;
+  }
+
+  .date_of_exam {
+    visibility: hidden;
+  }
+
+  #notifications_title {
+    text-align: center;
+  }
+
+  .notif_content {
+    max-width: 100%;
+  }
+
+  .exam_content {
+    max-width: 100%;
+  }
+
+  #navbar {
+    height: 5vh;
+  }
+
+  #mobile_menu {
+    height: 5vh;
+    width: 50px;
+    background-color: wheat;
+  }
+  
+  #nav_button_container {
+    position: absolute;
+    margin-top: 5vh;
+    width: 100vw;
+    height: 100%;
+    display: flex;
+    flex-flow: column;
+  }
+
+  #navbar > div {
+    margin: 0 ;
+  }
+
+  .nav_button {
+    margin: 0;
+    background: linear-gradient(to right, rgb(156, 31, 117), rgb(133, 31, 156, 0.9), rgb(70, 31, 156));
+    height: 5vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
 }

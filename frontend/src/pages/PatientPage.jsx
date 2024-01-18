@@ -23,7 +23,8 @@ class PatientPage extends React.Component {
             isloading: true,
             patient_oib: window.location.href.split('/')[4],
             patientData: {},
-            selected: 0
+            selected: 0,
+            map: null
         }
     }
 
@@ -48,26 +49,32 @@ class PatientPage extends React.Component {
             case "0":
                 elem = <PatientNotifications link={this.state.patientData.link}
                 onTrigger={this.handleCallback} />;
+                    this.setState({map: null});
                 break;
             case "1":
                 elem = <MedicalHistory link={this.state.patientData.link}
                 onTrigger={this.handleCallback} />;
+                this.setState({map: null});
                 break;
             case "2":
                 if(this.state.patientData.role == "Parent") {
                     elem = <SickLeave link={this.state.patientData.link}
                     onTrigger={this.handleCallback} />;
+                    this.setState({map: null});
                     break;
                 } else {
                     elem = <SickNotes link={this.state.patientData.link}
                     onTrigger={this.handleCallback} />;
+                    this.setState({map: null});
                     break;
                 }
             case "3":
                 elem = <SpecialistExams link={this.state.patientData.link} />;
+                this.setState({map: <Map />});
                 break;
             case "4":
                 elem = <LoadFindings link={this.state.patientData.link} />;
+                this.setState({map: null});
                 break;
             default:
                 console.log("nuthin")
@@ -97,27 +104,29 @@ class PatientPage extends React.Component {
             return <div>LOADING...</div>
         }
 
-        return <Template profil={<Profil 
+        return <Template profil={
+            <Profil 
                 lastName={patient.surname} 
                 name={patient.name} 
-                type={patient.role}/>} 
+                type={patient.role}
+            />} 
                 buttons={
                     <NavbarButtons role={patient.role} isSelected={e => {
                         this.setState({selected: e});
                         this.selectTab(e, patient);
                     }}/>
                 }>
-            {this.state.element}
+            {this.state.map}
             <div id="patient_parent">   
-                    <div className="patient_profile">
+                    <div className="patient_profile_right">
                     <div className="patient_type">{this.props.type}</div>
                     <div className="patient_info">
                         {patient.name} {patient.surname} <br />
                         {patient.oib} <br />
-                        {patient.mail} <br />
                     </div>  
                 </div>
             </div>
+            {this.state.element}
         </Template>
     }
 }

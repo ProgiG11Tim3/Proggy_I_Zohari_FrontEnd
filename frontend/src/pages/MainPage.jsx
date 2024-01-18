@@ -7,7 +7,6 @@ import { Link } from "react-router-dom";
 class MainPage extends React.Component {
     render() {
         return <div>
-            {/* <Header profil={<Profil />}/> */}
             <Template>
                 <div id={"home_bigboy_main"}>
                     <div id={"home_main_container"}>

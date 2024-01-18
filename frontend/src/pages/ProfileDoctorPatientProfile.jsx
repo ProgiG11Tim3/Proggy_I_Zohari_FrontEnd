@@ -3,6 +3,7 @@ import Template from "../components/Template";
 import "../index.css";
 import axios from "axios";
 import { useParams } from "react-router-dom";
+import NavbarButtons from "../components/components/components/NavbarButtons";
 
 class ProfileDoctorPatientProfile extends React.Component {
 
@@ -29,7 +30,7 @@ class ProfileDoctorPatientProfile extends React.Component {
 
         const patient = this.state.patientData;
 
-        return <Template>
+        return <Template buttons={<NavbarButtons role="Doktor" oib={patient.oib}/>}>
 
             <div className="main">
                 <div className={"naslovbox_desno"}>

@@ -14,7 +14,6 @@ class ProfileDoctorPatientList extends React.Component {
     }
 
     componentDidMount() {
-        // Fetch patient data from the backend when the component mounts
         axios.get("/api/doctor/getAllPatients")
             .then(response => {
                 this.setState({ patients: response.data });
