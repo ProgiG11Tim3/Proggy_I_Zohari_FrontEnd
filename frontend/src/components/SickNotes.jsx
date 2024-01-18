@@ -13,7 +13,6 @@ class SickNotes extends React.Component {
 
     componentDidMount() {
         axios.get("/api"+this.props.link+"/getAllSickNotes").then(res => {
-            console.log(res.data);
             const temp = res.data.map(el => (
                 <Notification title={"Ispričnica"} content={el.noteData} key={el.excuseNoteId}/>
             ))

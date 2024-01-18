@@ -12,7 +12,6 @@ class MedicalHistory extends React.Component {
 
     componentDidMount() {
         axios.get("/api"+this.props.link+"/getAllSelectedNotifications").then(res => {
-            console.log(res.data);
             const temp = res.data.map(el => (
                 <Exam title={el.examinationId} content={el.diagnosis} date={el.dateOfExamination} key={el.examinationId}/>
             ))

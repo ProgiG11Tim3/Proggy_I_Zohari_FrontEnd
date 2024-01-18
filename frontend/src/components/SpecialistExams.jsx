@@ -12,7 +12,6 @@ class SpecialistExams extends React.Component {
 
     componentDidMount() {
         axios.get("/api"+ this.props.link +"/getAllSelectedSpecialistExaminations").then(res => {
-            console.log(res.data);
             const temp = res.data.map(el => (
                 <Notification title={el.examTitle} content={el.examLocations} key={el.examId}/>
             ))

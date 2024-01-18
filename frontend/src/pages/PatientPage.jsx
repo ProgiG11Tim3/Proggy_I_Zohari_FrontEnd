@@ -4,10 +4,7 @@ import axios from "axios";
 import Template from "../components/Template";
 import Profil from "../components/components/components/Profile";
 import NavbarButtons from "../components/components/components/NavbarButtons";
-import Patient from "../components/Patient";
-import Notification from "../components/Notification";
 import PatientNotifications from "../components/PatientNotifications";
-import OpenedNotification from "../components/OpenedNotification";
 import MedicalHistory from "../components/MedicalHistory";
 import SickLeave from "../components/SickLeave";
 import SpecialistExams from "../components/SpecialistExams";
@@ -25,23 +22,7 @@ class PatientPage extends React.Component {
             patient_oib: window.location.href.split('/')[4],
             patientData: {},
             selected: 0
-        }/* 
-        this.tabs = {
-            parent: [
-                <PatientNotifications />,
-                <MedicalHistory />,
-                <SickLeave />,
-                <SpecialistExams />,
-                <LoadFindings />
-            ],
-            child: [
-                <PatientNotifications />,
-                <MedicalHistory />,
-                <SickNotes />,
-                <SpecialistExams />,
-                <LoadFindings />
-            ]
-        } */
+        }
     }
 
     setCurrent(e) {
@@ -73,7 +54,6 @@ class PatientPage extends React.Component {
                 type={patient.role}/>} 
                 buttons={
                     <NavbarButtons role={patient.role} isSelected={e => {
-                        console.log(e)
                         this.setState({selected: e});
                         let elem;
                         switch(e) {
@@ -104,13 +84,6 @@ class PatientPage extends React.Component {
                     }}/>
                 }>
             {this.state.element}
-            {/* <PatientNotifications link={patient.link}/> */}
-            {/* <OpenedNotification /> */}
-            {/* <MedicalHistory /> */}
-            {/* <SickLeave /> */}
-            {/* <SpecialistExams /> */}
-            {/* <LoadFindings /> */}
-            {/* <MedicalExcuses /> */}
             <div id="patient_parent">   
                     <div className="patient_profile">
                     <div className="patient_type">{this.props.type}</div>

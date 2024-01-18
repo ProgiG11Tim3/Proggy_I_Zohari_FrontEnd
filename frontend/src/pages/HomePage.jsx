@@ -36,7 +36,6 @@ class HomePage extends React.Component {
             this.setState({parentData: res.data});
         });
         axios.get("/api/odabirprofila").then(res => {
-            console.log(res.data)
             const temp = res.data.map(el => {
                 return <Patient role={el.role} name={el.name} surname={el.surname} oib={el.oib} key={el.oib}/>
             })
