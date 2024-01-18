@@ -4,16 +4,15 @@ import "../index.css";
 import Input from "../components/components/Input";
 import axios from "axios";
 import {Navigate} from "react-router-dom";
-class ProfileDoctorSpecialistExam extends React.Component {
-
+class ProfileDoctorMedicalReportMessage extends React.Component {
     constructor(props) {
         super(props);
         this.element = null;
         this.state = {
             patientData: {},
-            examTitle: null,
-            examLocations: null,
-            recordId: null
+            notificationTitle: null,
+            notificationInformation: null,
+            parent: null
         };
         this.submit = this.submit.bind(this)
     }
@@ -22,24 +21,23 @@ class ProfileDoctorSpecialistExam extends React.Component {
         const OIB = window.location.href.split('/')[5];
 
         axios.get(`/api/doctor/getPatient/${OIB}`).then(res => {
-            console.log(OIB);
+            console.log(res.data);
             this.setState({ patientData: res.data });
         })
             .catch(error => {
                 console.error("Error fetching patient data:", error);
             });
+
     }
 
     submit() {
-
-
-        if (this.state.examTitle == null || this.state.examLocations == null) {
-            alert("Molimo da upišete i naslov i lokacije.");
+        if (this.state.notificationTitle == null || this.state.notificationInformation == null) {
+            alert("Molimo da upišete i naslov obavijesti i tekst obavijesti.");
         } else {
-            axios.post(`/api/addSpecialistExamination`, {
-                examTitle: this.state.examTitle,
-                examLocations: this.state.examLocations,
-                recordId: this.state.patientData.recordId
+            axios.post(`/api/addNotification`, {
+                notificationTitle: this.state.notificationTitle,
+                notificationInformation: this.state.notificationInformation,
+                parent: this.state.patientData.oib
             })
                 .then(res => {
                     if (res.data == "200") {
@@ -56,24 +54,26 @@ class ProfileDoctorSpecialistExam extends React.Component {
     }
     render(){
         const patient = this.state.patientData;
+        this.state.parentOib = patient.oib;
+
         return <Template>
             <div className={"naslovbox_desno"}>
-                <div className={"lom_naslovi naslov_desno"}> Specijalistički pregled </div>
+                <div className={"lom_naslovi naslov_desno"}> Nalaz privatne ustanove - poruka </div>
             </div>
             <div className={"bigboy_left_smallboi_right"}>
                 <div className={"bigboy_left"}>
-                    <div className={"lom_podnaslovi"}>Vrsta specijalističkog pregleda</div>
-                    <div id="doctor_specexam_type_input" className={"doctor_specexam_input"}>
-                        <textarea name="doctor_specexam_type" placeholder={"Vrsta specijalističkog pregleda"} type="text"
-                                  onChange={e => {this.setState({examTitle: e.target.value})}}/>
+                    <div className={"lom_podnaslovi"}>Naslov obavijesti</div>
+                    <div id="doctor_medrep_msg_title_input" className={"doctor_specexam_input"}>
+                        <textarea name="doctor_medrep_msg_title" placeholder={"Naslov obavijesti"}
+                                  onChange={e => {this.setState({notificationTitle: e.target.value})}}/>
                     </div>
-                    <div className={"lom_podnaslovi"}>Popis mogućih lokacija pregleda</div>
-                    <div id="doctor_specexam_location_input" className={"doctor_specexam_input"}>
-                        <textarea name="doctor_specexam_location" placeholder={"Popis mogućih lokacija pregleda"} type="text"
-                                  onChange={e => {this.setState({examLocations: e.target.value})}}/>
+                    <div className={"lom_podnaslovi"}>Tekst obavijesti</div>
+                    <div id="doctor_medrep_msg_text_input" className={"doctor_specexam_input"}>
+                        <textarea name="doctor_medrep_msg_text" placeholder={"Tekst obavijesti"}
+                                  onChange={e => {this.setState({notificationInformation: e.target.value})}}/>
                     </div>
                     <div id={"doctor_specexam_button_submitbox"} className={"button_boxes_together"}>
-                            <button id={"doctor_specexam_button_submit"} onClick={this.submit}>Učitaj</button>
+                        <button id={"doctor_medrep_msg_button_submit"} onClick={this.submit}>Pošalji</button>
                     </div>
                 </div>
                 <div className={"smallboi_right"}>
@@ -87,4 +87,4 @@ class ProfileDoctorSpecialistExam extends React.Component {
     }
 }
 
-export default ProfileDoctorSpecialistExam
+export default ProfileDoctorMedicalReportMessage

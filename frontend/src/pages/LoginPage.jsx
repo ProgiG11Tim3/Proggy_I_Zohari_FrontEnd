@@ -52,7 +52,16 @@ class LoginPage extends React.Component {
                 if (res.data == "PARENT") {
                     this.element = <Navigate to="/home" replace={true}/>
                     this.forceUpdate()
-                } else {
+                }
+                else if (res.data === "DOCTOR"){
+                    this.element = <Navigate to="/doctor/patientlist" replace={true}/>
+                    this.forceUpdate()
+                }
+                else if (res.data === "PEDIATRICIAN"){
+                    this.element = <Navigate to="/pediatrician/patientlist" replace={true}/>
+                    this.forceUpdate()
+                }
+                else {
                     alert("Neispravno korisničko ime ili lozinka.")
                 }
             }).catch((e) => {
