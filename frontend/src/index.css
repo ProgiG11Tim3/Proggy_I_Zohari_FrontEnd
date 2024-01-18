@@ -1600,7 +1600,7 @@ input[type="file"] {
     width: 100vw;
     height: 95vh;
     visibility: visible;
-
+  }  
 
   #doctor_specexam_button_submitbox {
     margin-top: 1rem;
@@ -1825,5 +1825,6 @@ input[type="file"] {
     margin-top: 2rem;
   }
 
-}
-}
+} 
+
+
