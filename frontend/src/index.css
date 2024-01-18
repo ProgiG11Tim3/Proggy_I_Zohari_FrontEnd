@@ -1807,4 +1807,23 @@ input[type="file"] {
     font-weight: bold;
   }
 
+  .ped_patient_profile_title {
+    margin-right: 0%;
+    margin-bottom: 10px;
+  }
+
+  #ped_main_container {
+    background-color: white;
+    border-radius: 30px;
+    margin: 0 auto 2em auto;
+    padding: 2.5%;
+    width: 90%;
+  }
+
+  #doctor_patient_profile_line {
+    margin-bottom: 1rem;
+    margin-top: 2rem;
+  }
+
+}
 }
