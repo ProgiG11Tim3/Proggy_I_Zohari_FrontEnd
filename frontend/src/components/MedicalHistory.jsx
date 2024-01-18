@@ -10,10 +10,20 @@ class MedicalHistory extends React.Component {
         }
     }
 
+    handleCallback = (childData) => {
+        this.props.onTrigger(childData);
+    };
+
     componentDidMount() {
         axios.get("/api"+this.props.link+"/getAllSelectedNotifications").then(res => {
             const temp = res.data.map(el => (
-                <Exam title={el.examinationId} content={el.diagnosis} date={el.dateOfExamination} key={el.examinationId}/>
+                <Exam 
+                title={el.examinationId} 
+                content={el.diagnosis} 
+                date={el.dateOfExamination} 
+                key={el.examinationId}
+                onTrigger={this.handleCallback}
+                type={"PREGLED"}/>
             ))
             this.setState({exams: temp});
         })

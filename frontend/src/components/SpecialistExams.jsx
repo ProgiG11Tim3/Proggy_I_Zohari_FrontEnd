@@ -1,6 +1,6 @@
 import React from "react";
 import axios from "axios";
-import Notification from "./Notification";
+import SpecialistExam from "./SpecialistExam";
 
 class SpecialistExams extends React.Component {
     constructor(props) {
@@ -10,10 +10,19 @@ class SpecialistExams extends React.Component {
         }
     }
 
+    handleCallback = (childData) => {
+        this.props.onTrigger(childData);
+    };
+
     componentDidMount() {
         axios.get("/api"+ this.props.link +"/getAllSelectedSpecialistExaminations").then(res => {
             const temp = res.data.map(el => (
-                <Notification title={el.examTitle} content={el.examLocations} key={el.examId}/>
+                <SpecialistExam 
+                title={el.examTitle} 
+                content={el.examLocations} 
+                key={el.examId}
+                onTrigger={this.handleCallback}
+                type={"PREGLED"}/>
             ))
             this.setState({notifs: temp});
         })

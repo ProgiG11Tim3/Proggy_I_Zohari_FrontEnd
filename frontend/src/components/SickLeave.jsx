@@ -11,10 +11,20 @@ class SickLeave extends React.Component {
         }
     }
 
+    handleCallback = (childData) => {
+        this.props.onTrigger(childData);
+    };
+
     componentDidMount() {
         axios.get("/api/getAllSickLeaves").then(res => {
             const temp = res.data.map(el => (
-                <Leave title={"Preporuka za bolovanje"} content={el.recData} from={el.doctor.nameDoctor + " " + el.doctor.lastNameDoctor} key={el.recommendationId}/>
+                <Leave 
+                title={"Preporuka za bolovanje"}
+                content={el.recData} 
+                from={el.doctor.nameDoctor + " " + el.doctor.lastNameDoctor} 
+                key={el.recommendationId}
+                onTrigger={this.handleCallback}
+                type={"BOLOVANJE"}/>
             ))
             this.setState({leaves: temp});
         })

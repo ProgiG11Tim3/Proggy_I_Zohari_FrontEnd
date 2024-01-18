@@ -8,17 +8,17 @@ class Notification extends React.Component {
         if(this.props.for != undefined) {
             this.for = "Za: "+this.props.for;
         }
-        this.button = null;
-        if(this.props.button == "true") {
-            this.button = <button className="notif_open">PREGLED</button>;
-        }
+    }
+
+    onTrigger = (event) => {
+        event = this.props;
+        this.props.onTrigger(event);
     }
 
     render() {
-        return <div className="notification">
+        return <div className="notification" onClick={this.onTrigger}>
             <div className="notif_title">{this.props.title}</div>
             <div className="notif_for">{this.for}</div>
-            {this.button}
             <div className="notif_content">{this.props.content}</div>
         </div>
     }

@@ -500,10 +500,9 @@ input::-webkit-inner-spin-button {
 
 .patient_info {
   width: 20vh;
-  height: 15vh;
+  height: 10vh;
   background-color: whitesmoke;
   padding: 5%;
-  margin: 5% 0;
   border-radius: 10px;
 }
 
@@ -595,6 +594,10 @@ input::-webkit-inner-spin-button {
   padding: 1.5vh;
   border-radius: 10px;
   background-color: white;
+}
+
+.notification:hover {
+  cursor: pointer;
 }
 
 #nav_button_container {
@@ -1156,4 +1159,36 @@ input[type="file"] {
 
 #load_file_button:hover {
   cursor: pointer;
+}
+
+@media only screen and (max-width: 768px) {
+  #login_main_container {
+    display: flex;
+    justify-content: center;
+    width: 70%;
+    height: 40vh;
+  }
+
+  .login_naslov {
+    padding-top: 20vh;
+    display: flex;
+    justify-content: center;
+    text-transform: uppercase;
+  }
+
+  #header {
+    display: none;
+  }
+
+  #language_button {
+    display: none;
+  }
+
+  #aa_button {
+    display: none;
+  }
+
+  #home_reg_log_container {
+    position: relative;
+  }
 }

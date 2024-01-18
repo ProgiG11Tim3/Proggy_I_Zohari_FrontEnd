@@ -10,10 +10,20 @@ class PatientNotifications extends React.Component {
         }
     }
 
+    handleCallback = (childData) => {
+        this.props.onTrigger(childData);
+    };
+
     componentDidMount() {
         axios.get("/api"+this.props.link+"/getAllNotifications").then(res => {
             const temp = res.data.map(el => (
-                <Notification button="true" title={el.notificationTitle} content={el.notificationInformation} key={el.notificationId}/>
+                <Notification
+                button="true"
+                onTrigger={this.handleCallback}
+                title={el.notificationTitle} 
+                content={el.notificationInformation} 
+                key={el.notificationId}
+                type={"OBAVIJEST"}/>
             ))
             this.setState({notifications: temp});
         })

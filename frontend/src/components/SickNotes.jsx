@@ -11,10 +11,19 @@ class SickNotes extends React.Component {
         }
     }
 
+    handleCallback = (childData) => {
+        this.props.onTrigger(childData);
+    };
+
     componentDidMount() {
         axios.get("/api"+this.props.link+"/getAllSickNotes").then(res => {
             const temp = res.data.map(el => (
-                <Notification title={"Ispričnica"} content={el.noteData} key={el.excuseNoteId}/>
+                <Notification 
+                title={"Ispričnica"} 
+                content={el.noteData} 
+                key={el.excuseNoteId}
+                onTrigger={this.handleCallback}
+                type={"ISPRIČNICA"}/>
             ))
             this.setState({notes: temp});
         })
