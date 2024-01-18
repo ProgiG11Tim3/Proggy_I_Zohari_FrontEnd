@@ -80,22 +80,20 @@ input::-webkit-inner-spin-button {
 
 #navbar {
   background: linear-gradient(to right, rgb(156, 31, 117), rgb(133, 31, 156), rgb(70, 31, 156));
-  display: flex;
-  justify-content: flex-end;
+  height: 3vh;
   width: 100%;
 }
 
 #navbar > div {
   color: white;
   font-size: 13px;
-  font-weight: bold;
   margin: 4px 20px 5px 0;
   width: fit-content;
 }
 
 #naslov {
   float: left;
-  height: 7%;
+  height: 12vh;
   width: fit-content;
 }
 
@@ -130,14 +128,16 @@ input::-webkit-inner-spin-button {
   margin-top: 4px;
 }
 
-#profil {
+#profile {
   display: flex;
   flex-direction: column;
   float: right;
-  height: 6em;
+  height: 12vh;
   justify-content: center;
   margin: 0;
   padding: 0 2%;
+  color: rgb(156, 31, 117);
+  font-weight: bold;
 }
 
 #icon {
@@ -455,16 +455,271 @@ input::-webkit-inner-spin-button {
   padding: 2em 0 1em 0;
 }
 
+#notification_container {
+  width: 45%;
+  margin: 2vh 2.5%;
+  float: left;
+}
 
-/*LIJECNIK*/
-/*LIJECNIK*/
-/*LIJECNIK*/
-/*LIJECNIK*/
-/*LIJECNIK*/
-/*LIJECNIK*/
-/*LIJECNIK*/
-/*LIJECNIK*/
-/*LIJECNIK*/
+.patient_profile {
+  display: flex;
+  width: 30vh;
+  height: 30vh;
+  margin: 2vh 2vh 0 2vh;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#patients {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  float: right;
+  width: 40%;
+  margin: 2vh 5%;
+}
+
+#patient_parent {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  float: right;
+  width: 15%;
+  margin: 2vh 5%;
+}
+
+.patient_type {
+  text-transform: uppercase;
+  justify-self: center;
+  font-size: 24px;
+  font-weight: bold;
+  color: rgb(156, 31, 117);
+}
+
+.patient_info {
+  width: 20vh;
+  height: 10vh;
+  background-color: whitesmoke;
+  padding: 5%;
+  border-radius: 10px;
+}
+
+.patient_button {
+  text-transform: uppercase;
+  background-color: rgb(156, 31, 117);
+  color: white;
+  border: none;
+  height: 4vh;
+  padding: 0 5%;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.patient_button:hover {
+  cursor: pointer;
+}
+
+.notif_content {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 55ch;
+}
+
+#notifications {
+  overflow-y: auto;
+  height: 70vh;
+  width: 100%;
+  padding: 2vh;
+  background-color: whitesmoke;
+  border-radius: 1em;
+}
+
+#notification_container_parent {
+  width: 60%;
+  margin: 2vh 2.5%;
+  float: left;
+}
+
+#notifications_title {
+  font-size: 24px;
+  font-weight: bold;
+  color: rgb(156, 31, 117);
+  margin: 1vh;
+}
+
+.notif_title {
+  width: fit-content;
+  font-weight: bold;
+  color: rgb(156, 31, 117);
+}
+
+.notif_from {
+  color: rgb(156, 31, 117);
+  float: right;
+  width: 20%;
+}
+
+.notif_for {
+  color: rgb(156, 31, 117);
+}
+
+.leave_for {
+  color: rgb(156, 31, 117);
+  float: right;
+  width: 20%;
+}
+
+.notif_open {
+  background-color: rgb(156, 31, 117);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  width: 12vh;
+  height: 3vh;
+  float: right;
+  font-weight: bold;
+}
+
+.notif_open:hover {
+  cursor: pointer;
+}
+
+.notification {
+  margin: 0 auto 1vh auto;
+  width: 95%;
+  height: fit-content;
+  padding: 1.5vh;
+  border-radius: 10px;
+  background-color: white;
+}
+
+.notification:hover {
+  cursor: pointer;
+}
+
+#nav_button_container {
+  float: left;
+  display: flex;
+}
+
+#language_button {
+  font-weight: bold;
+  float: right;
+}
+
+#aa_button {
+  font-weight: bold;
+  float: right;
+}
+
+#header {
+  height: 12vh;
+  margin: 0;
+}
+
+.nav_button {
+  margin: 0 1.5vw;
+}
+
+.nav_button:hover {
+  cursor: pointer;
+}
+
+#parent_button {  
+  background-color: rgb(156, 31, 117);
+  color: white;
+  border: none;
+  height: 4vh;
+  padding: 0 5%;
+  border-radius: 5px;
+  font-weight: bold;
+  margin: 15% 0 0 70%;
+}
+
+#parent_button:hover {
+  cursor: pointer;
+}
+
+#from {
+  color: rgb(156, 31, 117);
+}
+
+#content {
+  padding: 1.5vh;
+  background-color: white;
+  width: 95%;
+  margin: 0 auto 1vh auto;
+}
+
+#back_button {
+  width: 15vh;
+  background-color: rgb(156, 31, 117);
+  color: white;
+  border: none;
+  height: 4vh;
+  border-radius: 5px;
+  font-weight: bold;
+  position: absolute;
+  left: 4vw;
+  bottom: 5vh;
+}
+
+#back_button:hover {
+  cursor: pointer;
+}
+
+#popratna_poruka {
+  resize: none;
+  width: 70%;
+  height: 35%;
+  background-color: white;
+  border-radius: 20px;
+  border: none;
+  font-size: 13px;
+  padding: 10px;
+  margin: 10px 0 0 5%;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+#select_file_button {
+  display: flex;
+  align-items: center;
+  color: white;
+  background-color: rgb(73, 53, 80);
+  border: none;
+  height: 4vh;
+  width: fit-content;
+  border-radius: 15px;
+  font-weight: bold;
+  padding: 1%;
+}
+
+#select_file_button:hover {
+  cursor: pointer;
+}
+
+#file_selector {
+  padding: 6% 0;
+  height: fit-content;
+  align-items: center;
+  flex-flow: column;
+  display: flex;
+}
+
+.selector_text {
+  width: fit-content;
+  margin: 10px 0;
+}
+
+#popratna_naslov {
+  font-weight: bold;
+  margin-left: 6%;
+}
 
 
 #patient_list_naslov {
@@ -888,6 +1143,74 @@ input::-webkit-inner-spin-button {
   font-size: 12px;
   font-family: "Ubuntu Light";
   font-weight: bold;
+}
+
+.date_of_exam {
+  color: rgb(156, 31, 117);
+  float: right;
+  width: 10ch;
+  overflow: hidden;
+}
+
+.exam_content {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 80%;
+}
+
+#load_file_button {
+  background-color: rgb(156, 31, 117);
+  color: white;
+  border: none;
+  height: 4vh;
+  padding: 0 5%;
+  border-radius: 5px;
+  font-weight: bold;
+  position: absolute;
+  bottom: 6vh;
+}
+
+#load_file_button:hover {
+  cursor: pointer;
+}
+
+#map {
+  height: 70vh;
+  width: 100%;
+  margin: 0 auto;
+}
+
+@media only screen and (max-width: 768px) {
+  #login_main_container {
+    display: flex;
+    justify-content: center;
+    width: 70%;
+    height: 40vh;
+  }
+
+  .login_naslov {
+    padding-top: 20vh;
+    display: flex;
+    justify-content: center;
+    text-transform: uppercase;
+  }
+
+  #header {
+    display: none;
+  }
+
+  #language_button {
+    display: none;
+  }
+
+  #aa_button {
+    display: none;
+  }
+
+  #home_reg_log_container {
+    position: relative;
+  }
 }
 
 #doctor_medrep_msg_button_submit{
