@@ -48,12 +48,14 @@ class HomePage extends React.Component {
                         title={el.notificationTitle}
                         for={el.child.nameChild + " " + el.child.lastNameChild}
                         content={el.notificationInformation}
+                        onTrigger={() => {}}
                     />)
                 } else {
                     return (<Notification key={el.notificationId}
                         title={el.notificationTitle}
                         for={this.state.parentData.nameParent + " " + this.state.parentData.lastNameParent}
                         content={el.notificationInformation}
+                        onTrigger={() => {}}
                     />)
                 }
             });
@@ -73,14 +75,14 @@ class HomePage extends React.Component {
         lastName={parent.lastNameParent}
         name={parent.nameParent}
         type={"RODITELJ"}/>}>
+            <div id="patients">
+                {this.state.patients}
+            </div>
             <div id="notification_container">
                 <div id="notifications_title">OBAVIJESTI</div>
                 <div id="notifications">
                     {this.state.notifications}
                 </div>
-            </div>
-            <div id="patients">
-                {this.state.patients}
             </div>
         </Template>
     }

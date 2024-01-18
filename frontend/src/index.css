@@ -471,6 +471,16 @@ input::-webkit-inner-spin-button {
   justify-content: center;
 }
 
+#patient_profile_right {
+  display: flex;
+  width: 30vh;
+  height: 30vh;
+  margin: 2vh 2vh 0 2vh;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 #patients {
   display: flex;
   flex-wrap: wrap;
@@ -486,7 +496,7 @@ input::-webkit-inner-spin-button {
   justify-content: center;
   float: right;
   width: 15%;
-  margin: 2vh 5%;
+  margin: 10vh 5% 0 5%;
 }
 
 .patient_type {
@@ -534,6 +544,7 @@ input::-webkit-inner-spin-button {
   padding: 2vh;
   background-color: whitesmoke;
   border-radius: 1em;
+  overflow-x: hidden;
 }
 
 #notification_container_parent {
@@ -621,6 +632,8 @@ input::-webkit-inner-spin-button {
 
 .nav_button {
   margin: 0 1.5vw;
+  color: white;
+  text-decoration: none;
 }
 
 .nav_button:hover {
@@ -1174,6 +1187,7 @@ input[type="file"] {
 }
 
 #map {
+  float: right;
   height: 70vh;
   width: 100%;
   margin: 0 auto;
@@ -1302,12 +1316,6 @@ input[type="file"] {
   align-items: center;
 }
 
-/*PEDIJATAR*/
-/*PEDIJATAR*/
-/*PEDIJATAR*/
-/*PEDIJATAR*/
-/*PEDIJATAR*/
-
 #ped_button_color{
   background-color: rgb(133, 31, 156);
 }
@@ -1392,6 +1400,11 @@ input[type="file"] {
   margin: 0 auto 2em auto;
   padding: 2.5%;
   width: 60%;
+}
+
+#mobile_menu {
+  width: 0;
+  height: 0;
 }
 
 @media only screen and (max-width: 768px) {
@@ -1774,3 +1787,4 @@ input[type="file"] {
   }
 
 }
+  

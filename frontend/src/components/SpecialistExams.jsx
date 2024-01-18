@@ -33,7 +33,6 @@ class SpecialistExams extends React.Component {
 
     render() {
         return <div id="parent_notifications">
-            <Map />
             <div id="notification_container_parent">
                 <div id="notifications_title">Specijalistički pregledi</div>
                 <div id="notifications">
