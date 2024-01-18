@@ -11,6 +11,7 @@ import SpecialistExams from "../components/SpecialistExams";
 import LoadFindings from "../components/LoadFindings";
 import SickNotes from "../components/SickNotes";
 import OpenedNotification from "../components/OpenedNotification";
+import Map from "../components/Map";
 
 import "../index.css";
 
@@ -78,12 +79,11 @@ class PatientPage extends React.Component {
         axios.get("/api/odabirprofila").then(res => {
             res.data.forEach(el => {
                 if(el.oib == this.state.patient_oib) {
-                    this.setState({patientData: el})/* 
-                    this.setState({element: <OpenedNotification />}); */
+                    this.setState({patientData: el})
                     this.setState({element: <PatientNotifications 
-                        link={el.link} 
-                        onTrigger={this.handleCallback}
-                        />});
+                    link={el.link} 
+                    onTrigger={this.handleCallback}
+                    />});
                 }
             })
         })

@@ -1,5 +1,7 @@
 import React from "react";
 import axios from "axios";
+
+import Map from "./Map";
 import SpecialistExam from "./SpecialistExam";
 
 class SpecialistExams extends React.Component {
@@ -31,6 +33,7 @@ class SpecialistExams extends React.Component {
 
     render() {
         return <div id="parent_notifications">
+            <Map />
             <div id="notification_container_parent">
                 <div id="notifications_title">Specijalistički pregledi</div>
                 <div id="notifications">
