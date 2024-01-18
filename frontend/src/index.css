@@ -1547,13 +1547,22 @@ input[type="file"] {
     position: absolute;
     margin-top: 5vh;
     width: 100vw;
-    height: 100%;
+    height: 95vh;
+    visibility: visible;
     display: flex;
     flex-flow: column;
   }
 
   #navbar > div {
     margin: 0 ;
+  }
+
+  .visible {
+    visibility: visible;
+  }
+
+  .collapse {
+    visibility: collapse;
   }
 
   .nav_button {

@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import "../../../index.css";
 
 const NavbarButtons = (props) => {
+    const [collapsed, setCollapsed] = useState(false);
+    const [style, setStyle] = useState("collapse");
     const [third, setThird] = useState("Potvrđena bolovanja");
     const [buttons, setButtons] = useState(
         <div id="nav_button_container">
@@ -14,6 +16,18 @@ const NavbarButtons = (props) => {
             <div className="nav_button" onClick={() => props.isSelected("4")}>Učitavanje nalaza</div>
         </div>
     )
+
+    const changeStyle = () => {
+        if(collapsed == true) {
+            console.log(style)
+            setStyle("visible");
+            setCollapsed(false);
+        } else {
+            console.log(style)
+            setStyle("collapse");
+            setCollapsed(true);
+        }
+    }
 
     useEffect(() => {
         if(props.role == "Child") {
@@ -31,8 +45,8 @@ const NavbarButtons = (props) => {
         }
     }, [props])
 
-    return <div id="nav_button_container">
-        <div id="mobile_menu" ></div>
+    return <div id="nav_buttons">
+        <div id="mobile_menu" onClick={changeStyle}></div>
         {buttons}
     </div>
 }
