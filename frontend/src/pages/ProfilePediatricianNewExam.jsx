@@ -14,13 +14,13 @@ class ProfilePediatricianNewExam extends React.Component {
                 <div className={"bigboy_left"}>
                     <div className={"doctor_newexam_flexbox"}>
                         <div id={"doctor_newexam_oibbox"}>
-                            <div className={"lom_podnaslovi doctor_newexam_titles1"}>OIB pacijenta</div>
+                            <div id={"guzica_mala"} className={"lom_podnaslovi doctor_newexam_titles1"}>OIB pacijenta</div>
                             <div id="doctor_newexam_input">
                                 <Input name="doctor_newexam_oib" placeholder={"OIB AUTOMATSKI"} type="text"/>
                             </div>
                         </div>
                         <div id={"doctor_newexam_datebox"}>
-                            <div className={"lom_podnaslovi doctor_newexam_titles1"}>Datum pregleda</div>
+                            <div id={"guza"} className={"lom_podnaslovi doctor_newexam_titles1"}>Datum pregleda</div>
                             <div id="doctor_newexam_input">
                                 <Input name="doctor_newexam_date" placeholder={"Broj dana"} type="date"/>
                             </div>
@@ -28,7 +28,7 @@ class ProfilePediatricianNewExam extends React.Component {
                     </div>
                     <div className={"lom_podnaslovi"}>Opis dijagnoze</div>
                     <div id="doctor_newexam_diagnosis_input">
-                        <textarea name="doctor_newexam_diagnosis" placeholder={"Opis dijagnoze"} type="text"/>
+                        <textarea id={"guza_luza"} name="doctor_newexam_diagnosis" placeholder={"Opis dijagnoze"} type="text"/>
                     </div>
 
                     <div className={"doctor_newexam_flexbox"}>

@@ -1435,112 +1435,163 @@ input[type="file"] {
   }
 
   #home_reg_log_container {
-    margin-top: 5vh;
-    padding-bottom: 10vh;
+    position: relative;
   }
 
-  #home_main_container {
-    margin-top: 5vh;
+  .naslovbox_desno {
     display: flex;
-    flex-flow: column;
-  }
-
-  #notification_container {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-  }
-  
-  #notifications {
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    height: 70vh;
-  }
-
-  #patients {
-    width: 100%;
-    margin: 0;
-    flex-wrap: wrap;
-    order: 2;
-  }
-
-  .patient_profile {
-    margin: 2.5%;
-    width: 45%;
-  }
-
-  .patient_info {
-    display: flex;
-    align-items: center;
     justify-content: center;
-    margin: 10% 0 15% 0;
-  }
-
-  #notification_container_parent {
     width: 100%;
-    margin: 0;
-    padding: 0;
-    height: 50vh;
+    text-align: right;
   }
 
-  #patient_parent {
-    float: left;
+  .doctor_patient_profile_title {
+    margin-right: 0%;
+    margin-bottom: 10px;
+    margin-top: 20px;
+  }
+
+  .doctor_patient_profile {
+    width: 100%;
+    margin-top: 20px;
+    font-size: 12px;
+  }
+
+  .doctor_patient_profile {
+    width: 100%;
+    height: 100%;
+    margin-top: 20px;
+    font-size: 12px;
+  }
+
+  #register_main_container {
+    background-color: white;
+    border-radius: 30px;
+    margin: 0 auto 4em auto;
+    padding: 2.5%;
     width: 90%;
-    margin: 0;
   }
 
-  #patient_profile_right {
-    margin: 0;
-    height: 10vh;
-  }
-
-  #load_file_button {
-    position: static;
-    float: left;
-    width: 25%;
-    margin: 5% 37.5% 0 37.5%;
-  }
-
-  #popratna_naslov {
-    float: left;
-  }
-
-  #popratna_poruka {
-    width: 80%;
+  .bigboy_left_smallboi_right {
     display: flex;
-    margin: 0 auto;
+    flex-direction: column;
+    width: 100%;
+    height: 530px;
+    margin-top: 3%;
   }
 
-  .notif_from {
-    visibility: hidden;
-    width: 0;
+  .smallboi_right {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-left: 0%;
+    align-self: normal;
+    margin-top: 5%;
   }
 
-  .date_of_exam {
-    visibility: hidden;
+  .doctor_newexam_flexbox {
+    display: flex;
+    flex-direction: row;
   }
 
-  #notifications_title {
+  .bigboy_left {
+    background-color: white;
+    width: 100%;
+    border-top-right-radius: 40px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  #doctor_newexam_naslovbox {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    text-align: right;
+  }
+
+  #doctor_newexam_naslov {
+    margin-right: 0%;
+    padding-top: 15px;
+  }
+
+  #doctor_newexam_button_giveupbox {
+    align-self: center;
+    margin-left: 0%;
+  }
+
+  .button_boxes_together {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 5%;
+  }
+
+  #doctor_newexam_button_giveup {
+    background-color: rgb(77, 55, 78);
+    color: white;
+    border: none;
+    height: 30px;
+    width: 110px;
+    margin-top: 0px;
+    margin-left: 0px;
+    border-radius: 13px;
+    font-size: 12px;
+    font-family: "Ubuntu Light";
+    font-weight: bold;
+  }
+
+  #doctor_newexam_button_submit {
+    background-color: rgb(70, 31, 156);
+    color: white;
+    border: none;
+    height: 30px;
+    width: 110px;
+    margin-top: 0px;
+    margin-left: 0px;
+    border-radius: 13px;
+    font-size: 12px;
+    font-family: "Ubuntu Light";
+    font-weight: bold;
+  }
+
+  #doctor_newexam_currentdiagnosis {
+    width: 20%;
+  }
+
+  .doctor_newexam_titles1 {
+    margin-left: 8%;
+  }
+
+  #patient_name_textbox {
+    margin-bottom: 10px;
     text-align: center;
   }
 
-  .notif_content {
-    max-width: 100%;
+  #patient_oib_textbox {
+    text-align: center;
   }
 
-  .exam_content {
-    max-width: 100%;
+  #doctor_newexam_input {
+    margin-left: 30%;
   }
 
-  #navbar {
-    height: 5vh;
+  #doctor_newexam_diagnosis_input textarea {
+    background-color: rgb(246, 245, 249);
+    width: 88%;
+    height: 200px;
+    margin-top: 10px;
+    margin-left: 5%;
+    margin-right: 5%;
+    border-radius: 18px;
+    border: none;
+    padding: 1%;
+    font-size: 13px;
   }
 
-  #mobile_menu {
-    height: 5vh;
-    width: 50px;
-    background-color: wheat;
+  .naslov_desno {
+    margin-right: 0%;
+    padding-top: 15px;
   }
   
   #nav_button_container {
@@ -1549,12 +1600,67 @@ input[type="file"] {
     width: 100vw;
     height: 95vh;
     visibility: visible;
+
+
+  #doctor_specexam_button_submitbox {
+    margin-top: 1rem;
     display: flex;
-    flex-flow: column;
+    justify-content: center;
+    margin-bottom: 0.5rem;
   }
 
-  #navbar > div {
-    margin: 0 ;
+  #doctor_specexam_button_submit {
+    align-self: flex-end;
+    background-color: rgb(70, 31, 156);
+    color: white;
+    border: none;
+    height: 30px;
+    width: 110px;
+    margin-top: 15px;
+    margin-right: 0px;
+    border-radius: 13px;
+    font-size: 12px;
+    font-family: "Ubuntu Light";
+    font-weight: bold;
+  }
+
+  .doctor_specexam_input textarea {
+    background-color: rgb(246, 245, 249);
+    width: 86%;
+    height: 50px;
+    margin-top: 20px;
+    margin-left: 5%;
+    border-radius: 24px;
+    border: none;
+    padding: 10px;
+    font-size: 13px;
+  }
+
+  .flexbox_column {
+    display: flex;
+    flex-direction: column;
+    height: 65%;
+  }
+
+  .flexbox_div_1 {
+    width: 100%;
+    height: 100%;
+    margin-left: 2%;
+  }
+
+  #doctor_medrep_main {
+    display: flex;
+    flex-direction: column;
+    height: 75%;
+    margin-top: 40px;
+  }
+
+  .flexbox_div_2 {
+    display: flex;
+    flex-direction: column;
+    width: 86%;
+    height: 320px;
+    margin-left: 3%;
   }
 
   .visible {
@@ -1569,9 +1675,136 @@ input[type="file"] {
     margin: 0;
     background: linear-gradient(to right, rgb(156, 31, 117), rgb(133, 31, 156, 0.9), rgb(70, 31, 156));
     height: 5vh;
+  }
+  #doctor_medrep_button_submitbox {
+    margin-top: 18%;
     display: flex;
-    align-items: center;
     justify-content: center;
+  }
+
+  #doctor_medreport_message {
+    height: 8.5rem;
+    width: 95%;
+    margin-left: 0.9rem;
+  }
+
+  #doctor_medrep_button_submit {
+    align-self: center;
+    background-color: rgb(70, 31, 156);
+    color: white;
+    border: none;
+    height: 30px;
+    width: 180px;
+    margin-right: 0px;
+    border-radius: 13px;
+    font-size: 12px;
+    font-family: "Ubuntu Light";
+    font-weight: bold;
+  }
+
+  .lom_podnaslovi {
+    font-size: 20px;
+    color: rgb(59, 59, 56);
+    margin-left: 5%;
+    margin-top: 4%;
+  }
+
+  #doctor_medrep_msg_title_input textarea {
+    height: 20px;
+    border-radius: 12px;
+    align-items: center;
+    margin-top: 0.5rem;
+  }
+
+  #doctor_medrep_msg_text_input textarea {
+    height: 250px;
+    margin-top: 0.5rem;
+  }
+
+  #doctor_medrep_msg_button_submit {
+    align-self: flex-end;
+    background-color: rgb(70, 31, 156);
+    color: white;
+    border: none;
+    height: 30px;
+    width: 110px;
+    margin-right: 0px;
+    border-radius: 13px;
+    font-size: 12px;
+    font-family: "Ubuntu Light";
+    font-weight: bold;
+  }
+
+  #doctor_newexam_input {
+    margin-left: 1rem;
+  }
+
+  .input_container {
+    height: -moz-fit-content;
+    height: fit-content;
+    margin: 2% 2% 2% 0%;
+    padding: 0;
+    width: 155px;
+  }
+
+  #guza {
+    margin-left: 1rem;
+  }
+
+  #doctor_newexam_input {
+    margin-left: 1rem;
+  }
+
+  #doctor_newexam_datebox {
+    margin-left: 1rem;
+  }
+
+  #guzica_mala {
+    margin-left: 1rem;
+  }
+
+  #ped_specexam_button_submit {
+    align-self: center;
+    background-color: rgb(133, 31, 156);
+    color: white;
+    border: none;
+    height: 30px;
+    width: 110px;
+    margin-top: 1%;
+    margin-right: 0px;
+    border-radius: 13px;
+    font-size: 12px;
+    font-family: "Ubuntu Light";
+    font-weight: bold;
+  }
+
+  #ped_medrep_button_submit {
+    align-self: center;
+    background-color: rgb(133, 31, 156);
+    color: white;
+    border: none;
+    height: 30px;
+    width: 180px;
+    margin-top: 0.5rem;
+    margin-right: 0px;
+    border-radius: 13px;
+    font-size: 12px;
+    font-family: "Ubuntu Light";
+    font-weight: bold;
+  }
+
+  #ped_medrep_msg_button_submit {
+    align-self: flex-end;
+    background-color: rgb(133, 31, 156);
+    color: white;
+    border: none;
+    height: 30px;
+    width: 110px;
+    margin-right: 0px;
+    border-radius: 13px;
+    font-size: 12px;
+    font-family: "Ubuntu Light";
+    font-weight: bold;
   }
 
 }
