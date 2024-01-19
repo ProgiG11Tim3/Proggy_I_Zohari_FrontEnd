@@ -870,6 +870,18 @@ input[type="file"] {
   margin-top: 20px;
 }
 
+.select_location {
+  border: solid;
+  border-radius: 10px;
+  border-color: rgb(156, 31, 117);
+  width: 90%;
+  font-size: 20px;
+  color:rgb(59, 59, 56);
+  margin-left: 5%;
+  margin-top: 20px;
+}
+
+
 #doctor_newexam_input{
   margin-left: 60px;
 }
@@ -2181,6 +2193,11 @@ input[type="file"] {
     font-size: 12px;
     font-family: "Ubuntu Light";
     font-weight: bold;
+  }
+
+  .select_location {
+    width: 90%;
+    text-align: center;
   }
 
 } 
