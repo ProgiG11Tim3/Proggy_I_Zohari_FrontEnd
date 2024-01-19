@@ -1,19 +1,17 @@
 import React from "react";
 import Template from "../components/Template";
 import "../index.css";
-import Input from "../components/components/Input";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import Profile from "../components/components/components/Profile";
 
 class ProfilePediatricianMedicalReportOpened extends React.Component {
-
     constructor(props) {
         super(props);
         this.element = null;
         this.state = {
             patientData: {},
-            medrepData: {}
+            medrepData: {},
         };
     }
 
@@ -22,7 +20,6 @@ class ProfilePediatricianMedicalReportOpened extends React.Component {
 
 
         axios.get(`/api/pediatrician/getPatient/${OIB}`).then(res => {
-            console.log(OIB);
             this.setState({ patientData: res.data });
         })
             .catch(error => {
@@ -33,41 +30,25 @@ class ProfilePediatricianMedicalReportOpened extends React.Component {
         const reportID = parseInt(reportID1, 10);
 
         axios.get(`/api/getMedicalReport/${reportID}`).then(res => {
-                console.log(reportID);
+                console.log(res.data.medicalRecord.recordId);
                 this.setState({ medrepData: res.data });
             }
         )
             .catch(error => {
                 console.error("Error fetching patient data:", error);
             });
+   
+    }
 
-        let button = document.querySelector('#doctor_medreport_pdf_font'); // replace 'your-button-id' with the actual id of your button
-
-        button.addEventListener('click', function() {
-            let reportId = 1; // replace with the actual reportId you want to use
-            const rID = this.state.medrepData.reportId;
-
-            axios({
-                url: `/api/getFileByReportId/${rID}`,
-                method: 'GET',
-                responseType: 'blob', // important
-            })
-                .then((response) => {
-                    const url = window.URL.createObjectURL(new Blob([response.data]));
-                    const link = document.createElement('a');
-                    link.href = url;
-                    link.setAttribute('download', 'file.pdf'); // or any other extension
-                    document.body.appendChild(link);
-                    link.click();
-                })
-                .catch((error) => {
-                    console.error('Error:', error);
-                });
-        });
+    download(rID) {
+        axios.get(`/api/getFileByReportId/${rID}`).then(e => {
+            window.location.assign(`http://localhost:8080/api/getFileByReportId/${rID}`);
+        }).catch(() => {});
     }
 
     render(){
         const medRep = this.state.medrepData;
+        console.log(medRep);
         const patient = this.state.patientData;
         return <Template profil={
             <Profile />}>
@@ -81,8 +62,10 @@ class ProfilePediatricianMedicalReportOpened extends React.Component {
                             <div className={"flexbox_div_1"}>
                                 <div id={"doctor_medreport_title1"} className={"lom_podnaslovi"}>Preuzimanje nalaza</div>
                                 <div className={"flexbox"}>
-                                    <div id="doctor_medreport_pdf" className={"textbox_notfull"}>
-                                        <button id={"doctor_medreport_pdf_font"}>Preuzmi PDF</button>
+                                    <div id="doctor_medreport_pdf" className={"textbox_notfull"} onClick={() => {
+                                            this.download(medRep.reportId);
+                                        }}>
+                                        Preuzmi PDF
                                     </div>
                                     <div id={"doctor_medreport_pdf_name"}>ime_dokumenta.pdf</div>
                                 </div>

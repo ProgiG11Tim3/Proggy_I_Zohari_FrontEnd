@@ -42,6 +42,13 @@ class ProfileDoctorMedicalReportOpened extends React.Component {
                 console.error("Error fetching patient data:", error);
             });
     }
+
+    download(rID) {
+        axios.get(`/api/getFileByReportId/${rID}`).then(e => {
+            window.location.assign(`http://localhost:8080/api/getFileByReportId/${rID}`);
+        }).catch(() => {});
+    }
+
     render(){
         const medRep = this.state.medrepData;
         const patient = this.state.patientData;
@@ -59,7 +66,9 @@ class ProfileDoctorMedicalReportOpened extends React.Component {
                                 <div id={"doctor_medreport_title1"} className={"lom_podnaslovi"}>Preuzimanje nalaza</div>
                                 <div className={"flexbox"}>
                                     <div id="doctor_medreport_pdf" className={"textbox_notfull"}>
-                                        <div id={"doctor_medreport_pdf_font"}>Preuzmi PDF</div>
+                                        <div id={"doctor_medreport_pdf_font"} onClick={() => {
+                                            this.download(medRep.reportId);
+                                        }}>Preuzmi PDF</div>
                                     </div>
                                     <div id={"doctor_medreport_pdf_name"}>ime_dokumenta.pdf</div>
                                 </div>

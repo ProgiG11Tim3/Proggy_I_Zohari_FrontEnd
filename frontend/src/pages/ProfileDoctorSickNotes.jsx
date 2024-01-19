@@ -38,8 +38,8 @@ class ProfileDoctorSickNotes extends React.Component {
                 <Profile />} buttons={<NavbarButtons role="LOM"/>}>
                 <div id={"patient_list_naslov"} className={"lom_naslovi"}> Preporuke za bolovanje </div>
                 <div id={"patient_list_bigboy"}>
-                    {sickLeaveData && sickLeaveData.length > 0 ? (
-                        sickLeaveData.map((sickLeave) => (
+                    {sickLeave && sickLeave.length > 0 ? (
+                        sickLeave.map((sickLeave) => (
                             <div key={sickLeave.recommendationId} className="patient_list_instance">
                                 <div className="patient_list_infobox">
                                     <div className="patient_list_ime_prezime">{`${sickLeave.parent.lastNameParent} ${sickLeave.parent.nameParent}`}</div>
