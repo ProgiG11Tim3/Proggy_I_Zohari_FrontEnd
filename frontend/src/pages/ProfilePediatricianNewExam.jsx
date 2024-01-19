@@ -5,6 +5,7 @@ import Input from "../components/components/Input";
 import axios from "axios";
 import {Navigate} from "react-router-dom";
 import NavbarButtons from "../components/components/components/NavbarButtons";
+import Profile from "../components/components/components/Profile";
 
 class ProfilePediatricianNewExam extends React.Component {
 
@@ -69,7 +70,7 @@ class ProfilePediatricianNewExam extends React.Component {
     render(){
         const patient = this.state.patientData;
         return <Template profil={
-            <Profil />} buttons={<NavbarButtons role="Pedijatar" oib={window.location.href.split('/')[5]}/>}>
+            <Profile />} buttons={<NavbarButtons role="Pedijatar" oib={window.location.href.split('/')[5]}/>}>
             <div id={"doctor_newexam_naslovbox"} >
                 <div id={"doctor_newexam_naslov"} className={"lom_naslovi"}> Novi pregled </div>
             </div>

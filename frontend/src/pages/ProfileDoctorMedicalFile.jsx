@@ -4,6 +4,7 @@ import "../index.css";
 import Input from "../components/components/Input";
 import axios from "axios";
 import NavbarButtons from "../components/components/components/NavbarButtons";
+import Profile from "../components/components/components/Profile";
 
 class ProfileDoctorMedicalFile extends React.Component {
 
@@ -39,7 +40,7 @@ class ProfileDoctorMedicalFile extends React.Component {
         const medRed = this.state.medrecordData;
         const patient = this.state.patientData;
         return <Template profil={
-            <Profil />} buttons={<NavbarButtons role="Doktor" oib={patient.oib}/>}>
+            <Profile />} buttons={<NavbarButtons role="Doktor" oib={patient.oib}/>}>
             <div className={"naslovbox_desno"}>
                 <div className={"lom_naslovi naslov_desno"}> Liječnički karton </div>
             </div>

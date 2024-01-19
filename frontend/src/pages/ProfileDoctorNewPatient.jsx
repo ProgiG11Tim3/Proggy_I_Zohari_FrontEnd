@@ -5,6 +5,7 @@ import Input from "../components/components/Input";
 import axios from "axios";
 import {Navigate} from "react-router-dom";
 import NavbarButtons from "../components/components/components/NavbarButtons";
+import Profile from "../components/components/components/Profile";
 
 class ProfileDoctorNewPatient extends React.Component {
     constructor(props) {
@@ -35,7 +36,7 @@ class ProfileDoctorNewPatient extends React.Component {
     }
     render(){
         return <Template profil={
-            <Profil />} buttons={<NavbarButtons role="LOM"/>}>
+            <Profile />} buttons={<NavbarButtons role="LOM"/>}>
             <div id="login_bigboy_main">
                 <div id={"new_patient_title"}>Novi pacijent</div>
                 <div id={"new_patient_main_container"}>

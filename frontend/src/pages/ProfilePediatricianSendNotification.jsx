@@ -5,6 +5,7 @@ import Input from "../components/components/Input";
 import axios from "axios";
 import {Navigate} from "react-router-dom";
 import NavbarButtons from "../components/components/components/NavbarButtons";
+import Profile from "../components/components/components/Profile";
 
 class ProfilePediatricianSendNotification extends React.Component {
 
@@ -62,7 +63,7 @@ class ProfilePediatricianSendNotification extends React.Component {
     render(){
         const patient = this.state.patientData;
         return <Template profil={
-            <Profil />} buttons={<NavbarButtons role="Pedijatar" oib={window.location.href.split('/')[5]}/>}>
+            <Profile />} buttons={<NavbarButtons role="Pedijatar" oib={window.location.href.split('/')[5]}/>}>
             <div className={"naslovbox_desno"}>
                 <div className={"lom_naslovi naslov_desno"}> Obavijest roditelju </div>
             </div>
