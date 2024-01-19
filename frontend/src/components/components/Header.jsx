@@ -1,7 +1,7 @@
 import React from "react";
 import "../../index.css";
-import { Navigate } from 'react-router-dom';
 import logo from "../../images/logo.png";
+import { Link } from "react-router-dom";
 
 class Header extends React.Component {
     constructor(props) {
@@ -12,10 +12,9 @@ class Header extends React.Component {
         return <div>
             <div id="header">
                 <div id="naslov">
-                    <img src={logo} alt="logo" id="icon" onClick={() => {
-                        this.element = <Navigate to="/" replace={true}/>
-                        this.forceUpdate()
-                    }}/>
+                    <Link to="/">
+                        <img src={logo} alt="logo" id="icon"/>
+                    </Link>
                     <div id="naslov_text">
                         <div>Ozdravi</div>
                         <div id={"podnaslov_text"}>Olakšava život kad imate bolesnu djecu</div>
