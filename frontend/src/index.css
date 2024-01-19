@@ -141,6 +141,16 @@ input::-webkit-inner-spin-button {
   font-weight: bold;
 }
 
+#logout_button {
+  background-color: rgb(156, 31, 117);
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  width: 80%;
+  margin: 0 auto;
+  border-radius: 5px;
+}
+
 #icon {
   height: 4em;
   margin-bottom: 3px;

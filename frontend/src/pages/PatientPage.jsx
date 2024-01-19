@@ -105,8 +105,7 @@ class PatientPage extends React.Component {
             return <div>LOADING...</div>
         }
 
-        return <Template profil={
-            <Profil />} 
+        return <Template profil={<Profil />} 
                 buttons={
                     <NavbarButtons role={patient.role} isSelected={e => {
                         this.setState({selected: e});

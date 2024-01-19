@@ -69,7 +69,7 @@ class ProfilePediatricianGenSickNote extends React.Component {
 
     render(){
       const patient = this.state.patientData;
-        return <Template buttons={<NavbarButtons role="Pedijatar" oib={window.location.href.split('/')[5]}/>}>
+        return <Template  buttons={<NavbarButtons role="Pedijatar" oib={window.location.href.split('/')[5]}/>}>
             <div className={"naslovbox_desno"}>
                 <div className={"lom_naslovi naslov_desno"}> Generiraj preporuku o bolovanju </div>
             </div>

@@ -1,6 +1,8 @@
 import React from "react";
 import axios from "axios";
 
+import { Link } from "react-router-dom";
+
 import "../../../index.css";
 
 class Profile extends React.Component {
@@ -19,11 +21,17 @@ class Profile extends React.Component {
         })
     }
 
+    logout() {
+        axios.post("/api/logout").then(res => {
+            console.log(res.data)
+        })
+    }
+
     render() {
         return <div id="profile">
             <div>Prijavljen/a: {this.state.name} {this.state.surname}</div>
             <div>Profil: {this.state.role}</div>
-            <button>ODJAVI SE</button>
+            <Link to="/" id="logout_button" onClick={this.logout}>ODJAVI SE</Link>
         </div>
     }
 }
