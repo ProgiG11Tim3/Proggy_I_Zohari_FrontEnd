@@ -12,27 +12,28 @@ class RegisterPage extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            nameParent: null,
-            lastNameParent: null,
+            name: null,
+            surname:null,
             oib: null,
-            dateOfBirthParent: null,
+            dateOfBirth: null,
             placeOfResidence: null,
             postalCode: null,
-            phoneNumberParent: null,
-            emailParent: null,
-            userNameParent: null,
-            passwordParent: null,
-            employerEmail: null
+            phoneNumber: null,
+            emailAddress: null,
+            username: null,
+            password: null,
+            employerEmailAddress: null
         }
-        this.submit = this.submit.bind(this)
-        this.checkInputs = this.checkInputs.bind(this)
-        this.element = null
+        this.submit = this.submit.bind(this);
+        this.checkInputs = this.checkInputs.bind(this);
+        this.element = null;
+        this.repPass = null;
     }
 
     submit() {
         if (!this.checkInputs()) {
             alert("Molimo da popunite formu u potpunosti.")
-        } else if (this.state.passwordParent != this.repPass) {
+        } else if (this.state.password != this.repPass) {
             alert("Lozinke se ne podudaraju, pokušajte ponovo.")
         } else if (this.state.oib.length != 11) {
             alert("OIB mora imat 11 znakova.")
@@ -48,6 +49,7 @@ class RegisterPage extends React.Component {
                 alert(e);
             })   
         }
+        console.log(this.state)
     }
 
     checkInputs() {
@@ -68,16 +70,16 @@ class RegisterPage extends React.Component {
                     <div id="register_main_container">
                         <InputsParagraf paragrafTitle="Osnovni podaci">
                             <Input tag="Ime" name="ime" placeholder="Ime" type="text" 
-                            handleChange={e => {this.setState({nameParent: e.target.value})}} />
+                            handleChange={e => {this.setState({name: e.target.value})}} />
 
                             <Input tag="Prezime" name="prezime" placeholder="Prezime" type="text"
-                            handleChange={e => {this.setState({lastNameParent: e.target.value})}}/>
+                            handleChange={e => {this.setState({surname: e.target.value})}}/>
 
                             <Input tag="OIB" name="oib" placeholder="OIB" type="number"
                             handleChange={e => {this.setState({oib: e.target.value})}}/>
 
                             <Input tag="Datum rođenja" name="datum_rod" placeholder="YYYY-MM-DD" type="text"
-                            handleChange={e => {this.setState({dateOfBirthParent: e.target.value})}}/>
+                            handleChange={e => {this.setState({dateOfBirth: e.target.value})}}/>
 
                             <Input tag="Mjesto prebivališta" name="mjesto_preb" placeholder="Mjesto prebivališta" type="text"
                             handleChange={e => {this.setState({placeOfResidence: e.target.value})}}/>
@@ -89,20 +91,20 @@ class RegisterPage extends React.Component {
                         <div className="line"></div>
                         <InputsParagraf paragrafTitle="Kontakt podaci">
                             <Input tag="Broj telefona" name="broj_tel" placeholder="+385" type="number"
-                            handleChange={e => {this.setState({phoneNumberParent: e.target.value})}}/>
+                            handleChange={e => {this.setState({phoneNumber: e.target.value})}}/>
                             
                             <Input tag="Adresa elektroničke pošte" name="email" placeholder="Adresa elektroničke pošte" type="email"
-                            handleChange={e => {this.setState({emailParent: e.target.value})}}/>
+                            handleChange={e => {this.setState({emailAddress: e.target.value})}}/>
                         </InputsParagraf>
 
                         <div className="line"></div>
 
                         <InputsParagraf paragrafTitle="Podaci za prijavu">
                             <Input tag="Korisničko ime" name="username" placeholder="Korisničko ime" type="text"
-                            handleChange={e => {this.setState({userNameParent: e.target.value})}}/>
+                            handleChange={e => {this.setState({username: e.target.value})}}/>
 
                             <Input tag="Lozinka" name="lozinka1" placeholder="Lozinka" type="password"
-                            handleChange={e => {this.setState({passwordParent: e.target.value})}}/>
+                            handleChange={e => {this.setState({password: e.target.value})}}/>
 
                             <Input tag="Ponovi lozinku" name="lozinka2" placeholder="Ponovljena lozinka" type="password"
                             handleChange={e => {this.repPass = e.target.value}}/>
@@ -112,7 +114,7 @@ class RegisterPage extends React.Component {
 
                         <InputsParagraf paragrafTitle="Poslodavac">
                             <Input tag="E-mail poslodavca" name="poslodavac_mail" placeholder="E-mail poslodavca" type="email" 
-                            handleChange={e => {this.setState({employerEmail: e.target.value})}}/>
+                            handleChange={e => {this.setState({employerEmailAddress: e.target.value})}}/>
                         </InputsParagraf>
                         <button id="register_button" onClick={this.submit}>Registriraj se</button>
                     </div>
