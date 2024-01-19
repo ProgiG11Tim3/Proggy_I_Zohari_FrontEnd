@@ -68,7 +68,8 @@ class ProfilePediatricianNewExam extends React.Component {
     }
     render(){
         const patient = this.state.patientData;
-        return <Template buttons={<NavbarButtons role="Pedijatar" oib={window.location.href.split('/')[5]}/>}>
+        return <Template profil={
+            <Profil />} buttons={<NavbarButtons role="Pedijatar" oib={window.location.href.split('/')[5]}/>}>
             <div id={"doctor_newexam_naslovbox"} >
                 <div id={"doctor_newexam_naslov"} className={"lom_naslovi"}> Novi pregled </div>
             </div>

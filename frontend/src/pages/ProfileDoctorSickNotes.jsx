@@ -38,7 +38,8 @@ class ProfileDoctorSickNotes extends React.Component {
     render(){
         const sickLeave = this.state.sickLeaveData;
         const patient = this.state.patientData;
-        return <Template buttons={<NavbarButtons role="LOM"/>}>
+        return <Template profil={
+            <Profil />} buttons={<NavbarButtons role="LOM"/>}>
             <div id={"patient_list_naslov"} className={"lom_naslovi"}> Preporuke za bolovanje </div>
             <div id={"patient_list_bigboy"}>
 

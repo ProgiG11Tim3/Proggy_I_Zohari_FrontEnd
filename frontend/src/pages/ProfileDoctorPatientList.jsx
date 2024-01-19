@@ -27,7 +27,8 @@ class ProfileDoctorPatientList extends React.Component {
 
         const patient = this.state.patients;
         return (
-            <Template buttons={<NavbarButtons role="LOM"/>}>
+            <Template profil={
+                <Profil />} buttons={<NavbarButtons role="LOM"/>}>
                 <div id={"patient_list_naslov"} className={"lom_naslovi"}>
                     Popis pacijenata
                 </div>

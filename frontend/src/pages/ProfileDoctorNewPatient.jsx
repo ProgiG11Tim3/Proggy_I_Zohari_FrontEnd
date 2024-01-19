@@ -34,7 +34,8 @@ class ProfileDoctorNewPatient extends React.Component {
         }
     }
     render(){
-        return <Template buttons={<NavbarButtons role="LOM"/>}>
+        return <Template profil={
+            <Profil />} buttons={<NavbarButtons role="LOM"/>}>
             <div id="login_bigboy_main">
                 <div id={"new_patient_title"}>Novi pacijent</div>
                 <div id={"new_patient_main_container"}>

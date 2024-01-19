@@ -38,7 +38,8 @@ class ProfileDoctorMedicalFile extends React.Component {
     render(){
         const medRed = this.state.medrecordData;
         const patient = this.state.patientData;
-        return <Template buttons={<NavbarButtons role="Doktor" oib={patient.oib}/>}>
+        return <Template profil={
+            <Profil />} buttons={<NavbarButtons role="Doktor" oib={patient.oib}/>}>
             <div className={"naslovbox_desno"}>
                 <div className={"lom_naslovi naslov_desno"}> Liječnički karton </div>
             </div>
