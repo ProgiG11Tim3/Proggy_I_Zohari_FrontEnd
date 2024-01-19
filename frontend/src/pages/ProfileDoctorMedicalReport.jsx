@@ -40,7 +40,8 @@ class ProfileDoctorMedicalReport extends React.Component {
         const medRep = this.state.medrepData;
         const patient = this.state.patientData;
 
-        return <Template buttons={<NavbarButtons role="Doktor" oib={patient.oib}/>}>
+        return <Template profil={
+            <Profil />} buttons={<NavbarButtons role="Doktor" oib={patient.oib}/>}>
             <div className={"naslovbox_desno"}>
                 <div className={"lom_naslovi naslov_desno"}> Nalazi privatnih ustanova </div>
             </div>

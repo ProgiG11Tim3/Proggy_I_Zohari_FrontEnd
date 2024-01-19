@@ -4,7 +4,8 @@ import "../index.css";
 import Input from "../components/components/Input";
 class ProfileDoctorSickNotesSelect extends React.Component {
     render(){
-        return <Template>
+        return <Template profil={
+            <Profil />}>
             <div id={"patient_list_naslov"} className={"lom_naslovi"}> Preporuka za bolovanje </div>
             <div id={"patient_list_bigboy"}>
                 <div id={"sickleave_infobox"} className={"flexbox"}>

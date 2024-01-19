@@ -26,7 +26,8 @@ class ProfilePediatricianPatientList extends React.Component {
     }
     render(){
         const patient = this.state.patients;
-        return <Template buttons={<NavbarButtons role="PED"/>}>
+        return <Template profil={
+            <Profil />} buttons={<NavbarButtons role="PED"/>}>
             <div id={"patient_list_naslov"} className={"lom_naslovi"}> Popis pacijenata </div>
             <div id="patient_list_bigboy">
                 {this.state.patients && Array.isArray(this.state.patients) ? (

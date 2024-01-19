@@ -69,7 +69,8 @@ class ProfilePediatricianNewPatient extends React.Component {
     render() {
         return <div>
             {this.element}
-            <Template buttons={<NavbarButtons role="PED"/>}>
+            <Template profil={
+            <Profil />} buttons={<NavbarButtons role="PED"/>}>
                 <div className="main">
                     <div className="main_naslov">Novi pacijent</div>
                     <div id="register_main_container">

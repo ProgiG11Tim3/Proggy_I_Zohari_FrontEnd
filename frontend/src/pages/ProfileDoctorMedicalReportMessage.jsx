@@ -58,7 +58,8 @@ class ProfileDoctorMedicalReportMessage extends React.Component {
         const patient = this.state.patientData;
         this.state.parentOib = patient.oib;
 
-        return <Template>
+        return <Template profil={
+            <Profil />}>
             <div className={"naslovbox_desno"}>
                 <div className={"lom_naslovi naslov_desno"}> Nalaz privatne ustanove - poruka </div>
             </div>

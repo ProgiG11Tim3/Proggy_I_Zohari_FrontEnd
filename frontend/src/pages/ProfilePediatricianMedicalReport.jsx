@@ -39,7 +39,8 @@ class ProfilePediatricianMedicalReport extends React.Component {
     render(){
         const medRep = this.state.medrepData;
         const patient = this.state.patientData;
-        return <Template buttons={<NavbarButtons role="Pedijatar" oib={window.location.href.split('/')[5]}/>}>
+        return <Template profil={
+            <Profil />} buttons={<NavbarButtons role="Pedijatar" oib={window.location.href.split('/')[5]}/>}>
             <div className={"naslovbox_desno"}>
                 <div className={"lom_naslovi naslov_desno"}> Nalazi privatnih ustanova </div>
             </div>

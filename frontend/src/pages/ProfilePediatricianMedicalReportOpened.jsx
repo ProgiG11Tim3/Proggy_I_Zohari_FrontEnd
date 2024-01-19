@@ -43,7 +43,8 @@ class ProfilePediatricianMedicalReportOpened extends React.Component {
     render(){
         const medRep = this.state.medrepData;
         const patient = this.state.patientData;
-        return <Template>
+        return <Template profil={
+            <Profil />}>
             <div className={"naslovbox_desno"}>
                 <div className={"lom_naslovi naslov_desno"}> Nalaz privatne ustanove </div>
             </div>
