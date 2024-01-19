@@ -52,6 +52,7 @@ class PatientPage extends React.Component {
                     this.setState({map: null});
                 break;
             case "1":
+                console.log(this.state.patientData)
                 elem = <MedicalHistory link={this.state.patientData.link}
                 onTrigger={this.handleCallback} />;
                 this.setState({map: null});

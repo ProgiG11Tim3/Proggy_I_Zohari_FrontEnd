@@ -7,11 +7,9 @@ const Map = () => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        axios.get("/api/parentprofile/getAllSelectedSpecialistExaminations").then(res => {
-            res.data.forEach(elem => {
-                elem.hospitalLocations.forEach(loc => {
-                    console.log(loc)
-                    let temp = markers;
+        axios.get("/api/getAllHospitalLocations").then(res => {
+            res.data.forEach(loc => {
+                let temp = markers;
                     temp.push(
                         <Marker position={[loc.x_coordinate, loc.y_coordinate]} key={loc.hospitalLocationId}>
                             <Popup>
@@ -20,7 +18,6 @@ const Map = () => {
                         </Marker>
                     )
                     setMarkers(temp);
-                })
             })
             setLoading(false);
         })
