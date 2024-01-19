@@ -5,6 +5,8 @@ import Input from "../components/components/Input";
 import axios from "axios";
 import {Navigate} from "react-router-dom";
 import NavbarButtons from "../components/components/components/NavbarButtons";
+import { Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 class ProfilePediatricianNewExam extends React.Component {
 
@@ -27,13 +29,12 @@ class ProfilePediatricianNewExam extends React.Component {
         axios.get(`/api/pediatrician/getPatient/${OIB}`).then(res => {
             console.log(res);
             this.setState({ patientData: res.data });
-
         })
             .catch(error => {
                 console.error("Error fetching patient data:", error);
             });
-        axios.get(`/api/pediatrician/getPatientRecord/${OIB}`).then(res => {
 
+        axios.get(`/api/pediatrician/getPatientRecord/${OIB}`).then(res => {
             this.setState({ medicalRecord: res.data });
 
         })
@@ -55,8 +56,7 @@ class ProfilePediatricianNewExam extends React.Component {
             })
                 .then(res => {
                     if (res.status == 200) {
-                        this.element = <Navigate to="/pediatrician/patientlist" replace={true}/>
-                        this.forceUpdate();
+                        alert("Uspješno!");
                     } else {
                         console.log("ne radi");
                     }
@@ -101,7 +101,9 @@ class ProfilePediatricianNewExam extends React.Component {
 
                     <div className={"button_boxes_together"}>
                         <div id={"doctor_newexam_button_giveupbox"}>
-                            <button id={"doctor_newexam_button_giveup"}>Odustani</button>
+                            <Link to={`/pediatrician/patientprofile/${patient.oib}`}>
+                                <button id={"doctor_newexam_button_giveup"}>Odustani</button>
+                            </Link>
                         </div>
                         <div id={"doctor_newexam_button_submitbox"}>
                             <button id={"ped_newexam_button_submit"} onClick={this.submit}>Učitaj</button>
@@ -123,4 +125,4 @@ class ProfilePediatricianNewExam extends React.Component {
     }
 }
 
-export default ProfilePediatricianNewExam
+export default ProfilePediatricianNewExam;

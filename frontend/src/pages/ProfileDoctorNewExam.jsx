@@ -4,6 +4,7 @@ import "../index.css";
 import Input from "../components/components/Input";
 import axios from "axios";
 import {Navigate} from "react-router-dom";
+import { Link } from "react-router-dom";
 import NavbarButtons from "../components/components/components/NavbarButtons";
 
 class ProfileDoctorNewExam extends React.Component {
@@ -15,7 +16,8 @@ class ProfileDoctorNewExam extends React.Component {
             patientData: {},
             diagnosis: null,
             dateOfExamination: null,
-            oib: null
+            medicalCertificate: null,
+            medicalRecord: []
         };
         this.submit = this.submit.bind(this)
     }
@@ -31,6 +33,15 @@ class ProfileDoctorNewExam extends React.Component {
                 console.error("Error fetching patient data:", error);
             });
 
+        axios.get(`/api/doctor/getPatientRecord/${OIB}`).then(res => {
+
+            this.setState({ medicalRecord: res.data });
+
+        })
+            .catch(error => {
+                console.error("Error fetching patient data:", error);
+            });
+
     }
 
     submit() {
@@ -40,12 +51,13 @@ class ProfileDoctorNewExam extends React.Component {
             axios.post(`/api/addExamination`, {
                 diagnosis: this.state.diagnosis,
                 dateOfExamination: this.state.dateOfExamination,
-                oib: this.state.patientData.oib
+                medicalCertificate: this.state.medicalCertificate,
+                medicalRecord: this.state.medicalRecord
             })
                 .then(res => {
                     if (res.status == 200) {
-                        this.element = <Navigate to="/doctor/patientlist" replace={true}/>
-                        this.forceUpdate();
+                        console.log("radi");
+                        alert("Uspješno!");
                     } else {
                         console.log("ne radi");
                     }
@@ -84,13 +96,17 @@ class ProfileDoctorNewExam extends React.Component {
                     <div className={"doctor_newexam_flexbox"}>
                         <div className={"lom_podnaslovi doctor_newexam_titles1"}>Dodati dijagnozu u medicinski karton: </div>
                         <div id="doctor_newexam_currentdiagnosis">
-                            <Input name="doctor_newexam_currentdiagnosis" type="checkbox"/>
+                            <Input name="doctor_newexam_currentdiagnosis" type="checkbox"
+                                   handleChange={e => {this.setState({medicalCertificate: e.target.checked})}}/>
                         </div>
                     </div>
 
                     <div className={"button_boxes_together"}>
                         <div id={"doctor_newexam_button_giveupbox"}>
-                            <button id={"doctor_newexam_button_giveup"}>Odustani</button>
+                            <Link to={`/doctor/patientprofile/${patient.oib}`}>
+                                <button id={"doctor_newexam_button_giveup"}>Odustani</button>
+                            </Link>
+
                         </div>
                         <div id={"doctor_newexam_button_submitbox"}>
                             <button id={"doctor_newexam_button_submit"} onClick={this.submit}>Učitaj</button>

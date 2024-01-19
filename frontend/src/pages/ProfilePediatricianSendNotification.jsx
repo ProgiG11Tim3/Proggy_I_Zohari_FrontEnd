@@ -47,9 +47,9 @@ class ProfilePediatricianSendNotification extends React.Component {
             })
                 .then(res => {
                     if (res.status == 200) {
-                        this.element = <Navigate to="/pediatrician/patientlist" replace={true}/>
-                        this.forceUpdate();
+                        alert("Uspješno!");
                         console.log("proslo je");
+                        console.log(res.data)
                     } else {
                     }
                 })

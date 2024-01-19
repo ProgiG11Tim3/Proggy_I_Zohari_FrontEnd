@@ -76,7 +76,7 @@ class ProfileDoctorMedicalReportOpened extends React.Component {
                     </div>
 
                     <div id={"doctor_medrep_button_submitbox"} className={"button_boxes_together button_down"}>
-                        <Link to={`/doctor/patientprofile/${patient.oib}/medicalreports/medicalreport/${medRep.reportId}/message}`}>
+                        <Link to={`/doctor/patientprofile/${patient.oib}/medicalreports/medicalreport/${medRep.reportId}/message`}>
                             <button id={"doctor_medrep_button_submit"}>Povratna informacija</button>
                         </Link>
 

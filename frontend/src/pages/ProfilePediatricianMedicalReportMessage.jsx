@@ -44,8 +44,7 @@ class ProfilePediatricianMedicalReportMessage extends React.Component {
             })
                 .then(res => {
                     if (res.status == 200) {
-                        this.element = <Navigate to="/pediatrician/patientlist" replace={true}/>
-                        this.forceUpdate();
+                        alert("Uspješno!");
                     } else {
                         console.log(res);
                     }

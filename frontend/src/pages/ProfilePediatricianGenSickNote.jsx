@@ -36,16 +36,16 @@ class ProfilePediatricianGenSickNote extends React.Component {
         if (this.state.noteData == null) {
             alert("Molimo da upišete tekst ispričnice.");
         } else {
-            console.log(this.state.patientData)
+            console.log(this.state.patientData);
+            const child = this.state.patientData;
             axios.post(`/api/addSickNote`, {
-                child: this.state.patientData,
+                child: child,
                 noteData: this.state.noteData
             })
                 .then(res => {
                     if (res.status == 200) {
-                        console.log("poruka za front");
-                        this.element = <Navigate to="/pediatrician/patientlist" replace={true}/>
-                        this.forceUpdate();
+                        console.log(this.state.patientData);
+                        alert("Uspješno!");
                         console.log(res);
                     } else {
                         console.log(res);

@@ -22,8 +22,7 @@ class ProfileDoctorNewPatient extends React.Component {
             axios.post(`/api/unospacijentabyoib${this.state.oib}`)
                 .then(res => {
                     if (res.status == 200) {
-                        this.element = <Navigate to="/doctor/patientlist" replace={true}/>
-                        this.forceUpdate();
+                        alert("Uspješno!");
                     } else {
                         console.log("Neispravan OIB.");
                     }

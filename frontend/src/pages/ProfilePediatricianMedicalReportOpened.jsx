@@ -33,13 +33,37 @@ class ProfilePediatricianMedicalReportOpened extends React.Component {
         axios.get(`/api/getMedicalReport/${reportID}`).then(res => {
                 console.log(reportID);
                 this.setState({ medrepData: res.data });
-
             }
         )
             .catch(error => {
                 console.error("Error fetching patient data:", error);
             });
+
+        let button = document.querySelector('#doctor_medreport_pdf_font'); // replace 'your-button-id' with the actual id of your button
+
+        button.addEventListener('click', function() {
+            let reportId = 1; // replace with the actual reportId you want to use
+            const rID = this.state.medrepData.reportId;
+
+            axios({
+                url: `/api/getFileByReportId/${rID}`,
+                method: 'GET',
+                responseType: 'blob', // important
+            })
+                .then((response) => {
+                    const url = window.URL.createObjectURL(new Blob([response.data]));
+                    const link = document.createElement('a');
+                    link.href = url;
+                    link.setAttribute('download', 'file.pdf'); // or any other extension
+                    document.body.appendChild(link);
+                    link.click();
+                })
+                .catch((error) => {
+                    console.error('Error:', error);
+                });
+        });
     }
+
     render(){
         const medRep = this.state.medrepData;
         const patient = this.state.patientData;
@@ -55,7 +79,7 @@ class ProfilePediatricianMedicalReportOpened extends React.Component {
                                 <div id={"doctor_medreport_title1"} className={"lom_podnaslovi"}>Preuzimanje nalaza</div>
                                 <div className={"flexbox"}>
                                     <div id="doctor_medreport_pdf" className={"textbox_notfull"}>
-                                        <div id={"doctor_medreport_pdf_font"}>Preuzmi PDF</div>
+                                        <button id={"doctor_medreport_pdf_font"}>Preuzmi PDF</button>
                                     </div>
                                     <div id={"doctor_medreport_pdf_name"}>ime_dokumenta.pdf</div>
                                 </div>

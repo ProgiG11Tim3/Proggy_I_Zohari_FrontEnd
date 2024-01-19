@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import Template from "../components/Template";
 import "../index.css";
 import Input from "../components/components/Input";
@@ -53,10 +53,10 @@ class ProfilePediatricianSpecialistExam extends React.Component {
             })
                 .then(res => {
                     if (res.status == 200) {
-                        this.element = <Navigate to="/pediatrician/patientlist" replace={true}/>
-                        this.forceUpdate();
+                        console.log(res.data);
+                        alert("Uspješno!");
                     } else {
-                        console.log(res);
+                        console.log(res.data);
                     }
                 })
                 .catch((e) => {
@@ -79,8 +79,7 @@ class ProfilePediatricianSpecialistExam extends React.Component {
                     </div>
                     <div className={"lom_podnaslovi"}>Popis mogućih lokacija pregleda</div>
                     <div id="doctor_specexam_location_input" className={"doctor_specexam_input"}>
-                        <textarea name="doctor_specexam_location" placeholder={"Popis mogućih lokacija pregleda"}
-                                  onChange={e => {this.setState({examLocations: e.target.value})}}/>
+
                     </div>
                     <div id={"doctor_specexam_button_submitbox"} className={"button_boxes_together"}>
                         <button id={"ped_specexam_button_submit"} onClick={this.submit}>Učitaj</button>

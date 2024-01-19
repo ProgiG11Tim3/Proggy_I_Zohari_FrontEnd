@@ -14,8 +14,6 @@ class ProfilePediatricianGenSickNote extends React.Component {
         this.state = {
             patientData: {},
             recData: null,
-            doctor: null,
-            doctorData: {},
             parent: null,
             employerEmail: null
         };
@@ -29,14 +27,6 @@ class ProfilePediatricianGenSickNote extends React.Component {
             console.log(res.data);
             this.setState({ patientData: res.data });
 
-            const IDdoc = this.state.patientData.parent.doctorId;
-            axios.get(`/api/getDoctor/${IDdoc}`).then(res => {
-                console.log(IDdoc);
-                this.setState({ doctorData: res.data });
-            })
-                .catch(error => {
-                    console.error("Error fetching patient data:", error);
-                });
         })
             .catch(error => {
                 console.error("Error fetching patient data:", error);
@@ -47,16 +37,16 @@ class ProfilePediatricianGenSickNote extends React.Component {
         if (this.state.recData == null) {
             alert("Molimo da upišete tekst ispričnice.");
         } else {
-            axios.post(`/api/addSickNote`, {
-                doctor: this.state.doctorData,
-                recData: this.state.recData,
-                employerEmail: this.state.patientData.parent.employerEmail,
+            axios.post(`/api/addSickLeave`, {
                 parent: this.state.patientData.parent,
+                recData: this.state.recData,
+                employerEmail: this.state.patientData.parent.employerEmail
             })
                 .then(res => {
+                    console.log(res.data);
                     if (res.status == 200) {
-                        this.element = <Navigate to="/pediatrician/patientlist" replace={true}/>
-                        this.forceUpdate();
+                        console.log(res.data);
+                        alert("Uspješno!");
                     } else {
                         console.log(res);
                     }
