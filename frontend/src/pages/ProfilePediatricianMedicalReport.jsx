@@ -4,6 +4,8 @@ import "../index.css";
 import Input from "../components/components/Input";
 import axios from "axios";
 import {Link} from "react-router-dom";
+import NavbarButtons from "../components/components/components/NavbarButtons";
+
 class ProfilePediatricianMedicalReport extends React.Component {
 
     constructor(props) {
@@ -37,7 +39,7 @@ class ProfilePediatricianMedicalReport extends React.Component {
     render(){
         const medRep = this.state.medrepData;
         const patient = this.state.patientData;
-        return <Template>
+        return <Template buttons={<NavbarButtons role="Pedijatar" oib={window.location.href.split('/')[5]}/>}>
             <div className={"naslovbox_desno"}>
                 <div className={"lom_naslovi naslov_desno"}> Nalazi privatnih ustanova </div>
             </div>

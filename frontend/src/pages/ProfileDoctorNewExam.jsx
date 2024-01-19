@@ -4,6 +4,8 @@ import "../index.css";
 import Input from "../components/components/Input";
 import axios from "axios";
 import {Navigate} from "react-router-dom";
+import NavbarButtons from "../components/components/components/NavbarButtons";
+
 class ProfileDoctorNewExam extends React.Component {
 
     constructor(props) {
@@ -55,7 +57,7 @@ class ProfileDoctorNewExam extends React.Component {
     }
     render(){
         const patient = this.state.patientData;
-        return <Template>
+        return <Template buttons={<NavbarButtons role="Doktor" oib={patient.oib}/>}>
             <div id={"doctor_newexam_naslovbox"} >
                 <div id={"doctor_newexam_naslov"} className={"lom_naslovi"}> Novi pregled </div>
             </div>

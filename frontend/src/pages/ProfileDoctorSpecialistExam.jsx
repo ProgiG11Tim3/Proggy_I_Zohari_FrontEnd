@@ -4,6 +4,8 @@ import "../index.css";
 import Input from "../components/components/Input";
 import axios from "axios";
 import {Navigate} from "react-router-dom";
+import NavbarButtons from "../components/components/components/NavbarButtons";
+
 class ProfileDoctorSpecialistExam extends React.Component {
 
     constructor(props) {
@@ -22,7 +24,6 @@ class ProfileDoctorSpecialistExam extends React.Component {
         const OIB = window.location.href.split('/')[5];
 
         axios.get(`/api/doctor/getPatient/${OIB}`).then(res => {
-            console.log(OIB);
             this.setState({ patientData: res.data });
         })
             .catch(error => {
@@ -46,17 +47,17 @@ class ProfileDoctorSpecialistExam extends React.Component {
                         this.element = <Navigate to="/doctor/patientlist" replace={true}/>
                         this.forceUpdate();
                     } else {
-                        console.log(res);
+                        alert(res);
                     }
                 })
                 .catch((e) => {
-                    console.log(e);
+                    alert(e)
                 });
         }
     }
     render(){
         const patient = this.state.patientData;
-        return <Template>
+        return <Template buttons={<NavbarButtons role="Doktor" oib={patient.oib}/>}>
             <div className={"naslovbox_desno"}>
                 <div className={"lom_naslovi naslov_desno"}> Specijalistički pregled </div>
             </div>

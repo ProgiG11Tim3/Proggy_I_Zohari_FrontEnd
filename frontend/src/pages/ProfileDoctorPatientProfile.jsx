@@ -3,6 +3,7 @@ import Template from "../components/Template";
 import "../index.css";
 import axios from "axios";
 import { useParams } from "react-router-dom";
+import NavbarButtons from "../components/components/components/NavbarButtons";
 
 class ProfileDoctorPatientProfile extends React.Component {
 
@@ -18,18 +19,18 @@ class ProfileDoctorPatientProfile extends React.Component {
         const OIB = window.location.href.split('/')[5];
 
         axios.get(`/api/doctor/getPatient/${OIB}`).then(res => {
-            console.log(OIB);
             this.setState({ patientData: res.data });
             })
             .catch(error => {
                 console.error("Error fetching patient data:", error);
             });
     }
+    
     render(){
 
         const patient = this.state.patientData;
 
-        return <Template>
+        return <Template buttons={<NavbarButtons role="Doktor" oib={patient.oib}/>}>
 
             <div className="main">
                 <div className={"naslovbox_desno"}>

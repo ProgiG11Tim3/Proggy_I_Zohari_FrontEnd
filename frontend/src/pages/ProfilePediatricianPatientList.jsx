@@ -1,9 +1,9 @@
 import React from "react";
 import Template from "../components/Template";
 import "../index.css";
-import viewLogo from "../images/viewLogo.png";
 import axios from "axios";
 import {Link} from "react-router-dom";
+import NavbarButtons from "../components/components/components/NavbarButtons";
 
 class ProfilePediatricianPatientList extends React.Component {
 
@@ -26,7 +26,7 @@ class ProfilePediatricianPatientList extends React.Component {
     }
     render(){
         const patient = this.state.patients;
-        return <Template>
+        return <Template buttons={<NavbarButtons role="PED"/>}>
             <div id={"patient_list_naslov"} className={"lom_naslovi"}> Popis pacijenata </div>
             <div id="patient_list_bigboy">
                 {this.state.patients && Array.isArray(this.state.patients) ? (

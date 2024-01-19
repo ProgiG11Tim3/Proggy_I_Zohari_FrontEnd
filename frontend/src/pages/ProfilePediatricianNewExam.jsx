@@ -4,6 +4,8 @@ import "../index.css";
 import Input from "../components/components/Input";
 import axios from "axios";
 import {Navigate} from "react-router-dom";
+import NavbarButtons from "../components/components/components/NavbarButtons";
+
 class ProfilePediatricianNewExam extends React.Component {
 
     constructor(props) {
@@ -66,7 +68,7 @@ class ProfilePediatricianNewExam extends React.Component {
     }
     render(){
         const patient = this.state.patientData;
-        return <Template>
+        return <Template buttons={<NavbarButtons role="Pedijatar" oib={window.location.href.split('/')[5]}/>}>
             <div id={"doctor_newexam_naslovbox"} >
                 <div id={"doctor_newexam_naslov"} className={"lom_naslovi"}> Novi pregled </div>
             </div>
@@ -76,7 +78,7 @@ class ProfilePediatricianNewExam extends React.Component {
                 <div className={"bigboy_left"}>
                     <div className={"doctor_newexam_flexbox"}>
                         <div id={"doctor_newexam_datebox"}>
-                            <div className={"lom_podnaslovi doctor_newexam_titles1"}>Datum pregleda</div>
+                            <div id={"guza"} className={"lom_podnaslovi doctor_newexam_titles1"}>Datum pregleda</div>
                             <div id="doctor_newexam_input">
                                 <Input name="doctor_newexam_date" placeholder={"Broj dana"} type="date"
                                        handleChange={e => {this.setState({dateOfExamination: e.target.value})}}/>
@@ -85,7 +87,7 @@ class ProfilePediatricianNewExam extends React.Component {
                     </div>
                     <div className={"lom_podnaslovi"}>Opis dijagnoze</div>
                     <div id="doctor_newexam_diagnosis_input">
-                        <textarea name="doctor_newexam_diagnosis" placeholder={"Opis dijagnoze"}
+                        <textarea id={"guza_luza"} name="doctor_newexam_diagnosis" placeholder={"Opis dijagnoze"}
                                   onChange={e => {this.setState({diagnosis: e.target.value})}}/>
                     </div>
 
