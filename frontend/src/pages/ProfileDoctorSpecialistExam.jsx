@@ -43,7 +43,7 @@ class ProfileDoctorSpecialistExam extends React.Component {
                 recordId: this.state.patientData.recordId
             })
                 .then(res => {
-                    if (res.data == "200") {
+                    if (res.status == 200) {
                         this.element = <Navigate to="/doctor/patientlist" replace={true}/>
                         this.forceUpdate();
                     } else {

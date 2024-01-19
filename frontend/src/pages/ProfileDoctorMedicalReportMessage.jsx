@@ -35,9 +35,11 @@ class ProfileDoctorMedicalReportMessage extends React.Component {
             alert("Molimo da upišete i naslov obavijesti i tekst obavijesti.");
         } else {
             axios.post(`/api/addNotification`, {
+                parent: this.state.patientData,
+                child: null,
                 notificationTitle: this.state.notificationTitle,
                 notificationInformation: this.state.notificationInformation,
-                parent: this.state.patientData.oib
+
             })
                 .then(res => {
                     if (res.data == "200") {

@@ -43,7 +43,7 @@ class ProfileDoctorNewExam extends React.Component {
                 oib: this.state.patientData.oib
             })
                 .then(res => {
-                    if (res.data == "200") {
+                    if (res.status == 200) {
                         this.element = <Navigate to="/doctor/patientlist" replace={true}/>
                         this.forceUpdate();
                     } else {

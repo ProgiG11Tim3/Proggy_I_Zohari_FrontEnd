@@ -13,7 +13,6 @@ class ProfilePediatricianNewPatient extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            ChildRegistrationEntry: {
                 nameChild: null,
                 lastNameChild: null,
                 oib: null,
@@ -21,8 +20,6 @@ class ProfilePediatricianNewPatient extends React.Component {
                 educationalInstitution: null,
                 emailEduInstitution: null,
                 parentOIB: null,
-            }
-
 
         }
         this.submit = this.submit.bind(this)
@@ -34,20 +31,20 @@ class ProfilePediatricianNewPatient extends React.Component {
     submit() {
         if (!this.checkInputs()) {
             alert("Molimo da popunite formu u potpunosti.")
-        } else if (this.state.ChildRegistrationEntry.oib.length != 11) {
+        } else if (this.state.oib.length != 11) {
             alert("OIB mora imat 11 znakova.")
         } else {
             axios.post(`/api/unospacijentchild`, {
-                nameChild: this.state.ChildRegistrationEntry.nameChild,
-                lastNameChild: this.state.ChildRegistrationEntry.lastNameChild,
-                oib: this.state.ChildRegistrationEntry.oib,
-                dateOfBirthChild: this.state.ChildRegistrationEntry.dateOfBirthChild,
-                educationalInstitution: this.state.ChildRegistrationEntry.educationalInstitution,
-                emailEduInstitution: this.state.ChildRegistrationEntry.emailEduInstitution,
-                parentOIB: this.state.ChildRegistrationEntry.parentOib
+                oib: this.state.oib,
+                nameChild: this.state.nameChild,
+                lastNameChild: this.state.lastNameChild,
+                dateOfBirthChild: this.state.dateOfBirthChild,
+                educationalInstitution: this.state.educationalInstitution,
+                emailEduInstitution: this.state.emailEduInstitution,
+                parentOIB: this.state.parentOIB
             })
                 .then(res => {
-                    if (res.data == "200") {
+                    if (res.status == 200) {
                         this.element = <Navigate to="/pediatrician/patientlist" replace={true}/>
                         this.forceUpdate();
                     } else {

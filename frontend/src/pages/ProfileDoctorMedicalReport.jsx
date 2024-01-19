@@ -62,7 +62,7 @@ class ProfileDoctorMedicalReport extends React.Component {
                     ): (
                                 <div className={"patient_list_instance"}>
                                     <div className={"patient_list_infobox"}>
-                                        <div className={"patient_list_ime_prezime"}>{patient.lastNameParent}</div>
+                                        <div className={"patient_list_ime_prezime"}>{`${patient.lastNameParent} ${patient.nameParent}`}</div>
                                         <div className={"patient_list_oib"}>{new Date(medRep.dateOfReport).toLocaleDateString()}</div>
                                     </div>
                                     <div className={"patient_list_buttonbox"}>
