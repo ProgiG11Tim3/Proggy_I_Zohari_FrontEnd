@@ -1547,8 +1547,11 @@ input[type="file"] {
 
   #mobile_menu {
     height: 5vh;
-    width: 50px;
-    background-color: wheat;
+    width: 6vh;
+    background-image: url(./images/menu_icon.png);
+    background-size: 70%;
+    background-repeat: no-repeat;
+    background-position: center;
   }
 
   #nav_button_container {

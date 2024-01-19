@@ -7,7 +7,14 @@ const NavbarButtons = (props) => {
     const [style, setStyle] = useState("visible");
     const [buttons, setButtons] = useState(null);
 
+    const handleResize = () => {
+        if(window.innerWidth > 768) {
+            setStyle("visible");
+        }
+    }
+
     useEffect(() => {
+        window.addEventListener('resize', handleResize);
         if(window.innerWidth <= 768) {
             setStyle("collapse");
         }
@@ -78,10 +85,10 @@ const NavbarButtons = (props) => {
 
     return <div id="nav_buttons">
         <div id="mobile_menu" onClick={() => {
-            if(style == "collapse") {
-                setStyle("visible");
-            } else {
+            if(style == "visible") {
                 setStyle("collapse");
+            } else {
+                setStyle("visible");
             }
         }}></div>
         {renderButtons(buttons, style)}
