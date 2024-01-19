@@ -38,22 +38,37 @@ class ProfilePediatricianGenSickNote extends React.Component {
             alert("Molimo da upišete tekst ispričnice.");
         } else {
             console.log(this.state.patientData);
-            const child = this.state.patientData;
-            axios.post(`/api/addSickNote`, {
-                child: child,
-                noteData: this.state.noteData
-            })
-                .then(res => {
-                    if (res.status == 200) {
-                        console.log(this.state.patientData);
-                        alert("Uspješno!");
-                        console.log(res);
+
+            // Define the data for both requests
+            const addSickNoteData = {
+                child: this.state.patientData,
+                noteData: this.state.noteData,
+            };
+
+            const sendMailData = {
+                recipient: this.state.patientData.emailEducationalInstitution,
+                msgBody: this.state.noteData,
+                subject: "Ispričnica",
+            };
+
+            // Make both requests concurrently
+            axios.all([
+                axios.post("/api/addSickNote", addSickNoteData),
+                axios.post("/api/sendMail", sendMailData),
+            ])
+                .then(axios.spread((addSickNoteRes, sendMailRes) => {
+                    if (addSickNoteRes.status === 200 && sendMailRes.status === 200) {
+                        console.log("Both requests successful");
+                        this.element = <Navigate to="/pediatrician/patientlist" replace={true} />;
+                        this.forceUpdate();
                     } else {
-                        console.log(res);
+                        console.log("One or more requests failed");
+                        console.log("addSickNoteRes:", addSickNoteRes);
+                        console.log("sendMailRes:", sendMailRes);
                     }
-                })
-                .catch((e) => {
-                    console.log(e);
+                }))
+                .catch((error) => {
+                    console.log("Error making requests:", error);
                 });
         }
     }
