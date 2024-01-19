@@ -24,7 +24,6 @@ class ProfileDoctorSpecialistExam extends React.Component {
         const OIB = window.location.href.split('/')[5];
 
         axios.get(`/api/doctor/getPatient/${OIB}`).then(res => {
-            console.log(OIB);
             this.setState({ patientData: res.data });
         })
             .catch(error => {
@@ -48,11 +47,11 @@ class ProfileDoctorSpecialistExam extends React.Component {
                         this.element = <Navigate to="/doctor/patientlist" replace={true}/>
                         this.forceUpdate();
                     } else {
-                        console.log(res);
+                        alert(res);
                     }
                 })
                 .catch((e) => {
-                    console.log(e);
+                    alert(e)
                 });
         }
     }

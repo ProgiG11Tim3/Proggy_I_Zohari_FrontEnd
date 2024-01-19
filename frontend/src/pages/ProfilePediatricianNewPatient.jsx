@@ -51,11 +51,11 @@ class ProfilePediatricianNewPatient extends React.Component {
                         this.element = <Navigate to="/pediatrician/patientlist" replace={true}/>
                         this.forceUpdate();
                     } else {
-                        console.log(res);
+                        alert(res);
                     }
                 })
                 .catch((e) => {
-                    console.log(e);
+                    alert(e);
                 });
         }
     }

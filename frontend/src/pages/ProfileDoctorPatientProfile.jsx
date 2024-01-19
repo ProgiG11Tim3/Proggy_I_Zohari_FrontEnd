@@ -19,7 +19,6 @@ class ProfileDoctorPatientProfile extends React.Component {
         const OIB = window.location.href.split('/')[5];
 
         axios.get(`/api/doctor/getPatient/${OIB}`).then(res => {
-            console.log(OIB);
             this.setState({ patientData: res.data });
             })
             .catch(error => {

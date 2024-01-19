@@ -45,7 +45,7 @@ class RegisterPage extends React.Component {
                     alert("Pogreška u registraciji.")
                 }
             }).catch((e) => {
-                console.log(e)
+                alert(e);
             })   
         }
     }

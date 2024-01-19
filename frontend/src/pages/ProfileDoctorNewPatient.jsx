@@ -25,7 +25,7 @@ class ProfileDoctorNewPatient extends React.Component {
                         this.element = <Navigate to="/doctor/patientlist" replace={true}/>
                         this.forceUpdate();
                     } else {
-                        alert("Neispravan OIB.");
+                        console.log("Neispravan OIB.");
                     }
                 })
                 .catch((e) => {

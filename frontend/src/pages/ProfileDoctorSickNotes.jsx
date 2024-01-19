@@ -20,7 +20,6 @@ class ProfileDoctorSickNotes extends React.Component {
 
 
         axios.get(`/api/doctor/getPatient/${OIB}`).then(res => {
-            console.log(OIB);
             this.setState({ patientData: res.data });
         })
             .catch(error => {

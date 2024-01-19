@@ -26,7 +26,6 @@ class ProfilePediatricianPatientProfile extends React.Component {
     }
     render(){
         const oib = this.state.oib;
-        console.log(oib)
         return <Template buttons={<NavbarButtons role="Pedijatar" oib={oib}/>}>
             <div className="main">
                 <div className={"naslovbox_desno"}>
