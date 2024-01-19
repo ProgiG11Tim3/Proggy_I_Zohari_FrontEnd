@@ -89,6 +89,7 @@ input::-webkit-inner-spin-button {
   font-size: 13px;
   margin: 4px 20px 5px 0;
   width: fit-content;
+  height: 100%;
 }
 
 #naslov {
@@ -613,6 +614,7 @@ input::-webkit-inner-spin-button {
 #nav_button_container {
   float: left;
   display: flex;
+  height: 100%;
 }
 
 #language_button {
@@ -631,9 +633,12 @@ input::-webkit-inner-spin-button {
 }
 
 .nav_button {
+  display: flex;
   margin: 0 1.5vw;
   color: white;
   text-decoration: none;
+  height: 100%;
+  align-items: center;
 }
 
 .nav_button:hover {
@@ -1600,7 +1605,8 @@ input[type="file"] {
     width: 100vw;
     height: 95vh;
     visibility: visible;
-  }  
+  }
+
 
   #doctor_specexam_button_submitbox {
     margin-top: 1rem;

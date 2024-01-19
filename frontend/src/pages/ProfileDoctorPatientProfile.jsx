@@ -26,6 +26,7 @@ class ProfileDoctorPatientProfile extends React.Component {
                 console.error("Error fetching patient data:", error);
             });
     }
+    
     render(){
 
         const patient = this.state.patientData;

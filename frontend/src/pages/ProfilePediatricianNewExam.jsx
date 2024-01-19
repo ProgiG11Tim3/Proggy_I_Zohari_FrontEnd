@@ -2,9 +2,11 @@ import React from "react";
 import Template from "../components/Template";
 import "../index.css";
 import Input from "../components/components/Input";
+import NavbarButtons from "../components/components/components/NavbarButtons";
+
 class ProfilePediatricianNewExam extends React.Component {
     render(){
-        return <Template>
+        return <Template buttons={<NavbarButtons role="Pedijatar" oib={window.location.href.split('/')[5]}/>}>
             <div id={"doctor_newexam_naslovbox"} >
                 <div id={"doctor_newexam_naslov"} className={"lom_naslovi"}> Novi pregled </div>
             </div>

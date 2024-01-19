@@ -2,6 +2,7 @@ import React from "react";
 import Template from "../components/Template";
 import "../index.css";
 import axios from "axios";
+import NavbarButtons from "../components/components/components/NavbarButtons";
 
 class ProfileDoctorSickNotes extends React.Component {
 
@@ -38,7 +39,7 @@ class ProfileDoctorSickNotes extends React.Component {
     render(){
         const sickLeave = this.state.sickLeaveData;
         const patient = this.state.patientData;
-        return <Template>
+        return <Template buttons={<NavbarButtons role="LOM"/>}>
             <div id={"patient_list_naslov"} className={"lom_naslovi"}> Preporuke za bolovanje </div>
             <div id={"patient_list_bigboy"}>
 

@@ -4,6 +4,7 @@ import "../index.css";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import ProfileDoctorPatientProfile from "./ProfileDoctorPatientProfile";
+import NavbarButtons from "../components/components/components/NavbarButtons";
 
 class ProfileDoctorPatientList extends React.Component {
     constructor(props) {
@@ -26,7 +27,7 @@ class ProfileDoctorPatientList extends React.Component {
 
         const patient = this.state.patients;
         return (
-            <Template>
+            <Template buttons={<NavbarButtons role="LOM"/>}>
                 <div id={"patient_list_naslov"} className={"lom_naslovi"}>
                     Popis pacijenata
                 </div>
