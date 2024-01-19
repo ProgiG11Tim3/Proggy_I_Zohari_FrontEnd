@@ -19,7 +19,7 @@ class ProfilePediatricianNewPatient extends React.Component {
                 oib: null,
                 dateOfBirthChild: null,
                 educationalInstitution: null,
-                emailEduInstitution: null,
+                emailEducationalInstitution: null,
                 parentOIB: null,
 
         }
@@ -41,7 +41,7 @@ class ProfilePediatricianNewPatient extends React.Component {
                 lastNameChild: this.state.lastNameChild,
                 dateOfBirthChild: this.state.dateOfBirthChild,
                 educationalInstitution: this.state.educationalInstitution,
-                emailEduInstitution: this.state.emailEduInstitution,
+                emailEducationalInstitution: this.state.emailEducationalInstitution,
                 parentOIB: this.state.parentOIB
             })
                 .then(res => {
@@ -98,7 +98,7 @@ class ProfilePediatricianNewPatient extends React.Component {
                                    handleChange={e => {this.setState({educationalInstitution: e.target.value})}}/>
 
                             <Input tag="Adresa elektroničke pošte" name="email" placeholder="Adresa elektroničke pošte" type="email"
-                                   handleChange={e => {this.setState({emailEduInstitution: e.target.value})}}/>
+                                   handleChange={e => {this.setState({emailEducationalInstitution: e.target.value})}}/>
                         </InputsParagraf>
 
 
