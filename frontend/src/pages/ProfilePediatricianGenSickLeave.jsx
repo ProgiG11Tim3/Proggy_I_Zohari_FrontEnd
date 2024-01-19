@@ -13,6 +13,7 @@ class ProfilePediatricianGenSickNote extends React.Component {
             patientData: {},
             recData: null,
             doctor: null,
+            doctorData: {},
             parent: null,
             employerEmail: null
         };
@@ -29,19 +30,15 @@ class ProfilePediatricianGenSickNote extends React.Component {
             const IDdoc = this.state.patientData.parent.doctorId;
             axios.get(`/api/getDoctor/${IDdoc}`).then(res => {
                 console.log(IDdoc);
-                this.setState({ doctor: res.data });
+                this.setState({ doctorData: res.data });
             })
                 .catch(error => {
                     console.error("Error fetching patient data:", error);
                 });
-
-
         })
             .catch(error => {
                 console.error("Error fetching patient data:", error);
             });
-
-
     }
 
     submit() {
@@ -49,14 +46,13 @@ class ProfilePediatricianGenSickNote extends React.Component {
             alert("Molimo da upišete tekst ispričnice.");
         } else {
             axios.post(`/api/addSickNote`, {
-                doctor: this.state.doctor,
+                doctor: this.state.doctorData,
                 recData: this.state.recData,
                 employerEmail: this.state.patientData.parent.employerEmail,
                 parent: this.state.patientData.parent,
-
             })
                 .then(res => {
-                    if (res.data == "200") {
+                    if (res.status == 200) {
                         this.element = <Navigate to="/pediatrician/patientlist" replace={true}/>
                         this.forceUpdate();
                     } else {

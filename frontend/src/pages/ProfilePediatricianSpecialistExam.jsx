@@ -50,7 +50,7 @@ class ProfilePediatricianSpecialistExam extends React.Component {
                 medicalRecord: this.state.medicalRecord
             })
                 .then(res => {
-                    if (res.data == "200") {
+                    if (res.status == 200) {
                         this.element = <Navigate to="/pediatrician/patientlist" replace={true}/>
                         this.forceUpdate();
                     } else {

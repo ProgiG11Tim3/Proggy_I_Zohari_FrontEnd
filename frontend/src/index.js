@@ -28,6 +28,7 @@ import ProfilePediatricianNewPatient from "./pages/ProfilePediatricianNewPatient
 import ProfilePediatricianGenSickNote from "./pages/ProfilePediatricianGenSickNote";
 import ProfilePediatricianGenSickLeave from "./pages/ProfilePediatricianGenSickLeave";
 import ProfilePediatricianSendNotification from "./pages/ProfilePediatricianSendNotification";
+import AdminUserList from "./pages/AdminUserList";
 
 
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
@@ -37,6 +38,7 @@ const App = () => {
     return (
         <Router>
             <Routes>
+                <Route path={"/admin/userlist"} element={<AdminUserList />} />
                 <Route path={"/pediatrician/patientprofile/:oib/sendnotif"} element={<ProfilePediatricianSendNotification />} />
                 <Route path={"/pediatrician/patientprofile/:oib/sickleave"} element={<ProfilePediatricianGenSickLeave />} />
                 <Route path={"/pediatrician/patientprofile/:oib/sicknote"} element={<ProfilePediatricianGenSickNote />} />

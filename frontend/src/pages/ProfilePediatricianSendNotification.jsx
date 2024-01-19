@@ -23,9 +23,8 @@ class ProfilePediatricianSendNotification extends React.Component {
         const OIB = window.location.href.split('/')[5];
 
         axios.get(`/api/pediatrician/getPatient/${OIB}`).then(res => {
-            console.log(res);
             this.setState({ patientData: res.data });
-
+            console.log(res.data);
         })
             .catch(error => {
                 console.error("Error fetching patient data:", error);
@@ -38,18 +37,18 @@ class ProfilePediatricianSendNotification extends React.Component {
             alert("Molimo da upišete i naslov obavijesti i tekst povratne inofrmacije.");
         } else {
             axios.post(`/api/addNotification`, {
-                parent: this.state.patientData.parent,
-                child: null,
+                parent: null,
+                child: this.state.patientData,
                 notificationTitle: this.state.notificationTitle,
                 notificationInformation: this.state.notificationInformation,
 
             })
                 .then(res => {
-                    if (res.data == "200") {
+                    if (res.status == 200) {
                         this.element = <Navigate to="/pediatrician/patientlist" replace={true}/>
                         this.forceUpdate();
+                        console.log("proslo je");
                     } else {
-                        console.log(res);
                     }
                 })
                 .catch((e) => {

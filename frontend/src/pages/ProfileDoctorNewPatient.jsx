@@ -20,7 +20,7 @@ class ProfileDoctorNewPatient extends React.Component {
         } else {
             axios.post(`/api/unospacijentabyoib${this.state.oib}`)
                 .then(res => {
-                    if (res.data === "OK") {
+                    if (res.status == 200) {
                         this.element = <Navigate to="/doctor/patientlist" replace={true}/>
                         this.forceUpdate();
                     } else {

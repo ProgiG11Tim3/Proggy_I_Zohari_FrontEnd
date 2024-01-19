@@ -21,7 +21,7 @@ class ProfilePediatricianGenSickNote extends React.Component {
         const OIB = window.location.href.split('/')[5];
 
         axios.get(`/api/pediatrician/getPatient/${OIB}`).then(res => {
-            console.log(res.data);
+
             this.setState({ patientData: res.data });
         })
             .catch(error => {
@@ -34,15 +34,17 @@ class ProfilePediatricianGenSickNote extends React.Component {
         if (this.state.noteData == null) {
             alert("Molimo da upišete tekst ispričnice.");
         } else {
+            console.log(this.state.patientData)
             axios.post(`/api/addSickNote`, {
                 child: this.state.patientData,
                 noteData: this.state.noteData
-
             })
                 .then(res => {
-                    if (res.data == "200") {
+                    if (res.status == 200) {
+                        console.log("poruka za front");
                         this.element = <Navigate to="/pediatrician/patientlist" replace={true}/>
                         this.forceUpdate();
+                        console.log(res);
                     } else {
                         console.log(res);
                     }
@@ -53,7 +55,6 @@ class ProfilePediatricianGenSickNote extends React.Component {
         }
     }
     render(){
-
         const patient = this.state.patientData;
         return <Template>
 
