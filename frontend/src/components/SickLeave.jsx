@@ -21,7 +21,7 @@ class SickLeave extends React.Component {
                 <Leave 
                 title={"Preporuka za bolovanje"}
                 content={el.recData} 
-                from={el.doctor.nameDoctor + " " + el.doctor.lastNameDoctor} 
+                from={el.parent.doctor.nameDoctor + " " + el.parent.doctor.lastNameDoctor} 
                 key={el.recommendationId}
                 onTrigger={this.handleCallback}
                 type={"BOLOVANJE"}/>

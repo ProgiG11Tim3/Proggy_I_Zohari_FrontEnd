@@ -5,8 +5,16 @@ class LoadFindings extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            selectedFile: null
+            selectedFile: null,
+            message: null
         }
+        this.recordId = null;
+    }
+
+    componentDidMount() {
+        axios.get("/api"+this.props.link+"/getAllSelectedExaminations").then(res => {
+            this.recordId = res.data[0].medicalRecord.recordId;
+        })
     }
 
     onFileChange = (e) => {
@@ -18,8 +26,11 @@ class LoadFindings extends React.Component {
 
     uploadFile = () => {
         if(this.state.selectedFile != null) {
+            
             let formData = new FormData();
             formData.append("file", this.state.selectedFile);
+            formData.append("medicalRecord", this.recordId);
+            formData.append("messageForDoc", this.state.message);
             axios.post("/api/upload", formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data'
@@ -43,7 +54,9 @@ class LoadFindings extends React.Component {
                     </div>
                     <br></br>
                     <div id="popratna_naslov">Unesite popratnu poruku:</div>
-                    <textarea id="popratna_poruka"/>
+                    <textarea id="popratna_poruka" onChange={e => {
+                        this.setState({message: e.target.value});
+                    }}/>
                     <button id="load_file_button" onClick={this.uploadFile}>UČITAJ</button>
                 </div>
             </div>

@@ -1,24 +1,27 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
-
-const Map = () => {
+ 
+const Map = (props) => {
     const [markers, setMarkers] = useState([]);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        axios.get("/api/getAllHospitalLocations").then(res => {
-            res.data.forEach(loc => {
-                let temp = markers;
-                    temp.push(
+        axios.get("/api"+ props.link +"/getAllSelectedSpecialistExaminations").then(res => {
+            const locs = []
+            res.data.forEach(exam => {
+                exam.hospitalLocations.forEach(loc => {
+                    console.log(loc)
+                    locs.push(
                         <Marker position={[loc.x_coordinate, loc.y_coordinate]} key={loc.hospitalLocationId}>
                             <Popup>
                                 {loc.hospitalName}
                             </Popup>
                         </Marker>
-                    )
-                    setMarkers(temp);
+                    );
+                })
             })
+            setMarkers(locs);
             setLoading(false);
         })
     }, [])

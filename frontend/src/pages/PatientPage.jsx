@@ -71,7 +71,7 @@ class PatientPage extends React.Component {
                 }
             case "3":
                 elem = <SpecialistExams link={this.state.patientData.link} />;
-                this.setState({map: <Map />});
+                this.setState({map: <Map link={this.state.patientData.link}/>});
                 break;
             case "4":
                 elem = <LoadFindings link={this.state.patientData.link} />;

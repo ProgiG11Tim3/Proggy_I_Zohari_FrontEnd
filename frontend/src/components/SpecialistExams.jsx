@@ -1,7 +1,6 @@
 import React from "react";
 import axios from "axios";
 
-import Map from "./Map";
 import SpecialistExam from "./SpecialistExam";
 
 class SpecialistExams extends React.Component {
@@ -18,6 +17,13 @@ class SpecialistExams extends React.Component {
 
     componentDidMount() {
         axios.get("/api"+ this.props.link +"/getAllSelectedSpecialistExaminations").then(res => {
+            const locs = []
+            res.data.forEach(exam => {
+                exam.hospitalLocations.forEach(loc => {
+                    locs.push(loc);
+                })
+            })
+
             const temp = res.data.map(el => (
                 <SpecialistExam 
                 title={el.examTitle} 
