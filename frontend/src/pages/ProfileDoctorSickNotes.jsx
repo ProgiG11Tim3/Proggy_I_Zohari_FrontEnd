@@ -3,7 +3,11 @@ import Template from "../components/Template";
 import "../index.css";
 import axios from "axios";
 import NavbarButtons from "../components/components/components/NavbarButtons";
+
 import { Link } from "react-router-dom";
+
+import Profile from "../components/components/components/Profile";
+
 
 class ProfileDoctorSickNotes extends React.Component {
     constructor(props) {
@@ -26,14 +30,13 @@ class ProfileDoctorSickNotes extends React.Component {
             });
     }
 
-    render() {
-        const { sickLeaveData } = this.state;
 
-        return (
-            <Template buttons={<NavbarButtons role="LOM" />}>
-                <div id={"patient_list_naslov"} className={"lom_naslovi"}>
-                    Preporuke za bolovanje
-                </div>
+    render() {
+        const sickLeave = this.state.sickLeaveData;
+        const patient = this.state.patientData;
+        return <Template profil={
+                <Profile />} buttons={<NavbarButtons role="LOM"/>}>
+                <div id={"patient_list_naslov"} className={"lom_naslovi"}> Preporuke za bolovanje </div>
                 <div id={"patient_list_bigboy"}>
                     {sickLeaveData && sickLeaveData.length > 0 ? (
                         sickLeaveData.map((sickLeave) => (
@@ -58,7 +61,6 @@ class ProfileDoctorSickNotes extends React.Component {
                     )}
                 </div>
             </Template>
-        );
     }
 }
 

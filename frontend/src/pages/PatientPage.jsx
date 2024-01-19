@@ -71,7 +71,7 @@ class PatientPage extends React.Component {
                 }
             case "3":
                 elem = <SpecialistExams link={this.state.patientData.link} />;
-                this.setState({map: <Map />});
+                this.setState({map: <Map link={this.state.patientData.link}/>});
                 break;
             case "4":
                 elem = <LoadFindings link={this.state.patientData.link} />;
@@ -105,12 +105,7 @@ class PatientPage extends React.Component {
             return <div>LOADING...</div>
         }
 
-        return <Template profil={
-            <Profil 
-                lastName={patient.surname} 
-                name={patient.name} 
-                type={patient.role}
-            />} 
+        return <Template profil={<Profil />} 
                 buttons={
                     <NavbarButtons role={patient.role} isSelected={e => {
                         this.setState({selected: e});

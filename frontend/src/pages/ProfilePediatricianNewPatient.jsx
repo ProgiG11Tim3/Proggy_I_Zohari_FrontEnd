@@ -6,6 +6,7 @@ import Template from "../components/Template";
 import Input from "../components/components/Input";
 import InputsParagraf from "../components/InputsParagraf";
 import NavbarButtons from "../components/components/components/NavbarButtons";
+import Profile from "../components/components/components/Profile";
 
 import "../index.css"
 
@@ -68,7 +69,8 @@ class ProfilePediatricianNewPatient extends React.Component {
     render() {
         return <div>
             {this.element}
-            <Template buttons={<NavbarButtons role="PED"/>}>
+            <Template profil={
+            <Profile />} buttons={<NavbarButtons role="PED"/>}>
                 <div className="main">
                     <div className="main_naslov">Novi pacijent</div>
                     <div id="register_main_container">

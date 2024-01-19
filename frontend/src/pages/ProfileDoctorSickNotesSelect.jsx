@@ -4,6 +4,7 @@ import "../index.css";
 import Input from "../components/components/Input";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import Profile from "../components/components/components/Profile";
 
 
 class ProfileDoctorSickNotesSelect extends React.Component {
@@ -43,9 +44,13 @@ class ProfileDoctorSickNotesSelect extends React.Component {
     };
 
     render(){
+
         const sickLeave = this.state.sickLeaveData;
         const parentData = this.state.parent;
-        return <Template>
+
+        return <Template profil={
+            <Profile />}>
+
             <div id={"patient_list_naslov"} className={"lom_naslovi"}> Preporuka za bolovanje </div>
             <div id={"patient_list_bigboy"}>
                 <div id={"sickleave_infobox"} className={"flexbox"}>

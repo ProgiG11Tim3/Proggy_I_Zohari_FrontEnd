@@ -4,6 +4,8 @@ import "../index.css";
 import Input from "../components/components/Input";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import Profile from "../components/components/components/Profile";
+
 class ProfilePediatricianMedicalReportOpened extends React.Component {
 
     constructor(props) {
@@ -67,7 +69,8 @@ class ProfilePediatricianMedicalReportOpened extends React.Component {
     render(){
         const medRep = this.state.medrepData;
         const patient = this.state.patientData;
-        return <Template>
+        return <Template profil={
+            <Profile />}>
             <div className={"naslovbox_desno"}>
                 <div className={"lom_naslovi naslov_desno"}> Nalaz privatne ustanove </div>
             </div>
